@@ -1,0 +1,26 @@
+/* MOBILE FIRST */
+
+/* TABLET */
+@media (min-width: 481px) {
+	.user-container {
+		width: 40%;
+	}
+
+    .new-user-btn {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* PÁGINA ELECTRÓNICA */
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    /* PÁGINA ELECTRÓNICA */
+}
+
+/* DESKTOP XXL */
+@media (min-width: 1040px) {
+    /* PÁGINA ELECTRÓNICA */
+}

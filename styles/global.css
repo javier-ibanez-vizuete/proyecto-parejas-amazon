@@ -1,0 +1,191 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	font-family: "Roboto", "Poppins", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Referencias de estilos genéricas (sustituir por los colores deseados) */
+:root {
+	--accent-bg-color: #f4ede4;
+	--text-color: #1d1d1d;
+	--text-light-color: #696969;
+	--text-secondary-color: #a31212;
+	--primary-color: #0d4011;
+	--primary-color-dark: #154b21;
+}
+
+/* CSS Global para estilos */
+
+ul {
+	list-style-type: none;
+}
+
+/* A partir de aquí introduce tus estilos
+(estos estilos aplican desde Mobile en adelante hasta  que se sobreescriban en alguna media query) */
+:root {
+	--accent-bg-color: #f4ede4;
+	--primary-text-color: #000;
+	--contrast-color: #fff;
+	--primary-color: #400d40;
+	--secondary-color: #efece6;
+	--tertiary-color: #fff5e7;
+	--primary-color-btn: #191919;
+	--color-containers: #efece6;
+
+	--container-width: 95%;
+}
+
+.card-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-container {
+	width: 100%;
+	display: flex;
+}
+
+.user-content {
+	display: flex;
+	flex-direction: column;
+    gap: 8px;
+	padding: 10px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+} 
+
+.input-search {
+    padding: 8px 4px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.separator {
+	border: 1px solid grey;
+}
+
+.continue-btn-container {
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+
+.continue-btn {
+    width: 100%;
+	background-color: #f7ca00;
+	border: none;
+	border-radius: 10px;
+	padding: 4px 0;
+}
+
+.user-info {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.user-info a {
+    color: #2162A1;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #123557;
+}
+
+.help-container a {
+    color: #2162A1;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.business-shop-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.business-shop-content h2 {
+    font-size: 14px;
+}
+
+.business-shop-content a {
+    font-weight: 400;
+    color: #2162A1;
+}
+
+.new-user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 16px;
+    font-size: 10px;
+}
+
+.new-user-btn {
+    width: 100%;
+    font-size: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 4px;
+    background-color: #FFF;
+}
+
+.footer-container {
+    width: 100%;
+}
+
+.footer-links {
+    color: #2162A1;
+    font-size: 10px;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 10px;
+    text-align: center;
+    color: gray;
+}
