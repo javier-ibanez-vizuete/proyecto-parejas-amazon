@@ -182,6 +182,7 @@ a:hover {
     color: #2162A1;
     font-size: 10px;
     text-align: center;
+    padding: 4px;
 }
 
 .copyright {
@@ -189,3 +190,5 @@ a:hover {
     text-align: center;
     color: gray;
 }
+
+/* PÁGINA ELECTRÓNICA */

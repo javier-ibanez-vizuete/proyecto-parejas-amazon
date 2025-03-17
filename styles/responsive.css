@@ -6,21 +6,44 @@
 		width: 40%;
 	}
 
-    .new-user-btn {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-    }
+	.new-user-btn {
+		width: 40%;
+		display: flex;
+		flex-direction: column;
+	}
 
-    /* PÁGINA ELECTRÓNICA */
+	/* PÁGINA ELECTRÓNICA */
 }
 
 /* DESKTOP */
 @media (min-width: 1024px) {
-    /* PÁGINA ELECTRÓNICA */
+    .user-container,
+    .new-user-btn {
+		width: 30%;
+	}
+	/* PÁGINA ELECTRÓNICA */
 }
 
 /* DESKTOP XXL */
 @media (min-width: 1040px) {
-    /* PÁGINA ELECTRÓNICA */
+	.user-container,
+    .new-user-btn {
+		width: 20%;
+	}
+
+	.user-content,
+	.help-container a,
+	.business-shop-content h2,
+	.business-shop-content a {
+		font-size: 18px;
+	}
+
+	.new-user-container,
+	.new-user-btn,
+    .footer-links,
+	.copyright {
+		font-size: 14px;
+	}
+
+	/* PÁGINA ELECTRÓNICA */
 }
