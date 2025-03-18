@@ -11,17 +11,21 @@
 		<main>
 			<section>
 				<div class="card-container">
-                    <img src="/media/logos/amazon-logo.png" alt="">
-					
-                    <div class="user-container">
-						<div class="user-content">
-							<h1>Iniciar sesión</h1>
-							<p>Dirección de e-mail o número de teléfono móvil</p>
-							<input class="input-search" type="search" placeholder="Introduce tu e-mail" />
+					<img src="/media/logos/amazon-logo.png" alt="" />
 
-							<div class="continue-btn-container">
-								<button class="continue-btn">Continuar</button>
-							</div>
+					<div class="user-container">
+						<div class="user-content">
+
+							<form action="/login" method="POST">
+								<h1>Iniciar sesión</h1>
+								<p>Dirección de e-mail o número de teléfono móvil</p>
+
+								<input class="input-email" type="email" name="email" placeholder="Introduce tu e-mail" />
+
+								<div class="continue-btn-container">
+									<button type="submit" class="continue-btn">Continuar</button>
+								</div>
+							</form>
 
 							<div class="user-info">
 								<p>
