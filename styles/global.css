@@ -42,16 +42,6 @@ a {
 	text-decoration: none;
 }
 
-/* Referencias de estilos genéricas (sustituir por los colores deseados) */
-:root {
-	--accent-bg-color: #f4ede4;
-	--text-color: #1d1d1d;
-	--text-light-color: #696969;
-	--text-secondary-color: #a31212;
-	--primary-color: #0d4011;
-	--primary-color-dark: #154b21;
-}
-
 /* CSS Global para estilos */
 
 ul {
@@ -63,22 +53,20 @@ ul {
 :root {
 	--accent-bg-color: #f4ede4;
 	--primary-text-color: #000;
-	--contrast-color: #fff;
-	--primary-color: #400d40;
-	--secondary-color: #efece6;
-	--tertiary-color: #fff5e7;
-	--primary-color-btn: #191919;
-	--color-containers: #efece6;
+	--links-text-color: #2162a1;
+	--contrast-color: #232f3e;
+	--light-gray: #eaeaea;
+	--primary-color-btn: #f7ca00;
 
 	--container-width: 95%;
 }
 
 .card-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .user-container {
@@ -89,18 +77,19 @@ ul {
 .user-content {
 	display: flex;
 	flex-direction: column;
-    gap: 8px;
+	gap: 8px;
 	padding: 10px;
-    border: 1px solid grey;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-} 
+	border: 1px solid grey;
+	border-radius: 8px;
+	font-size: 14px;
+	font-weight: 600;
+}
 
-.input-search {
-    padding: 8px 4px;
-    border: 1px solid grey;
-    border-radius: 4px;
+.input-email {
+	width: 100%;
+	padding: 8px 4px;
+	border: 1px solid grey;
+	border-radius: 4px;
 }
 
 .separator {
@@ -114,81 +103,290 @@ ul {
 }
 
 .continue-btn {
-    width: 100%;
-	background-color: #f7ca00;
+	width: 100%;
+	background-color: var(--primary-color-btn);
 	border: none;
 	border-radius: 10px;
 	padding: 4px 0;
 }
 
 .user-info {
-    font-size: 10px;
-    font-weight: 400;
+	font-size: 10px;
+	font-weight: 400;
 }
 
 .user-info a {
-    color: #2162A1;
-    text-decoration: underline;
+	color: var(--links-text-color);
+	text-decoration: underline;
 }
 
 a:hover {
-    color: #123557;
+	color: #123557;
 }
 
 .help-container a {
-    color: #2162A1;
-    font-weight: 400;
-    font-size: 12px;
+	color: var(--links-text-color);
+	font-weight: 400;
+	font-size: 12px;
 }
 
 .business-shop-content {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
 }
 
 .business-shop-content h2 {
-    font-size: 14px;
+	font-size: 14px;
 }
 
 .business-shop-content a {
-    font-weight: 400;
-    color: #2162A1;
+	font-weight: 400;
+	color: var(--links-text-color);
 }
 
 .new-user-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    padding: 16px;
-    font-size: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+	padding: 16px;
+	font-size: 10px;
 }
 
 .new-user-btn {
-    width: 100%;
-    font-size: 10px;
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 4px;
-    background-color: #FFF;
+	width: 100%;
+	font-size: 10px;
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding: 4px;
+	background-color: #fff;
 }
 
-.footer-container {
-    width: 100%;
+.footer-container-login {
+	width: 100%;
 }
 
-.footer-links {
-    color: #2162A1;
-    font-size: 10px;
-    text-align: center;
-    padding: 4px;
+.footer-links-login {
+	color: var(--links-text-color);
+	font-size: 10px;
+	text-align: center;
+	padding: 4px;
 }
 
 .copyright {
-    font-size: 10px;
-    text-align: center;
-    color: gray;
+	font-size: 10px;
+	text-align: center;
+	color: gray;
 }
 
 /* PÁGINA ELECTRÓNICA */
+
+.nav-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	background-color: #131921;
+	color: #fff;
+}
+
+.nav-content {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+}
+
+.nav-logo {
+	width: 100%;
+}
+
+.nav-logo img,
+.user-icon img,
+.cart-img img {
+	width: 100%;
+}
+
+.shipping-information,
+.nav-categories,
+.cart-description,
+.language,
+.login-user,
+.repayment,
+.no-display,
+.secondary-menu-text,
+.categories-no-display {
+	display: none;
+}
+
+.user-icon,
+.cart-img {
+	width: 60%;
+}
+
+.secondary-menu-container {
+	width: 100%;
+	color: #000;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	background-color: var(--contrast-color);
+	color: #fff;
+	padding: 8px 0;
+}
+
+.secondary-menu-links {
+	display: flex;
+	flex-direction: row;
+}
+
+.secondary-menu-links ul {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 7px;
+	font-size: 11px;
+}
+
+.secondary-menu-links a:hover {
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	padding: 6px;
+}
+
+.electronics-categories-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	font-size: 10px;
+	padding: 10px 0;
+	border-bottom: 2px solid rgb(198, 198, 198);
+}
+
+.main-section-container,
+.featured-categories-container,
+.news-products-container,
+.bests-sellers-container,
+.best-rated-container {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px 0;
+}
+
+.main-section-content,
+.main-section-content h3,
+.main-section-content p {
+	padding-bottom: 8px;
+}
+
+.main-section-content h3 {
+	font-size: 24px;
+}
+
+.main-section-content p {
+	font-size: 12px;
+}
+
+.main-section-content a {
+	color: var(--links-text-color);
+}
+
+.logitech-banner,
+.huawei-banner {
+	width: 100%;
+}
+
+.logitech-banner img,
+.huawei-banner img {
+	width: 100%;
+}
+
+.back {
+	width: 100%;
+	background-color: #37475a;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	font-size: 12px;
+	padding: 18px 0;
+}
+
+.footer-links-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.footer-links {
+	width: 25%;
+	color: #FFF;
+	background-color: var(--contrast-color);
+	display: flex;
+	flex-direction: column;
+	padding: 4px;
+}
+
+.footer-links h4 {
+	font-size: 12px;
+	font-weight: 400;
+	padding-bottom: 4px;
+	text-align: left;
+} 
+
+.footer-links a {
+	font-size: 10px;
+	text-align: left;
+	padding: 6px 0;
+}
+
+.footer-links a:hover {
+	color: #FFF;
+}
+
+.amazon-countries-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--contrast-color);
+}
+
+.amazon-logo {
+	width: 30%;
+	padding: 10px;
+}
+
+.amazon-logo img {
+	width: 100%;
+}
+
+.amazon-countries {
+	display: none;
+}
+
+.copyright-container {
+	width: 100%;
+	background-color: var(--contrast-color);
+	color: #FFF;
+	padding: 20px 0;
+}
+
+.copyright-info {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	font-size: 10px;
+	text-align: center;
+}
+
+.copyright-content {
+	font-size: 10px;
+	text-align: center;
+}
