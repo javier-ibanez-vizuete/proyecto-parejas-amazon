@@ -116,21 +116,81 @@ const products = [
 	},
 	{
 		id: 17,
-        name: 'Samsung Galaxy Tab A9+ Tablet Android, 128 GB Almacenamiento, WiFi, Pantalla 11”, Sonido 3D, Gris (Versión Española)',
-        brand: "samsung",
-        category: "tablets",
-        price: 199
+		name: "Samsung Galaxy Tab A9+ Tablet Android, 128 GB Almacenamiento, WiFi, Pantalla 11”, Sonido 3D, Gris (Versión Española)",
+		brand: "samsung",
+		category: "tablets",
+		price: 199,
+	},
+	{
+		id: 18,
+		name: "DOOGEE U11 Android 15 Tablet 11 Pulgadas, Tablet Octa-Core, 16GB RAM+128GB ROM/1TB TF, HD IPS Pantalla/90Hz, 8580mAh Batería,WiFi 2.4/5GHz / Widevine L1 /5MP+13MP / Facial ID/GMS/BT5.0/3.5mm Jack",
+		brand: "doogee",
+		category: "tablets",
+		price: 129,
+	},
+	// MONITORES
+	{
+		id: 19,
+		name: "Philips 24E1N1100A - Monitor Full HD de 24 Pulgadas, Integrado Altavoz, Tiempo de Respuesta de 1 ms (1920x1080, 100 Hz, VGA, HDMI 1.4) Negro",
+		brand: "philips",
+		category: "monitor",
+		price: 236,
+	},
+	{
+		id: 20,
+		name: "MSI Pro MP275 – Monitor rofessional 27”,100 Hz, FHD, IPS, HDR Ready, Pantalla TÜV, Altavoces Integrados, antiflicker Eye-Q Check",
+		brand: "msi",
+		category: "monitor",
+		price: 124,
+	},
+	{
+		id: 21,
+		name: 'MSI Pro MP161 E2U Monitor portátil Full HD de 15,6", Panel IPS 1920 x 1080, 60 Hz, Pantalla Agradable a la Vista (PC, portátil, móvil), Altavoces, chasis y Soporte, Mini-HDMI 2.0b, 2 x USB Type-C',
+		brand: "msi",
+		category: "monitor",
+		price: 99,
+	},
+	{
+		id: 22,
+		name: 'MSI Pro MP252 Monitor Profesional Full HD de 24,5"- Panel IPS 1920 x 1080, 100 Hz, Pantalla Eye-Friendly, Altavoces Integrados, inclinación Ajustable, HDM 2.0b, DisplayPort 1.4a',
+		brand: "msi",
+		category: "monitor",
+		price: 129,
+	},
+	{
+		id: 23,
+		name: "LG 27US500-W - Monitor 4K UltraHD, 27 Pulgadas, IPS, 3840 x 2160, HDMIx2 2.0, SuperResolution+, clasificación F, 60 Hz, 5 ms, Blanco",
+		brand: "lg",
+		category: "monitor",
+		price: 199,
 	},
     {
-        id: 18,
-        name: 'DOOGEE U11 Android 15 Tablet 11 Pulgadas, Tablet Octa-Core, 16GB RAM+128GB ROM/1TB TF, HD IPS Pantalla/90Hz, 8580mAh Batería,WiFi 2.4/5GHz / Widevine L1 /5MP+13MP / Facial ID/GMS/BT5.0/3.5mm Jack',
-        brand: "doogee",
-        category: "tablets",
-        price: 129,
+        id: 24,
+        name: 'SAMSUNG LS24C310EAUXEN - Monitor Profesional Esencial S3 S31C de 24" Full HD (1920 x 1080, 16:9, 75Hz, 5ms, Panel IPS, AMD FreeSync, Modo Eye Saver, Flicker Free), Negro, Versión 2024',
+        brand: "samsung",
+        category: "monitor",
+        price: 85,
     },
-    // MONITORES
     {
-        id: 19,
-        name: 
-    }
+        id: 25,
+        name: 'ASUS Monitor VA27EHF Eye Care Gaming 27" (IPS, Full HD, sin marcos, 100 Hz, sincronización adaptativa, MPRT de 1 ms, HDMI, luz azul baja, sin parpadeos, montaje en pared)',
+        brand: "asus",
+        category: "monitor",
+        price: 104,
+    },
+    {
+        id: 26,
+        name: 'HP V27ie G5- Monitor de 27" Full HD (1920 x 1080, 75Hz, 5ms, IPS, 16:9, AMD FreeSync, Low Blue Light, HDMI, VGA, DisplayPort, Joypad OSD, Antirreflejo, VESA, Inclinación Ajustable) Negro',
+        brand: "hp",
+        category: "monitor",
+        price: 119,
+    },
+    {
+        id: 27,
+        name: 'MSI mag 27C6F Monitor Curvo Gaming FHD de 27", 1500R 1920 x 1080 Panel VA rápido, 180 Hz / 0,5 ms (GtG, mín.), Sincronización adaptativa, DP 1.2a, HDMI CEC',
+        brand: "msi",
+        category: "monitor",
+        price: 192,
+    },
+    // ALMACENAMIENTO EXTERNO
 ];
