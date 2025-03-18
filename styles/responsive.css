@@ -13,21 +13,207 @@
 	}
 
 	/* PÁGINA ELECTRÓNICA */
+	.user-icon,
+	.user-icon img,
+	.cart,
+	.cart-img {
+		display: none;
+	}
+
+	.nav-logo {
+		width: 20%;
+	}
+
+	.shipping-information {
+		display: flex;
+	}
+
+	.nav-search {
+		width: 80%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-size: 14px;
+		padding: 0 8px;
+	}
+
+	.nav-categories p {
+		background-color: #e6e6e6;
+		padding: 11px;
+		color: #000;
+	}
+
+	.nav-categories {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.nav-search-input {
+		width: 80%;
+		padding: 10px;
+	}
+
+	.language {
+		width: 10%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.spain-language {
+		width: 30%;
+	}
+
+	.spain-language img {
+		width: 100%;
+	}
+
+	.login-user,
+	.repayment,
+	.cart {
+		width: 10%;
+	}
+
+	.cart {
+		display: flex;
+	}
+
+	.login-text,
+	.repayment p {
+		font-size: 12px;
+	}
+
+	.login-account p,
+	.repayment-strong p,
+	.cart p {
+		font-size: 14px;
+		font-weight: 500;
+	}
+
+	.repayment {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.cart-description {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.secondary-menu-links ul {
+		gap: 6px;
+		font-size: 12px;
+	}
+
+	.no-display {
+		display: flex;
+	}
+
+	.no-display:hover {
+		color: #fff;
+		border: 1px solid #fff;
+		border-radius: 4px;
+		padding: 0 8px;
+	}
+
+	.electronics-categories-container {
+		width: 100%;
+	}
+
+	.electronics-categories {
+		width: 90%;
+		font-size: 10px;
+	}
+
+	.categories-no-display {
+		display: flex;
+		font-size: 8px;
+	}
+
+	.footer-links {
+		font-size: 12px;
+	}
+
+	.amazon-countries-container {
+		padding: 20px 0;
+	}
+
+	.amazon-logo {
+		width: 20%;
+	}
+
+	.amazon-countries {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		font-size: 10px;
+		gap: 8px;
+		color: #FFF;
+	}
+
+	.copyright-info {
+		justify-content: center;
+		gap: 10px;
+	}
+
 }
 
 /* DESKTOP */
 @media (min-width: 1024px) {
-    .user-container,
-    .new-user-btn {
+	.user-container,
+	.new-user-btn {
 		width: 30%;
 	}
 	/* PÁGINA ELECTRÓNICA */
+	.nav-logo {
+		width: 20%;
+	}
+
+	.nav-search-input {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.secondary-menu-links ul {
+		gap: 14px;
+		font-size: 14px;
+	}
+
+	.electronics-categories-container,
+	.categories-no-display {
+		font-size: 10px;
+	}
+
+	.back {
+		font-size: 14px;
+	}
+
+	.footer-links h4 {
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	.footer-links a {
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+	.amazon-countries {
+		font-size: 12px;
+	}
+
+	.copyright-info,
+	.copyright-content {
+		font-size: 12px;
+	}
 }
 
 /* DESKTOP XXL */
 @media (min-width: 1040px) {
 	.user-container,
-    .new-user-btn {
+	.new-user-btn {
 		width: 20%;
 	}
 
@@ -40,10 +226,51 @@
 
 	.new-user-container,
 	.new-user-btn,
-    .footer-links,
+	.footer-links,
 	.copyright {
 		font-size: 14px;
 	}
 
 	/* PÁGINA ELECTRÓNICA */
+	.nav-logo {
+		width: 20%;
+	}
+
+	.nav-search-input {
+		width: 90%;
+		padding: 10px;
+	}
+
+	.secondary-menu-links ul {
+		gap: 20px;
+		font-size: 20px;
+	}
+
+	.electronics-categories-container,
+	.categories-no-display {
+		font-size: 14px;
+	}
+
+	.back {
+		font-size: 14px;
+	}
+
+	.footer-links h4 {
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	.footer-links a {
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+	.amazon-countries {
+		font-size: 16px;
+	}
+
+	.copyright-info,
+	.copyright-content {
+		font-size: 14px;
+	}
 }
