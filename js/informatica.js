@@ -251,8 +251,3 @@ products.forEach((product) => {
 
 	productsContainer.append(productCard);
 });
-
-
-
-
-
