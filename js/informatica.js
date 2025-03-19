@@ -194,3 +194,65 @@ const products = [
     },
     // ALMACENAMIENTO EXTERNO
 ];
+
+
+const createProductInfo = (product) => {
+	// console.log(product);
+
+	const productInfo = document.createElement("div");
+	productInfo.classList.add("product-info");
+
+	const infoDiv = document.createElement("div");
+
+	const productPrice = document.createElement("h3");
+	productPrice.textContent = product.price + " €";
+	const productTitle = document.createElement("p");
+	productTitle.textContent = product.name;
+
+	const containerButtonDiv = document.createElement("div");
+	infoDiv.classList.add("container-shop-btn")
+	infoDiv.textContent = "Comprar";
+
+	productInfo.append(infoDiv);
+	productInfo.append(productPrice);
+	productInfo.append(productTitle);
+	productInfo.append(containerButtonDiv);
+
+	return productInfo;
+}
+
+// IMAGEN (HAY QUE AÑADIRLAS)
+// const createProductImg = (img, title) => {
+// 	const productImg = document.createElement("img");
+// 	productImg.src = img;
+// 	productImg.alt = title;
+
+// 	return productImg;
+// }
+
+const createProductCard = (product) => {
+	const productCardDiv = document.createElement("div");
+	productCardDiv.classList.add("product-card");
+
+	// const {image, name} = product;
+	// const img = createProductImg(image, name);
+	// productCardDiv.append(img);
+
+	const productInfoDiv = createProductInfo(product);
+	productCardDiv.append(productInfoDiv);
+
+	return productCardDiv;
+}
+
+products.forEach((product) => {
+	const productsContainer = document.getElementById("products");
+
+	const productCard = createProductCard(product);
+
+	productsContainer.append(productCard);
+});
+
+
+
+
+

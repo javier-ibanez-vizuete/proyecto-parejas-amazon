@@ -85,7 +85,8 @@ ul {
 	font-weight: 600;
 }
 
-.input-email {
+.input-email,
+.input-name {
 	width: 100%;
 	padding: 8px 4px;
 	border: 1px solid grey;
@@ -269,10 +270,7 @@ a:hover {
 }
 
 .main-section-container,
-.featured-categories-container,
-.news-products-container,
-.bests-sellers-container,
-.best-rated-container {
+.products-container {
 	width: 90%;
 	display: flex;
 	flex-direction: column;
@@ -318,6 +316,33 @@ a:hover {
 	padding: 18px 0;
 }
 
+#products {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.product-card {
+	width: 30%;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: row;
+}
+
+.product-info {
+	width: 100%;
+	border: 1px solid var(--light-gray);
+	display: flex;
+	flex-direction: column;
+}
+
+.info-container h3 {
+	width: 20%; 
+	white-space: nowrap; 
+	text-overflow: ellipsis; 
+	display: block;
+}
+
 .footer-links-container {
 	width: 100%;
 	display: flex;
@@ -326,7 +351,7 @@ a:hover {
 
 .footer-links {
 	width: 25%;
-	color: #FFF;
+	color: #fff;
 	background-color: var(--contrast-color);
 	display: flex;
 	flex-direction: column;
@@ -338,7 +363,7 @@ a:hover {
 	font-weight: 400;
 	padding-bottom: 4px;
 	text-align: left;
-} 
+}
 
 .footer-links a {
 	font-size: 10px;
@@ -347,7 +372,7 @@ a:hover {
 }
 
 .footer-links a:hover {
-	color: #FFF;
+	color: #fff;
 }
 
 .amazon-countries-container {
@@ -374,7 +399,7 @@ a:hover {
 .copyright-container {
 	width: 100%;
 	background-color: var(--contrast-color);
-	color: #FFF;
+	color: #fff;
 	padding: 20px 0;
 }
 
