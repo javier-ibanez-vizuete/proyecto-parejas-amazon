@@ -5,7 +5,7 @@ const products = [
 		name: "HP EliteBook 840 G3 INTEL CORE i5-6200U 6ªGEN 2.3 GHz WEBCAM 16GB RAM 256GB SSD Window 10 Po 64 bit. (Reacondicionado)",
 		brand: "hp",
 		category: "laptops",
-        image: "/media/productos/portatiles/hp-fd0186ns/hp-15-fd0186ns-front.jpg",
+		image: "/media/productos/portatiles/hp-fd0186ns/hp-15-fd0186ns-front.jpg",
 		price: 202,
 	},
 	{
@@ -13,7 +13,7 @@ const products = [
 		name: "Acer Aspire 3 A315-59-595G, Ordenador Portátil 15,6” (Intel Core i5-1235U, 16 GB RAM, 1 TB SSD, Iris Xe Graphics, Windows 11 Home) Color Plata, Teclado QWERTY Español",
 		brand: "acer",
 		category: "laptops",
-        image:"/media/productos/portatiles/acer-aspire-3/acer-aspire-3-front.jpg",
+		image: "/media/productos/portatiles/acer-aspire-3/acer-aspire-3-front.jpg",
 		price: 499,
 	},
 	{
@@ -21,7 +21,7 @@ const products = [
 		name: 'HP 15-fd0186ns - Ordenador portátil de 15.6" FHD (Intel N100, 4GB RAM, 128GB UFS, Intel UHD, Windows 11) Plata - Teclado QWERTY Español',
 		brand: "hp",
 		category: "laptops",
-        image:"/media/productos/portatiles/hp-fd0186ns/hp-15-fd0186ns-front.jpg",
+		image: "/media/productos/portatiles/hp-fd0186ns/hp-15-fd0186ns-front.jpg",
 		price: 299,
 	},
 	{
@@ -29,7 +29,7 @@ const products = [
 		name: 'TECHBITE Portátil ZIN 3 14.1 HD 128 GB, Intel Celeron N4020, 4 GB de RAM LPDDR / 128 GB de Memoria, Windows 10 Pro, 5000 mAh, Pantalla 14.1", Wi-Fi, Bluetooth, portátil Oficina, Teclado ES, Negro',
 		brand: "techbite",
 		category: "laptops",
-        image: "/media/productos/portatiles/techbite-portatil/techbite-portatil-front.jpg",
+		image: "/media/productos/portatiles/techbite-portatil/techbite-portatil-front.jpg",
 		price: 136,
 	},
 	{
@@ -37,7 +37,7 @@ const products = [
 		name: 'Lenovo IdeaPad 1 Gen 7 - Ordenador Portátil 15.6" FHD (AMD Ryzen 7 5700U, 16GB RAM, 512GB SSD, AMD Radeon Graphics, Wi-Fi 6, Sin Sistema Operativo), Teclado QWERTY Español, Color Gris Nube',
 		brand: "lenovo",
 		category: "laptops",
-        image: "/media/productos/portatiles/lenovo-ideapad-1/lenovo-ideapad-1-front.jpg",
+		image: "/media/productos/portatiles/lenovo-ideapad-1/lenovo-ideapad-1-front.jpg",
 		price: 599,
 	},
 	{
@@ -45,7 +45,7 @@ const products = [
 		name: "Acer Aspire 1 A115-32-C4Y0 - Ordenador Portátil 15,6” HD LCD (Intel Celeron N4500, 4GB RAM, 128 GB eMMc, Intel UHD Graphics, Windows 11 Home en Modo S), Color Plata, Teclado QWERTY Español",
 		brand: "acer",
 		category: "laptops",
-        image: "/media/productos/portatiles/acer-aspire-1/acer-aspire-1-front.jpg",
+		image: "/media/productos/portatiles/acer-aspire-1/acer-aspire-1-front.jpg",
 		price: 249,
 	},
 	{
@@ -53,7 +53,7 @@ const products = [
 		name: 'ASUS Vivobook 15 F1504ZA-NJ691W - Ordenador Portátil 15.6" Full HD (Intel Core i5-1235U, 16GB RAM, 512GB SSD, Iris Xe Graphics, Windows 11 Home) Plata Fría - Teclado QWERTY español',
 		brand: "asus",
 		category: "laptops",
-        image: "/media/productos/portatiles/asus-vivobook-15/asus-vivobook-15-front.jpg",
+		image: "/media/productos/portatiles/asus-vivobook-15/asus-vivobook-15-front.jpg",
 		price: 549,
 	},
 	{
@@ -61,7 +61,7 @@ const products = [
 		name: "Ordenador Portátil 15,6 Pulgadas Celeron N5095 2,9 GHz Win11 Pro 8GB 256GB SSD Expansión 1TB DDR4 5G WiFi 1920x1080 FHD HDMl USB 3.0 Portatil con Ratón Inalámbrico y Teclado Español Membrana - Plata",
 		brand: "",
 		category: "laptops",
-        image: "/media/productos/portatiles/ordenador-portatil/ordenador-portatil-front.jpg",
+		image: "/media/productos/portatiles/ordenador-portatil/ordenador-portatil-front.jpg",
 		price: 279,
 	},
 	{
@@ -69,7 +69,7 @@ const products = [
 		name: 'AOC Ordenador Portatil con I-ntel N97 (hasta 3,6 GHz), Portátil Computadora 16GB DDR4 512GB SSD Expansión 2TB （Mejor que Celeron） Laptop,WiFi,BT5,Tipo C,USB3.2, HDMI, 15,6" Notebook 1080P Versión 2025',
 		brand: "aoc",
 		category: "laptops",
-        image: "/media/productos/portatiles/aoc-ordenador-portatil/aoc-ordenador-portatil-front.jpg",
+		image: "/media/productos/portatiles/aoc-ordenador-portatil/aoc-ordenador-portatil-front.jpg",
 		price: 359,
 	},
 	// TABLETS
@@ -78,7 +78,7 @@ const products = [
 		name: "Xiaomi Redmi Pad SE Tablet 11 Pulgadas 8GB+256GB Resolution 1200 x 2000, 90hz Display, Battery 8000mAh, 10W Fast Charging WiFi Grey",
 		brand: "xiaomi",
 		category: "tablets",
-        image: "/media/productos/tablets/xiaomi-redmi-pad-se/xiaomi-redmi-pad-se-front.jpg",
+		image: "/media/productos/tablets/xiaomi-redmi-pad-se/xiaomi-redmi-pad-se-front.jpg",
 		price: 167,
 	},
 	{
@@ -86,7 +86,7 @@ const products = [
 		name: "FECLYDET Tablet 10 Pulgadas, Android 14 Octa-Core con 10GB RAM+128GB ROM(1TB TF), Widevine L1,Bluetooth 5.0, Cámara Dual, 5000mAh, WiFi6（Negro）",
 		brand: "feclydet",
 		category: "tablets",
-        image: "/media/productos/tablets/feclydet-tablet/feclydet-tablet-front.jpg",
+		image: "/media/productos/tablets/feclydet-tablet/feclydet-tablet-front.jpg",
 		price: 79,
 	},
 	{
@@ -94,7 +94,7 @@ const products = [
 		name: "Lenovo Tablet Tab M11, Pantalla táctil de 11 Pulgadas, MediaTek G88, 4 GB de RAM, 128 GB eMMC 5.1, Android 13, Gris, Incluye Pen",
 		brand: "lenovo",
 		category: "tablets",
-        image: "/media/productos/tablets/lenovo-tablet-tab-m11/lenovo-tablet-tab-m11-front.jpg",
+		image: "/media/productos/tablets/lenovo-tablet-tab-m11/lenovo-tablet-tab-m11-front.jpg",
 		price: 169,
 	},
 	{
@@ -102,7 +102,7 @@ const products = [
 		name: "Xiaomi Redmi Pad SE 4Go/128Go Wi-FI Gris (Graphite Gray)",
 		brand: "xiaomi",
 		category: "tablets",
-        image: "/media/productos/tablets/xiami-redmi-pad-se-4go/xiaomi-redmi-se-4go-front.jpg",
+		image: "/media/productos/tablets/xiami-redmi-pad-se-4go/xiaomi-redmi-se-4go-front.jpg",
 		price: 132,
 	},
 	{
@@ -110,7 +110,7 @@ const products = [
 		name: 'Xiaomi Redmi Pad SE 8,7" – Tablet de 8,7” LCD (MediaTek Helio G85, 4GB de RAM, 64GB de ROM, WiFi + Bluetooth 5.3, batería de 6650 mAh, Cargador no Incluido), Azul (Versión ES)',
 		brand: "xiaomi",
 		category: "tablets",
-        image: "/media/productos/tablets/xiaomi-redmi-pad-se-8.7/xiaomi-redmi-pad-se-8.7-front.jpg",
+		image: "/media/productos/tablets/xiaomi-redmi-pad-se-8.7/xiaomi-redmi-pad-se-8.7-front.jpg",
 		price: 94,
 	},
 	{
@@ -118,7 +118,7 @@ const products = [
 		name: "Apple iPad de 11 Pulgadas: Chip A16, Modelo de 11 Pulgadas, Pantalla Liquid Retina, 128 GB, Wi Fi 6, cámaras Frontal y Trasera de 12 Mpx, Touch ID, autonomía para un día Entero – Plata",
 		brand: "apple",
 		category: "tablets",
-        image: "/media/productos/tablets/apple-ipad/apple-ipad-front.jpg",
+		image: "/media/productos/tablets/apple-ipad/apple-ipad-front.jpg",
 		price: 399,
 	},
 	{
@@ -126,7 +126,7 @@ const products = [
 		name: "HONOR Pad X8A 4GB 128GB, Ampliable hasta 1TB, WiFi Tablet, Pantalla de 11 Pulgadas 90Hz, Snapdragon 680, 4 Altavoces, Batería 8300mAh, Cuerpo Metálico, Android 14, Google Service, Gris",
 		brand: "honor",
 		category: "tablets",
-        image: "/media/productos/tablets/honor-pad-x8a/honor-pad-x8a-front.jpg",
+		image: "/media/productos/tablets/honor-pad-x8a/honor-pad-x8a-front.jpg",
 		price: 169,
 	},
 	{
@@ -134,7 +134,7 @@ const products = [
 		name: "Samsung Galaxy Tab A9+ Tablet Android, 128 GB Almacenamiento, WiFi, Pantalla 11”, Sonido 3D, Gris (Versión Española)",
 		brand: "samsung",
 		category: "tablets",
-        image: "/media/productos/tablets/samsung-galaxy-tab-a9plus/samsung-galaxy-tab-a9plus-front.jpg",
+		image: "/media/productos/tablets/samsung-galaxy-tab-a9plus/samsung-galaxy-tab-a9plus-front.jpg",
 		price: 199,
 	},
 	{
@@ -142,7 +142,7 @@ const products = [
 		name: "DOOGEE U11 Android 15 Tablet 11 Pulgadas, Tablet Octa-Core, 16GB RAM+128GB ROM/1TB TF, HD IPS Pantalla/90Hz, 8580mAh Batería,WiFi 2.4/5GHz / Widevine L1 /5MP+13MP / Facial ID/GMS/BT5.0/3.5mm Jack",
 		brand: "doogee",
 		category: "tablets",
-        image: "/media/productos/tablets/doogee-u11/doogee-u11-front.jpg",
+		image: "/media/productos/tablets/doogee-u11/doogee-u11-front.jpg",
 		price: 129,
 	},
 	// MONITORES
@@ -151,7 +151,7 @@ const products = [
 		name: "Philips 24E1N1100A - Monitor Full HD de 24 Pulgadas, Integrado Altavoz, Tiempo de Respuesta de 1 ms (1920x1080, 100 Hz, VGA, HDMI 1.4) Negro",
 		brand: "philips",
 		category: "monitor",
-        image: "/media/productos/monitores/philips-24e1n1100a/philips-24e1n1100a-front.jpg",
+		image: "/media/productos/monitores/philips-24e1n1100a/philips-24e1n1100a-front.jpg",
 		price: 236,
 	},
 	{
@@ -159,7 +159,7 @@ const products = [
 		name: "MSI Pro MP275 – Monitor rofessional 27”,100 Hz, FHD, IPS, HDR Ready, Pantalla TÜV, Altavoces Integrados, antiflicker Eye-Q Check",
 		brand: "msi",
 		category: "monitor",
-        image: "/media/productos/monitores/msi-pro-mp275/msi-pro-mp275-front.jpg",
+		image: "/media/productos/monitores/msi-pro-mp275/msi-pro-mp275-front.jpg",
 		price: 124,
 	},
 	{
@@ -167,7 +167,7 @@ const products = [
 		name: 'MSI Pro MP161 E2U Monitor portátil Full HD de 15,6", Panel IPS 1920 x 1080, 60 Hz, Pantalla Agradable a la Vista (PC, portátil, móvil), Altavoces, chasis y Soporte, Mini-HDMI 2.0b, 2 x USB Type-C',
 		brand: "msi",
 		category: "monitor",
-        image: "/media/productos/monitores/msi-pro-mp161-e2u/msi-pro-mp161-e2u-front.jpg",
+		image: "/media/productos/monitores/msi-pro-mp161-e2u/msi-pro-mp161-e2u-front.jpg",
 		price: 99,
 	},
 	{
@@ -175,7 +175,7 @@ const products = [
 		name: 'MSI Pro MP252 Monitor Profesional Full HD de 24,5"- Panel IPS 1920 x 1080, 100 Hz, Pantalla Eye-Friendly, Altavoces Integrados, inclinación Ajustable, HDM 2.0b, DisplayPort 1.4a',
 		brand: "msi",
 		category: "monitor",
-        image: "/media/productos/monitores/msi-pro-mp252/msi-pro-mp252-front.jpg",
+		image: "/media/productos/monitores/msi-pro-mp252/msi-pro-mp252-front.jpg",
 		price: 129,
 	},
 	{
@@ -183,7 +183,7 @@ const products = [
 		name: "LG 27US500-W - Monitor 4K UltraHD, 27 Pulgadas, IPS, 3840 x 2160, HDMIx2 2.0, SuperResolution+, clasificación F, 60 Hz, 5 ms, Blanco",
 		brand: "lg",
 		category: "monitor",
-        image: "/media/productos/monitores/lg-27us500-w/lg-27us500-w-front.jpg",
+		image: "/media/productos/monitores/lg-27us500-w/lg-27us500-w-front.jpg",
 		price: 199,
 	},
 	{
@@ -191,7 +191,7 @@ const products = [
 		name: 'SAMSUNG LS24C310EAUXEN - Monitor Profesional Esencial S3 S31C de 24" Full HD (1920 x 1080, 16:9, 75Hz, 5ms, Panel IPS, AMD FreeSync, Modo Eye Saver, Flicker Free), Negro, Versión 2024',
 		brand: "samsung",
 		category: "monitor",
-        image: "/media/productos/monitores/samsung-ls24c310eauxen/samsung-ls24c310eauxen-front.jpg",
+		image: "/media/productos/monitores/samsung-ls24c310eauxen/samsung-ls24c310eauxen-front.jpg",
 		price: 85,
 	},
 	{
@@ -199,7 +199,7 @@ const products = [
 		name: 'ASUS Monitor VA27EHF Eye Care Gaming 27" (IPS, Full HD, sin marcos, 100 Hz, sincronización adaptativa, MPRT de 1 ms, HDMI, luz azul baja, sin parpadeos, montaje en pared)',
 		brand: "asus",
 		category: "monitor",
-        image: "/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg",
+		image: "/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg",
 		price: 104,
 	},
 	{
@@ -207,7 +207,7 @@ const products = [
 		name: 'HP V27ie G5- Monitor de 27" Full HD (1920 x 1080, 75Hz, 5ms, IPS, 16:9, AMD FreeSync, Low Blue Light, HDMI, VGA, DisplayPort, Joypad OSD, Antirreflejo, VESA, Inclinación Ajustable) Negro',
 		brand: "hp",
 		category: "monitor",
-        image: "/media/productos/monitores/hp-v27ie-g5/hp-v27ie-g5-front.jpg",
+		image: "/media/productos/monitores/hp-v27ie-g5/hp-v27ie-g5-front.jpg",
 		price: 119,
 	},
 	{
@@ -215,8 +215,39 @@ const products = [
 		name: 'MSI mag 27C6F Monitor Curvo Gaming FHD de 27", 1500R 1920 x 1080 Panel VA rápido, 180 Hz / 0,5 ms (GtG, mín.), Sincronización adaptativa, DP 1.2a, HDMI CEC',
 		brand: "msi",
 		category: "monitor",
-        image: "/media/productos/monitores/msi-mag-27c6f/msi-mag-27c6f-front.jpg",
+		image: "/media/productos/monitores/msi-mag-27c6f/msi-mag-27c6f-front.jpg",
 		price: 192,
 	},
 	// ALMACENAMIENTO EXTERNO
+    {
+		id: 28,
+		name: 'Kingston Canvas Select Plus Tarjeta microSD, SDCS2/128GB Class 10 con Adaptador SD, garantía de por vida con el fabricante.',
+		brand: "kingston",
+		category:"almacenamiento",
+		image: "/media/productos/almacenamiento-externo/kingston-canvas-select-plus/kingston-canvas-select-plus-front.jpg",
+		price: 8,
+	},
+	{
+		id: 29,
+		name: 'SanDisk Ultra Tarjeta Micro SDXC 256 GB + adaptador SD (Compatibles con tabletas y móviles Android, UHS-I, hasta 150 MB/s, Video Full HDD, Clase A1 de rendimiento, Class 10, U1)',
+		brand: "sandisk",
+		category: "almacenamiento",
+		image: "/media/productos/almacenamiento-externo/sandisk-micro-sdxc/sandisk-ultra-micro-sdxc-front.jpg",
+		price: 18,
+	},
+	{
+		id: 30,
+		name: 'SanDisk 128GB Ultra, Tarjeta de memoria microSDXC, hasta 140 MB/s + adaptador SD, con Clase A1 de rendimiento de las aplicaciones, UHS-I Class 10 U1',
+		brand: "sandisk",
+		category: "almacenamiento",
+		image: "/media/productos/almacenamiento-externo/sandisk-128gb-ultra/sandisk-128gb-ultra-front.jpg",
+		price: 12,
+	},
+	{
+		id: 31,
+		name: 'SanDisk Ultra Flair 256GB Pendrive, Memoria USB 3.0, velocidad de lectura hasta 150 MB/s, Protección con Contraseña, Carcasa de metal elegante y duradera, Plata y negro',
+		brand: "sandisk",
+		category: "almacenamiento",
+		image: "/media/productos/almacenamiento-externo/sandisk-ultra-flair/sandisk-ultra-flair-front.jpg"
+	}
 ];
