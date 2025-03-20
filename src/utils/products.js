@@ -7,6 +7,8 @@ const products = [
 		category: "laptops",
 		image: "/media/productos/portatiles/hp-fd0186ns/hp-15-fd0186ns-front.jpg",
 		price: 202,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 2,
@@ -15,6 +17,8 @@ const products = [
 		category: "laptops",
 		image: "/media/productos/portatiles/acer-aspire-3/acer-aspire-3-front.jpg",
 		price: 499,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 3,
@@ -23,6 +27,8 @@ const products = [
 		category: "laptops",
 		image: "/media/productos/portatiles/hp-fd0186ns/hp-15-fd0186ns-front.jpg",
 		price: 299,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 4,
@@ -31,6 +37,8 @@ const products = [
 		category: "laptops",
 		image: "/media/productos/portatiles/techbite-portatil/techbite-portatil-front.jpg",
 		price: 136,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 5,
@@ -39,6 +47,8 @@ const products = [
 		category: "laptops",
 		image: "/media/productos/portatiles/lenovo-ideapad-1/lenovo-ideapad-1-front.jpg",
 		price: 599,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 6,
@@ -47,6 +57,8 @@ const products = [
 		category: "laptops",
 		image: "/media/productos/portatiles/acer-aspire-1/acer-aspire-1-front.jpg",
 		price: 249,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 7,
@@ -55,6 +67,8 @@ const products = [
 		category: "laptops",
 		image: "/media/productos/portatiles/asus-vivobook-15/asus-vivobook-15-front.jpg",
 		price: 549,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 8,
@@ -63,6 +77,8 @@ const products = [
 		category: "laptops",
 		image: "/media/productos/portatiles/ordenador-portatil/ordenador-portatil-front.jpg",
 		price: 279,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 9,
@@ -71,6 +87,8 @@ const products = [
 		category: "laptops",
 		image: "/media/productos/portatiles/aoc-ordenador-portatil/aoc-ordenador-portatil-front.jpg",
 		price: 359,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	// TABLETS
 	{
@@ -80,6 +98,8 @@ const products = [
 		category: "tablets",
 		image: "/media/productos/tablets/xiaomi-redmi-pad-se/xiaomi-redmi-pad-se-front.jpg",
 		price: 167,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 11,
@@ -88,6 +108,8 @@ const products = [
 		category: "tablets",
 		image: "/media/productos/tablets/feclydet-tablet/feclydet-tablet-front.jpg",
 		price: 79,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 12,
@@ -96,6 +118,8 @@ const products = [
 		category: "tablets",
 		image: "/media/productos/tablets/lenovo-tablet-tab-m11/lenovo-tablet-tab-m11-front.jpg",
 		price: 169,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 13,
@@ -104,6 +128,8 @@ const products = [
 		category: "tablets",
 		image: "/media/productos/tablets/xiami-redmi-pad-se-4go/xiaomi-redmi-se-4go-front.jpg",
 		price: 132,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 14,
@@ -112,6 +138,8 @@ const products = [
 		category: "tablets",
 		image: "/media/productos/tablets/xiaomi-redmi-pad-se-8.7/xiaomi-redmi-pad-se-8.7-front.jpg",
 		price: 94,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 15,
@@ -120,6 +148,8 @@ const products = [
 		category: "tablets",
 		image: "/media/productos/tablets/apple-ipad/apple-ipad-front.jpg",
 		price: 399,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 16,
@@ -128,6 +158,8 @@ const products = [
 		category: "tablets",
 		image: "/media/productos/tablets/honor-pad-x8a/honor-pad-x8a-front.jpg",
 		price: 169,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 17,
@@ -136,6 +168,8 @@ const products = [
 		category: "tablets",
 		image: "/media/productos/tablets/samsung-galaxy-tab-a9plus/samsung-galaxy-tab-a9plus-front.jpg",
 		price: 199,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 18,
@@ -144,6 +178,8 @@ const products = [
 		category: "tablets",
 		image: "/media/productos/tablets/doogee-u11/doogee-u11-front.jpg",
 		price: 129,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	// MONITORES
 	{
@@ -153,6 +189,8 @@ const products = [
 		category: "monitor",
 		image: "/media/productos/monitores/philips-24e1n1100a/philips-24e1n1100a-front.jpg",
 		price: 236,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 20,
@@ -161,6 +199,8 @@ const products = [
 		category: "monitor",
 		image: "/media/productos/monitores/msi-pro-mp275/msi-pro-mp275-front.jpg",
 		price: 124,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 21,
@@ -169,6 +209,8 @@ const products = [
 		category: "monitor",
 		image: "/media/productos/monitores/msi-pro-mp161-e2u/msi-pro-mp161-e2u-front.jpg",
 		price: 99,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 22,
@@ -177,6 +219,8 @@ const products = [
 		category: "monitor",
 		image: "/media/productos/monitores/msi-pro-mp252/msi-pro-mp252-front.jpg",
 		price: 129,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 23,
@@ -185,6 +229,8 @@ const products = [
 		category: "monitor",
 		image: "/media/productos/monitores/lg-27us500-w/lg-27us500-w-front.jpg",
 		price: 199,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 24,
@@ -193,6 +239,8 @@ const products = [
 		category: "monitor",
 		image: "/media/productos/monitores/samsung-ls24c310eauxen/samsung-ls24c310eauxen-front.jpg",
 		price: 85,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 25,
@@ -201,6 +249,8 @@ const products = [
 		category: "monitor",
 		image: "/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg",
 		price: 104,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 26,
@@ -209,6 +259,8 @@ const products = [
 		category: "monitor",
 		image: "/media/productos/monitores/hp-v27ie-g5/hp-v27ie-g5-front.jpg",
 		price: 119,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 27,
@@ -217,6 +269,8 @@ const products = [
 		category: "monitor",
 		image: "/media/productos/monitores/msi-mag-27c6f/msi-mag-27c6f-front.jpg",
 		price: 192,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	// ALMACENAMIENTO EXTERNO
 	{
@@ -226,6 +280,8 @@ const products = [
 		category: "almacenamiento",
 		image: "/media/productos/almacenamiento-externo/kingston-canvas-select-plus/kingston-canvas-select-plus-front.jpg",
 		price: 8,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 29,
@@ -234,6 +290,8 @@ const products = [
 		category: "almacenamiento",
 		image: "/media/productos/almacenamiento-externo/sandisk-micro-sdxc/sandisk-ultra-micro-sdxc-front.jpg",
 		price: 18,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 30,
@@ -242,6 +300,8 @@ const products = [
 		category: "almacenamiento",
 		image: "/media/productos/almacenamiento-externo/sandisk-128gb-ultra/sandisk-128gb-ultra-front.jpg",
 		price: 12,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 31,
@@ -250,6 +310,8 @@ const products = [
 		category: "almacenamiento",
 		image: "/media/productos/almacenamiento-externo/sandisk-ultra-flair/sandisk-ultra-flair-front.jpg",
 		price: 22,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 32,
@@ -258,6 +320,8 @@ const products = [
 		category: "almacenamiento",
 		image: "/media/productos/almacenamiento-externo/amazon-basics-microsdxc-128gb/amazon-basics-micro-sdxc-128gb-front.jpg",
 		price: 11,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 33,
@@ -266,6 +330,8 @@ const products = [
 		category: "almacenamiento",
 		image: "/media/productos/almacenamiento-externo/kingston-datatraveler-exodia-dtx/kingston-datatraveler-exodia-dtx-front.jpg",
 		price: 8,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 34,
@@ -274,6 +340,8 @@ const products = [
 		category: "almacenamiento",
 		image: "/media/productos/almacenamiento-externo/amazon-basics-microsdxc-256gb/amazon-basics-microsdxc-256gb-front.jpg",
 		price: 17,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 35,
@@ -282,6 +350,8 @@ const products = [
 		category: "almacenamiento",
 		image: "/media/productos/almacenamiento-externo/sandisk-128gb-extreme-pro/sandisk-128gb-extreme-pro-front.jpg",
 		price: 63,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 36,
@@ -290,6 +360,8 @@ const products = [
 		category: "almacenamiento",
 		image: "/media/productos/almacenamiento-externo/lexar-32gb-microsd/lexar-32gb-microsd-front.jpg",
 		price: 8,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	// ---------GAMING----------
 	{
@@ -299,6 +371,8 @@ const products = [
 		category: "gaming",
 		image: "/media/productos/gaming/assassins-creed-shadows/assassins-creed-shadows-front.jpg",
 		price: 69,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 38,
@@ -307,6 +381,8 @@ const products = [
 		category: "gaming",
 		image: "/media/productos/gaming/playstation-5-mando-inalambrico/playstation-5-mando-inalambrico-front.jpg",
 		price: 64,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 39,
@@ -315,6 +391,8 @@ const products = [
 		category: "gaming",
 		image: "/media/productos/gaming/star-wars-jedi-survivor/star-wars-jedi-survivor-front.jpg",
 		price: 51,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 40,
@@ -323,6 +401,8 @@ const products = [
 		category: "gaming",
 		image: "/media/productos/gaming/ea-sports-fc-25/ea-sports-fc-25-front.jpg",
 		price: 36,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 41,
@@ -331,6 +411,8 @@ const products = [
 		category: "gaming",
 		image: "/media/productos/gaming/powera-cargador-rapido-dual/powera-cargador-rapido-dual-front.jpg",
 		price: 24,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 42,
@@ -339,6 +421,8 @@ const products = [
 		category: "gaming",
 		image: "/media/productos/gaming/oivo-cargador-mando-ps5/oivo-cargador-mando-ps5-front.jpg",
 		price: 23,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 43,
@@ -347,6 +431,8 @@ const products = [
 		category: "gaming",
 		image: "/media/productos/gaming/alan-wake-2/alan-wake-2-front.jpg",
 		price: 53,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 44,
@@ -355,6 +441,8 @@ const products = [
 		category: "gaming",
 		image: "/media/productos/gaming/black-myth-wukong/black-myth-wukong-front.jpg",
 		price: 59,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 45,
@@ -363,6 +451,8 @@ const products = [
 		category: "gaming",
 		image: "/media/productos/gaming/playstation-5-portal-remote-player/playstation-5-portal-remote-player-front.jpg",
 		price: 209,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	//  ------AURICULARES-------
 	{
@@ -372,69 +462,87 @@ const products = [
 		category: "auriculares",
 		image: "/media/productos/auriculares/corsair-void-rgb-elite/corsair-void-rgb-elite-front.jpg",
 		price: 89,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 47,
-		name: 'HyperX Cloud III wired Auriculares para Juegos con Cable, PC, PS5, Xbox Series X S, Controladores de 53 mm en ángulo, DTS, micrófono nítido de 10 mm, USB-C USB-A, Negro',
+		name: "HyperX Cloud III wired Auriculares para Juegos con Cable, PC, PS5, Xbox Series X S, Controladores de 53 mm en ángulo, DTS, micrófono nítido de 10 mm, USB-C USB-A, Negro",
 		brand: "HyperX",
 		category: "auriculares",
 		image: "/media/productos/auriculares/hyperx-cloud-2/hyperx-cloud-2-front.jpg",
 		price: 69,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 48,
-		name: 'Corsair VIRTUOSO RGB WIRELESS Auriculares Inalámbricos para Juegos Alta Fidelidad - Sonido Envolvente 7.1 - Micrófono Omnidireccional Desmontable - PC, Mac, PS5, PS4, Nintendo Switch, Móvil - Blanco',
+		name: "Corsair VIRTUOSO RGB WIRELESS Auriculares Inalámbricos para Juegos Alta Fidelidad - Sonido Envolvente 7.1 - Micrófono Omnidireccional Desmontable - PC, Mac, PS5, PS4, Nintendo Switch, Móvil - Blanco",
 		brand: "Corsair",
 		category: "auriculares",
 		image: "/media/productos/auriculares/corsair-virtuoso-rgb/corsair-virutoso-rgb-front.jpg",
 		price: 202,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 49,
-		name: 'HyperX Auriculares inalámbricos para juegos Cloud Flight',
+		name: "HyperX Auriculares inalámbricos para juegos Cloud Flight",
 		brand: "HyperX",
 		category: "auriculares",
 		image: "/media/productos/auriculares/hyperx-cloud-flight/hyperx-cloud-flight-front.jpg",
 		price: 105,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 50,
-		name: 'Logitech G533 Auriculares Inalámbricos para Gaming, 7.1 Surround DTS Headphone:X, Transductores 40mm Pro-G, Micrófono, 2,4 GHz Inalámbrico, Batería de 15 Horas, PC/Mac',
+		name: "Logitech G533 Auriculares Inalámbricos para Gaming, 7.1 Surround DTS Headphone:X, Transductores 40mm Pro-G, Micrófono, 2,4 GHz Inalámbrico, Batería de 15 Horas, PC/Mac",
 		brand: "Logitech",
 		category: "auriculares",
 		image: "/media/productos/auriculares/logitech-g533/logitech-g533-front.jpg",
 		price: 99,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 51,
-		name: 'SteelSeries Arctis 1 Wireless - Auriculares inalámbricos para juegos – USB-C Inalámbrico – PC / PS5 / PS4 / Nintendo Switch / Android – Negro',
+		name: "SteelSeries Arctis 1 Wireless - Auriculares inalámbricos para juegos – USB-C Inalámbrico – PC / PS5 / PS4 / Nintendo Switch / Android – Negro",
 		brand: "SteelSeries",
 		category: "auriculaes",
 		image: "/media/productos/auriculares/steelseries-arctis-1/steelseries-arctis-1-front.jpg",
 		price: 158,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 52,
-		name: 'SteelSeries Arctis 3 - Auriculares de Juego Multiplataforma - Para PC, Playstation 5, PS4, Xbox One, Nintendo Switch, RV, Android y iOS - Blanco',
+		name: "SteelSeries Arctis 3 - Auriculares de Juego Multiplataforma - Para PC, Playstation 5, PS4, Xbox One, Nintendo Switch, RV, Android y iOS - Blanco",
 		brand: "SteelSeries",
 		category: "auriculares",
 		image: "/media/productos/auriculares/steelseries-arctis-3/steelseries-arctis-3-front.jpg",
 		price: 109,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 53,
-		name: 'SteelSeries Arctis 5 - Auriculares De Juego - Iluminados Por RGB - Dts Headphone:X V2.0 Surround - Para PC, Playstation 5 Y PlayStation 4 - Blanco',
+		name: "SteelSeries Arctis 5 - Auriculares De Juego - Iluminados Por RGB - Dts Headphone:X V2.0 Surround - Para PC, Playstation 5 Y PlayStation 4 - Blanco",
 		brand: "SteelSeries",
 		category: "auriculares",
 		image: "/media/productos/auriculares/steelseries-arctis-5/steelseries-arctis-5-front.jpg",
 		price: 127,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 	{
 		id: 54,
-		name: 'Kraken Ultimate - Auriculares USB con sonido envolvente y micrófono ANC (micrófono con supresión activa de ruido, altavoces de 50 mm ajustados a medida, audio espacial THX) Negro',
+		name: "Kraken Ultimate - Auriculares USB con sonido envolvente y micrófono ANC (micrófono con supresión activa de ruido, altavoces de 50 mm ajustados a medida, audio espacial THX) Negro",
 		brand: "Razer",
 		category: "auriculares",
 		image: "/media/productos/auriculares/razer-kraken-ultimate/razer-kraken-ultimate-front.jpg",
 		price: 204,
+		isOnWishList: false,
+		isOnTrolly: false,
 	},
 ];

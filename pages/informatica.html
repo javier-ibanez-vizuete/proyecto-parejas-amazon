@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="/src/helpers/storage.js" defer></script>
 	<script src="/src/utils/products.js" defer></script>
 	<script src="/src/app.js" defer></script>
 	<link rel="stylesheet" href="/styles/index.css" />
@@ -51,38 +52,38 @@
 	<main>
 		<section>
 			<div class="electronics-categories-container">
-				<button>Informática</button>
-				<button>
+				<button class="btn-full-informatica">Informática</button>
+				<button class="btn-laptops-products">
 					<span>Portátiles</span>
 					<div class="arrow-icon-container">
 						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black">
 					</div>
 				</button>
-				<button>
+				<button class="btn-monitors-products">
 					<span>Monitores</span>
 					<div class="arrow-icon-container">
 						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black">
 					</div>
 				</button>
-				<button>
+				<button class="btn-tablets-products">
 					<span>Tablets</span>
 					<div class="arrow-icon-container">
 						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black">
 					</div>
 				</button>
-				<button>
+				<button class="btn-gaming-products">
 					<span>Gaming</span>
 					<div class="arrow-icon-container">
 						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black">
 					</div>
 				</button>
-				<button>
+				<button class="btn-headphones-products">
 					<span>Auriculares</span>
 					<div class="arrow-icon-container">
 						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black">
 					</div>
 				</button>
-				<button>
+				<button class="btn-storages-products">
 					<span>Almacenamiento</span>
 					<div class="arrow-icon-container">
 						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black">
@@ -90,166 +91,9 @@
 				</button>
 			</div>
 		</section>
-
-		<!-- <section class="container">
-			<main>
-				<div class="main-section-container">
-					<div class="main-section-content">
-						<h3>Informática</h3>
-						<p>
-							Descubre nuestra selección de <a href="">Ordenadores de sobremesa</a>,
-							<a href="">Portátiles</a>, <a href="#">Tablets</a>, <a href="#">Componentes</a>,
-							<a href="">lmacenamiento de datos externo</a>, <a href="">Monitores</a> y mucho más.
-						</p>
-					</div>
-
-					<div class="logitech-banner">
-						<img src="/media/banners/logitech-banner.jpg" alt="Logitech" />
-					</div>
-
-				</div>
-			</main>
-		</section> -->
-
 		<section class="catalog-section container">
 			<h3 class="category-title"></h3>
 			<div class="products-container">
-				<div class="product-card">
-					<div class="img-product-container">
-						<img src="/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg" alt="">
-					</div>
-					<div class="card-information-container">
-						<h3 class="product-price">90</h3>
-						<p class="product-name">
-							Razer Barracuda X - Auriculares Inalámbricos Multiplataforma para Juegos
-							y Móviles, SmartSwitch Dual Wireless, Diseño Ergonómico de 250 g, TriForce 40mm, Micrófono
-							Cardioide, Negro
-						</p>
-						<div class="buttons-card-container">
-							<button class="btn-add-to-wish-list btn-style">Añadir a Deseados</button>
-							<button class="btn-add-to-trolly btn-style">Añadir al carrito</button>
-						</div>
-					</div>
-				</div>
-				<div class="product-card">
-					<div class="img-product-container">
-						<img src="/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg" alt="">
-					</div>
-					<div class="card-information-container">
-						<h3 class="product-price">90</h3>
-						<p class="product-name">
-							Razer Barracuda X - Auriculares Inalámbricos Multiplataforma para Juegos
-							y Móviles, SmartSwitch Dual Wireless, Diseño Ergonómico de 250 g, TriForce 40mm, Micrófono
-							Cardioide, Negro
-						</p>
-						<div class="buttons-card-container">
-							<button class="btn-add-to-wish-list btn-style">Añadir a Deseados</button>
-							<button class="btn-add-to-trolly btn-style">Añadir al carrito</button>
-						</div>
-					</div>
-				</div>
-				<div class="product-card">
-					<div class="img-product-container">
-						<img src="/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg" alt="">
-					</div>
-					<div class="card-information-container">
-						<h3 class="product-price">90</h3>
-						<p class="product-name">
-							Razer Barracuda X - Auriculares Inalámbricos Multiplataforma para Juegos
-							y Móviles, SmartSwitch Dual Wireless, Diseño Ergonómico de 250 g, TriForce 40mm, Micrófono
-							Cardioide, Negro
-						</p>
-						<div class="buttons-card-container">
-							<button class="btn-add-to-wish-list btn-style">Añadir a Deseados</button>
-							<button class="btn-add-to-trolly btn-style">Añadir al carrito</button>
-						</div>
-					</div>
-				</div>
-				<div class="product-card">
-					<div class="img-product-container">
-						<img src="/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg" alt="">
-					</div>
-					<div class="card-information-container">
-						<h3 class="product-price">90</h3>
-						<p class="product-name">
-							Razer Barracuda X - Auriculares Inalámbricos Multiplataforma para Juegos
-							y Móviles, SmartSwitch Dual Wireless, Diseño Ergonómico de 250 g, TriForce 40mm, Micrófono
-							Cardioide, Negro
-						</p>
-						<div class="buttons-card-container">
-							<button class="btn-add-to-wish-list btn-style">Añadir a Deseados</button>
-							<button class="btn-add-to-trolly btn-style">Añadir al carrito</button>
-						</div>
-					</div>
-				</div>
-				<div class="product-card">
-					<div class="img-product-container">
-						<img src="/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg" alt="">
-					</div>
-					<div class="card-information-container">
-						<h3 class="product-price">90</h3>
-						<p class="product-name">
-							Razer Barracuda X - Auriculares Inalámbricos Multiplataforma para Juegos
-							y Móviles, SmartSwitch Dual Wireless, Diseño Ergonómico de 250 g, TriForce 40mm, Micrófono
-							Cardioide, Negro
-						</p>
-						<div class="buttons-card-container">
-							<button class="btn-add-to-wish-list btn-style">Añadir a Deseados</button>
-							<button class="btn-add-to-trolly btn-style">Añadir al carrito</button>
-						</div>
-					</div>
-				</div>
-				<div class="product-card">
-					<div class="img-product-container">
-						<img src="/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg" alt="">
-					</div>
-					<div class="card-information-container">
-						<h3 class="product-price">90</h3>
-						<p class="product-name">
-							Razer Barracuda X - Auriculares Inalámbricos Multiplataforma para Juegos
-							y Móviles, SmartSwitch Dual Wireless, Diseño Ergonómico de 250 g, TriForce 40mm, Micrófono
-							Cardioide, Negro
-						</p>
-						<div class="buttons-card-container">
-							<button class="btn-add-to-wish-list btn-style">Añadir a Deseados</button>
-							<button class="btn-add-to-trolly btn-style">Añadir al carrito</button>
-						</div>
-					</div>
-				</div>
-				<div class="product-card">
-					<div class="img-product-container">
-						<img src="/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg" alt="">
-					</div>
-					<div class="card-information-container">
-						<h3 class="product-price">90</h3>
-						<p class="product-name">
-							Razer Barracuda X - Auriculares Inalámbricos Multiplataforma para Juegos
-							y Móviles, SmartSwitch Dual Wireless, Diseño Ergonómico de 250 g, TriForce 40mm, Micrófono
-							Cardioide, Negro
-						</p>
-						<div class="buttons-card-container">
-							<button class="btn-add-to-wish-list btn-style">Añadir a Deseados</button>
-							<button class="btn-add-to-trolly btn-style">Añadir al carrito</button>
-						</div>
-					</div>
-				</div>
-				<div class="product-card">
-					<div class="img-product-container">
-						<img src="/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg" alt="">
-					</div>
-					<div class="card-information-container">
-						<h3 class="product-price">90</h3>
-						<p class="product-name">
-							Razer Barracuda X - Auriculares Inalámbricos Multiplataforma para Juegos
-							y Móviles, SmartSwitch Dual Wireless, Diseño Ergonómico de 250 g, TriForce 40mm, Micrófono
-							Cardioide, Negro
-						</p>
-						<div class="buttons-card-container">
-							<button class="btn-add-to-wish-list btn-style">Añadir a Deseados</button>
-							<button class="btn-add-to-trolly btn-style">Añadir al carrito</button>
-						</div>
-					</div>
-				</div>
 				<div class="product-card">
 					<div class="img-product-container">
 						<img src="/media/productos/monitores/asus-va27ehf/asus-va27ehf-front.jpg" alt="">
