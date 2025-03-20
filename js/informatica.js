@@ -1,5 +1,0 @@
-// ARRAY DE PRODUCTOS (OBJETOS)
-
-
-
-

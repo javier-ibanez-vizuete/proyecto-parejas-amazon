@@ -69,7 +69,7 @@ const changepage = () => {
             return alert("Por favor introduzca un nombre para iniciar sesion");
         }
         saveDataInStorage("userName", inputName.value)
-        window.location.href = "/pages/informatica.html";
+        window.location.href = "https://project-reply-amazon.netlify.app/pages/informatica.html";
 	});
 };
 
