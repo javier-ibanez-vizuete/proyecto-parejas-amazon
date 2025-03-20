@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="/src/utils/products.js" defer></script>
-		<script src="/js/informatica.js" defer></script>
-		<link rel="stylesheet" href="/styles/index.css" />
-		<link rel="stylesheet" href="/styles/pages/informatica.css">
-		<title>Informatica | Amazon.es</title>
-	</head>
-	<body>
-		<header>
-			<nav role="navigation" class="main menu">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="/src/utils/products.js" defer></script>
+	<script src="/js/informatica.js" defer></script>
+	<link rel="stylesheet" href="/styles/index.css" />
+	<link rel="stylesheet" href="/styles/pages/informatica.css">
+	<title>Informatica | Amazon.es</title>
+</head>
+
+<body>
+	<header>
+		<div class="logo-header-container">
+			<img src="/media/logos/amazon-logo-white.png" alt="Logo amazon White">
+		</div>
+		<div class="search-container">
+			<input type="search" name="input-search-product" id="input-search-product">
+			<button>
+				<img src="/media/icons/icon-search-black.png" alt="Icon search black">
+			</button>
+		</div>
+		<div class="user-trolly-container">
+			<div class="language-selector">
+				<img src="/media/icons/icon.spanishflag.png" alt="Spanish Flag">
+			</div>
+			<div class="account-container">
+				<p>Hola <span class="span-for-user-name"></span></p>
+				<div class="title-for-account-and-icon-container">
+					<h5>Cuenta y listas</h5>
+					<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow black">
+				</div>
+			</div>
+			<div class="trolly-for-products-container">
+				<span class="span-products-on-trolly">0</span>
+				<img src="/media/icons/icon-trolly-products.png" alt="black basket">
+				<h5>Cesta</h5>
+			</div>
+		</div>
+		<!-- <nav role="navigation" class="main menu">
 				<div class="nav-container">
 					<div class="nav-content">
 						<div class="nav-logo">
@@ -95,56 +123,53 @@
 						</div>
 					</div>
 				</div>
-			</nav>
-		</header>
+			</nav> -->
+	</header>
 
-		<section>
-			<div class="electronics-categories-container">
-				<a href="#">Informática</a>
-				<a href="#">Portátiles</a>
-				<a href="#">Tablets</a>
-				<a href="#">Oficina</a>
-				<a href="#">Monitores</a>
-				<a href="#" class="categories-no-display">Componentes</a>
-				<a href="#" class="categories-no-display">Gaming</a>
-				<a href="#" class="categories-no-display">Almacenamiento</a>
-				<a href="#" class="categories-no-display">Accesorios</a>
-				<a href="#" class="categories-no-display">Dispositivos de red</a>
-				<a href="#" class="categories-no-display">Impresora y tinta</a>
-				<a href="#" class="categories-no-display">Amazon Business</a>
-			</div>
-		</section>
+	<section>
+		<div class="electronics-categories-container">
+			<a href="#">Informática</a>
+			<a href="#">Portátiles</a>
+			<a href="#">Tablets</a>
+			<a href="#">Oficina</a>
+			<a href="#">Monitores</a>
+			<a href="#" class="categories-no-display">Componentes</a>
+			<a href="#" class="categories-no-display">Gaming</a>
+			<a href="#" class="categories-no-display">Almacenamiento</a>
+			<a href="#" class="categories-no-display">Accesorios</a>
+			<a href="#" class="categories-no-display">Dispositivos de red</a>
+			<a href="#" class="categories-no-display">Impresora y tinta</a>
+			<a href="#" class="categories-no-display">Amazon Business</a>
+		</div>
+	</section>
 
-		<section>
-			<main>
-				<div class="main-section-container">
-					<div class="main-section-content">
-						<h3>Informática</h3>
-						<p>
-							Descubre nuestra selección de <a href="">Ordenadores de sobremesa</a>,
-							<a href="">Portátiles</a>, <a href="#">Tablets</a>, <a href="#">Componentes</a>,
-							<a href="">lmacenamiento de datos externo</a>, <a href="">Monitores</a> y mucho más.
-						</p>
-					</div>
-
-					<div class="logitech-banner">
-						<img src="/media/banners/logitech-banner.jpg" alt="Logitech" />
-					</div>
-
-					<div class="huawei-banner">
-						<img src="/media/banners/banner-huawei.jpg" alt="Huawei" />
-					</div>
+	<section>
+		<main>
+			<div class="main-section-container">
+				<div class="main-section-content">
+					<h3>Informática</h3>
+					<p>
+						Descubre nuestra selección de <a href="">Ordenadores de sobremesa</a>,
+						<a href="">Portátiles</a>, <a href="#">Tablets</a>, <a href="#">Componentes</a>,
+						<a href="">lmacenamiento de datos externo</a>, <a href="">Monitores</a> y mucho más.
+					</p>
 				</div>
-			</main>
-		</section>
 
-		<section>
-			<div class="products-container">
-				<h3>Products</h3>
-				<div id="products"></div>
+				<div class="logitech-banner">
+					<img src="/media/banners/logitech-banner.jpg" alt="Logitech" />
+				</div>
+
 			</div>
-		</section>
-<!-- 
+		</main>
+	</section>
+
+	<section>
+		<div class="products-container">
+			<h3>Products</h3>
+			<div id="products"></div>
+		</div>
+	</section>
+	<!-- 
 		<section>
 			<div class="news-products-container">
 				<h3>Novedades</h3>
@@ -166,106 +191,107 @@
 			</div>
 		</section> -->
 
-		<footer>
-			<section>
-				<div class="back">
-					<p>Volver arriba</p>
+	<footer>
+		<section>
+			<div class="back">
+				<p>Volver arriba</p>
+			</div>
+		</section>
+
+		<section>
+			<div class="footer-links-container">
+				<div class="footer-links">
+					<h4>Conócenos</h4>
+					<a href="">Trabajar en Amazon</a>
+					<a href="">Sobre amazon.es</a>
+					<a href="">Sostenibilidad</a>
+					<a href="">Amazon Science</a>
 				</div>
-			</section>
 
-			<section>
-				<div class="footer-links-container">
-					<div class="footer-links">
-						<h4>Conócenos</h4>
-						<a href="">Trabajar en Amazon</a>
-						<a href="">Sobre amazon.es</a>
-						<a href="">Sostenibilidad</a>
-						<a href="">Amazon Science</a>
-					</div>
-
-					<div class="footer-links">
-						<h4>Gana dinero con nosotros</h4>
-						<a href="">Vender en Amazon</a>
-						<a href="">Vender en Amazon Business</a>
-						<a href="">Vender en Amazon Handmade</a>
-						<a href="">Desarrolla y protege tu marca</a>
-						<a href="">Programa de afiliados</a>
-						<a href="">Logística de Amazon</a>
-						<a href="">Suministrar a Amazon</a>
-						<a href="">Promociona tus productos</a>
-						<a href="">Publica tu libro en Kindle</a>
-						<a href="">Amazon Pay</a>
-						<a href="">Alojar un Amazon Hub</a>
-					</div>
-
-					<div class="footer-links">
-						<h4>Métodos de pago</h4>
-						<a href="">Métodos de pago</a>
-						<a href="">Conversor de divisas Amazon</a>
-						<a href="">Tarjetas regalo</a>
-						<a href="">Recarga online</a>
-						<a href="">Recarga en tienda</a>
-					</div>
-
-					<div class="footer-links">
-						<h4>¿Necesitas ayuda?</h4>
-						<a href="">Localizar compras</a>
-						<a href="">Tarifas y políticas de envío</a>
-						<a href="">Amazon Prime</a>
-						<a href="">Devolver productos</a>
-						<a href="">Reciclaje</a>
-						<a href="">Gestionar contenido</a>
-						<a href="">App Amazon</a>
-						<a href="">Atención al cliente</a>
-						<a href="">Accesibilidad</a>
-						<a href="">Listas de regalos</a>
-						<a href=""></a>
-					</div>
+				<div class="footer-links">
+					<h4>Gana dinero con nosotros</h4>
+					<a href="">Vender en Amazon</a>
+					<a href="">Vender en Amazon Business</a>
+					<a href="">Vender en Amazon Handmade</a>
+					<a href="">Desarrolla y protege tu marca</a>
+					<a href="">Programa de afiliados</a>
+					<a href="">Logística de Amazon</a>
+					<a href="">Suministrar a Amazon</a>
+					<a href="">Promociona tus productos</a>
+					<a href="">Publica tu libro en Kindle</a>
+					<a href="">Amazon Pay</a>
+					<a href="">Alojar un Amazon Hub</a>
 				</div>
-			</section>
 
-			<section>
-				<div class="amazon-countries-container">
-					<div class="amazon-logo">
-						<img src="/media/logos/amazon-logo-white.png" alt="" />
-					</div>
-
-					<div class="amazon-countries">
-						<a href="">Australia</a>
-						<a href="">Alemania</a>
-						<a href="">Brasil</a>
-						<a href="">Canadá</a>
-						<a href="">China</a>
-						<a href="">EEUU</a>
-						<a href="">Francia</a>
-						<a href="">India</a>
-						<a href="">Italia</a>
-						<a href="">Japón</a>
-						<a href="">México</a>
-						<a href="">Países Bajos</a>
-						<a href="">Polonia</a>
-						<a href="">Emiratos Árabes</a>
-						<a href="">Singapur</a>
-						<a href="">Turquía</a>
-					</div>
+				<div class="footer-links">
+					<h4>Métodos de pago</h4>
+					<a href="">Métodos de pago</a>
+					<a href="">Conversor de divisas Amazon</a>
+					<a href="">Tarjetas regalo</a>
+					<a href="">Recarga online</a>
+					<a href="">Recarga en tienda</a>
 				</div>
-			</section>
 
-			<section>
-				<div class="copyright-container">
-					<div class="copyright-info">
-						<a href="">Condiciones de uso</a>
-						<a href="">Aviso de privacidad</a>
-						<a href="">Área legal</a>
-						<a href="">Cookies</a>
-						<a href="">Publicidad</a>
-					</div>
-
-					<div class="copyright-content">
-						<p>© 1996-2025, Amazon.com, Inc. o sus afiliados</p>
-					</div>
+				<div class="footer-links">
+					<h4>¿Necesitas ayuda?</h4>
+					<a href="">Localizar compras</a>
+					<a href="">Tarifas y políticas de envío</a>
+					<a href="">Amazon Prime</a>
+					<a href="">Devolver productos</a>
+					<a href="">Reciclaje</a>
+					<a href="">Gestionar contenido</a>
+					<a href="">App Amazon</a>
+					<a href="">Atención al cliente</a>
+					<a href="">Accesibilidad</a>
+					<a href="">Listas de regalos</a>
+					<a href=""></a>
 				</div>
-			</section>
-		</footer>
-	</body>
+			</div>
+		</section>
+
+		<section>
+			<div class="amazon-countries-container">
+				<div class="amazon-logo">
+					<img src="/media/logos/amazon-logo-white.png" alt="" />
+				</div>
+
+				<div class="amazon-countries">
+					<a href="">Australia</a>
+					<a href="">Alemania</a>
+					<a href="">Brasil</a>
+					<a href="">Canadá</a>
+					<a href="">China</a>
+					<a href="">EEUU</a>
+					<a href="">Francia</a>
+					<a href="">India</a>
+					<a href="">Italia</a>
+					<a href="">Japón</a>
+					<a href="">México</a>
+					<a href="">Países Bajos</a>
+					<a href="">Polonia</a>
+					<a href="">Emiratos Árabes</a>
+					<a href="">Singapur</a>
+					<a href="">Turquía</a>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="copyright-container">
+				<div class="copyright-info">
+					<a href="">Condiciones de uso</a>
+					<a href="">Aviso de privacidad</a>
+					<a href="">Área legal</a>
+					<a href="">Cookies</a>
+					<a href="">Publicidad</a>
+				</div>
+
+				<div class="copyright-content">
+					<p>© 1996-2025, Amazon.com, Inc. o sus afiliados</p>
+				</div>
+			</div>
+		</section>
+	</footer>
+</body>
+
 </html>

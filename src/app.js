@@ -7,10 +7,12 @@ const changepage = () => {
             event.preventDefault();
             return alert("Por favor introduzca un nombre para iniciar sesion");
         }
-        window.location.href = "/pages/informatica.html"
+        saveDataInStorage("userName", inputName.value)
+        window.location.href = "/pages/informatica.html";
 	});
 };
 
 document.addEventListener("DOMContentLoaded", () => {
 	changepage();
+    
 });
