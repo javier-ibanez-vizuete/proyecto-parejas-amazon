@@ -10,5 +10,10 @@ const getDataFromStorage = (key) => {
 };
 
 const saveDataInStorage = (key, data) => {
-    localStorage.setItem(key, JSON.stringify(data));
+    if (typeof data === "string") {
+        localStorage.setItem(key,data);
+    }
+    if (typeof data !== "string") {
+        localStorage.setItem(key, JSON.stringify(data));
+    }
 };

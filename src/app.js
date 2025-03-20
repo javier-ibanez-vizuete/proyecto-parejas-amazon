@@ -4,6 +4,8 @@ if (getDataFromStorage("productsOnStorage")) {
 	saveDataInStorage("productsOnStorage", productsOnStorage);
 }
 
+
+
 const clearContainer = () => {
 	const productsContainer = document.querySelector(".products-container");
 	console.log(productsContainer);
@@ -25,13 +27,24 @@ const createButtonsContainer = (isOnWishList, isOnTrolly) => {
 	divButtonsContainer.classList.add("buttons-card-container");
 
 	const btnForWishLisst = document.createElement("button");
-	btnForWishLisst.classList.add("btn-add-to-wish-list","btn-style");
-	if (isOnWishList) {
-		console.log("PERRITO");
-	}
-	if (!isOnWishList) {
-		console.log("NO esta en la wish list");
-	}
+	btnForWishLisst.classList.add("btn-add-to-wish-list", "btn-style");
+	btnForWishLisst.textContent = isOnWishList ? "Quitar de Deseados" : "Añadir a deseados";
+	btnForWishLisst.addEventListener("click", () => {
+		isOnWishList = !isOnWishList;
+		btnForWishLisst.textContent = isOnWishList ? "Quitar de Deseados" : "Añadir a deseados";
+		saveDataInStorage(productsOnStorage);
+	});
+	divButtonsContainer.append(btnForWishLisst);
+
+	const btnForTrolly = document.createElement("button");
+	btnForTrolly.classList.add("btn-add-to-trolly", "btn-style");
+	btnForTrolly.textContent = isOnTrolly ? "Eliminar del Carrito" : "Agregar al carrito";
+	btnForTrolly.addEventListener("click", () => {
+		isOnTrolly = !isOnTrolly;
+		btnForTrolly.textContent = isOnTrolly ? "Eliminar del Carrito" : "Agregar al carrito";
+		saveDataInStorage(productsOnStorage);
+	});
+	divButtonsContainer.append(btnForTrolly);
 
 	return divButtonsContainer;
 };
@@ -51,8 +64,9 @@ const createInfoProductContainer = (product) => {
 	paragraphProductName.textContent = product.name;
 	divInfoContainer.append(paragraphProductName);
 
-	const {isOnWishList, isOnTrolly} = product;
+	const { isOnWishList, isOnTrolly } = product;
 	const divButtonsContainer = createButtonsContainer(isOnWishList, isOnTrolly);
+	divInfoContainer.append(divButtonsContainer);
 
 	return divInfoContainer;
 };
@@ -63,7 +77,7 @@ const createProductCard = (product) => {
 
 	const { image } = product;
 	const divImageContainer = createProductimage(image);
-	divCardContainer.append(divImageContainer)
+	divCardContainer.append(divImageContainer);
 
 	const divInfoProductContainer = createInfoProductContainer(product);
 	divCardContainer.append(divInfoProductContainer);
@@ -92,7 +106,7 @@ const renderCatalog = (filtroTexto = "") => {
 	clearContainer();
 
 	const productsByName = filterProductsByName(filtroTexto);
-	productsByName.forEach((product, index) => {
+	productsByName.forEach((product) => {
 		const productsContainer = document.querySelector(".products-container");
 		const productCard = createProductCard(product);
 		productsContainer.append(productCard);
@@ -114,6 +128,20 @@ const changepage = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+	const inputSearch = document.querySelector("#input-search-product");
+	inputSearch.value = getDataFromStorage("searchOnStorage")
+	inputSearch.addEventListener("keyup", () => {
+		saveDataInStorage("searchOnStorage", inputSearch.value);
+		const currentSearch = getDataFromStorage("searchOnStorage");
+		renderCatalog(currentSearch);
+	});
+
+	const btnSearch = document.querySelector(".btnSearch")
+	console.log("Este es el input de busqueda",inputSearch);
 	// changepage();
-	renderCatalog();
+	if (inputSearch.value) {
+		renderCatalog(inputSearch.value)
+	} else {
+		renderCatalog();
+	}
 });

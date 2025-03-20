@@ -244,12 +244,6 @@ main {
 	justify-content: space-between;
 	gap: 0.5rem;
 	align-items: center;
-	
-	visibility: hidden;
-}
-
-.product-card:hover .buttons-card-container {
-	visibility: visible;
 }
 
 .buttons-card-container button {
