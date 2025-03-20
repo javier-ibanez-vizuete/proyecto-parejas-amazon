@@ -2,10 +2,14 @@
 
 /* TABLET */
 @media (min-width: 481px) {
+	:root {
+		--radius-card: 6px;
+	}
+	
 	/* --------------------- INDEX HTML------------------------- */
-	/* ---------------------------------------- */
-	.user-container {
-		width: 40%;
+	/* -----------------------MAIN----------------- */
+	.card-container {
+		max-width: 360px;
 	}
 
 	.new-user-btn {
@@ -164,16 +168,44 @@
 
 /* DESKTOP */
 @media (min-width: 1024px) {
+	:root {
+		--accent-bg-color: #f4ede4;
+		--primary-text-color: #000;
+		--links-text-color: #2162a1;
+		--contrast-color: #232f3e;
+		--light-gray: #eaeaea;
+		--primary-color-btn: #f7ca00;
+	
+		--spacing-xs: 8px;
+		--spacing-sm: 12px;
+		--spacing-md: 16px;
+		--spacing-lg: 20px;
+		--spacing-xl: 28px;
+		--spacing-2xl: 40px;
+		--spacing-3xl: 52px;
+		--spacing-4xl: 64px;
+		
+		--radius-card: 8px;
+		--radius-button: 24px;
+		
+		--container-width: 90%;
+	}
+	
+	
 	/* -------------- INDEX HTML------------- */
 	/* --------------header----------- */
 	.logo-container {
 		width: 300px;
 	}
 	
-	.user-container,
+	/* --------------------MAIN--------------------- */
+.card-container {
+	padding: var(--spacing-lg);
+}
+	/* .user-container,
 	.new-user-btn {
 		width: 50%;
-	}
+	} */
 	/* PÁGINA ELECTRÓNICA */
 	.nav-logo {
 		width: 20%;
