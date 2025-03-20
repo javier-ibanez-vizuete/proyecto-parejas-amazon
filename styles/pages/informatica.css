@@ -4,7 +4,6 @@
 	border-radius: var(--radius-button);
 }
 
-
 :root {
 	--accent-bg-color: #f4ede4;
 	--primary-text-color: #000;
@@ -62,7 +61,7 @@ header span {
 	align-items: center;
 	flex-shrink: 0;
 
-width: 12rem;
+	width: 12rem;
 }
 
 .search-container {
@@ -199,6 +198,12 @@ main {
 	gap: 2rem;
 }
 
+.catalog-section .category-title {
+	font-weight: 400;
+	
+	padding-top: var(--spacing-sm);
+}
+
 .products-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -208,8 +213,9 @@ main {
 .product-card {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 
-	background-color: rgb(243, 242, 242);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
 	padding: var(--spacing-xs);
 	border-radius: var(--radius-card);
 }
@@ -218,6 +224,7 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex: 1;
 }
 
 .card-information-container {

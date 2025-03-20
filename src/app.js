@@ -6,7 +6,6 @@ if (getDataFromStorage("productsOnStorage")) {
 
 const clearContainer = () => {
 	const productsContainer = document.querySelector(".products-container");
-	console.log(productsContainer);
 	productsContainer.innerHTML = "";
 };
 
@@ -54,7 +53,7 @@ const createInfoProductContainer = (product) => {
 
 	const h3ProductPrice = document.createElement("h3");
 	h3ProductPrice.classList.add("product-price");
-	h3ProductPrice.textContent = product.price;
+	h3ProductPrice.textContent = `${product.price} €`;
 	divInfoContainer.append(h3ProductPrice);
 
 	const paragraphProductName = document.createElement("p");
@@ -93,22 +92,57 @@ const filterProductsByName = (name) => {
 	return filterByName;
 };
 
+const filterProductsByLaptops = () => {
+	const filterByLaptops = productsOnStorage.filter(({ category }) => category.toLowerCase() === "laptops");
+	if (filterByLaptops.length) {
+		return filterByLaptops;
+	}
+	return productsOnStorage;
+};
+
+const filterProductsByMonitors = () => {
+	const filterByMonitors = productsOnStorage.filter(({ category }) => category.toLowerCase() === "monitor");
+	if (filterByMonitors.length) {
+		return filterByMonitors;
+	}
+	return productsOnStorage;
+};
+
 const renderCatalog = (filtroTexto = "") => {
-	// SELECCION DE BOTONES
+	// SELECCION DE ELEMENTOS
+	// const spanForProductsNumber = document.querySelector(".number-of-products");
 	const btnFullProducts = document.querySelector(".btn-full-informatica");
 	const btnLaptopsProducts = document.querySelector(".btn-laptops-products");
 	const btnMonitorsProducts = document.querySelector(".btn-monitors-products");
 	const btnTabletsProducts = document.querySelector(".btn-tablets-products");
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
+	const productsContainer = document.querySelector(".products-container");
 	clearContainer();
 
-	const productsByName = filterProductsByName(filtroTexto);
-	productsByName.forEach((product) => {
-		const productsContainer = document.querySelector(".products-container");
-		const productCard = createProductCard(product);
-		productsContainer.append(productCard);
-	});
+	if (btnFullProducts.classList.contains("open-all-products")) {
+		const productsByName = filterProductsByName(filtroTexto);
+		productsByName.forEach((product) => {
+			const productCard = createProductCard(product);
+			productsContainer.append(productCard);
+		});
+	}
+
+	if (btnLaptopsProducts.classList.contains("open-laptops-products")) {
+		const onlyLaptopProducts = filterProductsByLaptops();
+		onlyLaptopProducts.forEach((product) => {
+			const productCard = createProductCard(product);
+			productsContainer.append(productCard);
+		});
+	}
+
+	if (btnMonitorsProducts.classList.contains("open-monitors-products")) {
+		const onlyMonitorsProducts = filterProductsByMonitors();
+		onlyMonitorsProducts.forEach((product) => {
+			const productCard = createProductCard(product);
+			productsContainer.append(productCard);
+		});
+	}
 };
 
 const changepage = () => {
@@ -126,19 +160,60 @@ const changepage = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+	// SELECCION DE ELEMENTOS
+	const h3CategoryTitle = document.querySelector(".category-title");
+	const spanForProductsNumber = document.querySelector(".number-of-products");
 	const inputSearch = document.querySelector("#input-search-product");
+	const btnSearch = document.querySelector(".btnSearch");
+	const btnFullProducts = document.querySelector(".btn-full-informatica");
+	const btnLaptopsProducts = document.querySelector(".btn-laptops-products");
+	const btnMonitorsProducts = document.querySelector(".btn-monitors-products");
+	const btnTabletsProducts = document.querySelector(".btn-tablets-products");
+	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
+	const btnStoragesProducts = document.querySelector(".btn-storages-products");
+
 	inputSearch.value = getDataFromStorage("searchOnStorage");
+	// ADDEVENTLISTENER
 	inputSearch.addEventListener("keyup", () => {
 		saveDataInStorage("searchOnStorage", inputSearch.value);
 		const currentSearch = getDataFromStorage("searchOnStorage");
 		renderCatalog(inputSearch.value);
 	});
-
-	const btnSearch = document.querySelector(".btnSearch");
 	btnSearch.addEventListener("click", (event) => {
 		event.preventDefault();
-		renderCatalog(inputSearch.value)
+		renderCatalog(inputSearch.value);
 	});
+	btnFullProducts.addEventListener("click", () => {
+		h3CategoryTitle.textContent = "Informática";
+		btnFullProducts.classList.add("open-all-products");
+		btnLaptopsProducts.classList.remove("open-laptops-products");
+		btnMonitorsProducts.classList.remove("open-monitors-products");
+		btnTabletsProducts.classList.remove("open-tablets-products");
+		btnHeadphonesProducts.classList.remove("open-headphones-products");
+		btnStoragesProducts.classList.remove("open-storages-products");
+		renderCatalog();
+	});
+	btnLaptopsProducts.addEventListener("click", () => {
+		h3CategoryTitle.textContent = "Portátiles";
+		btnLaptopsProducts.classList.add("open-laptops-products");
+		btnFullProducts.classList.remove("open-all-products");
+		btnMonitorsProducts.classList.remove("open-monitors-products");
+		btnTabletsProducts.classList.remove("open-tablets-products");
+		btnHeadphonesProducts.classList.remove("open-headphones-products");
+		btnStoragesProducts.classList.remove("open-storages-products");
+		renderCatalog();
+	});
+	btnMonitorsProducts.addEventListener("click", () => {
+		h3CategoryTitle.textContent = "Monitores";
+		btnMonitorsProducts.classList.add("open-monitors-products");
+		btnFullProducts.classList.remove("open-all-products");
+		btnLaptopsProducts.classList.remove("open-laptops-products");
+		btnTabletsProducts.classList.remove("open-tablets-products");
+		btnHeadphonesProducts.classList.remove("open-headphones-products");
+		btnStoragesProducts.classList.remove("open-storages-products");
+		renderCatalog();
+	});
+
 	// changepage();
 	if (inputSearch.value) {
 		renderCatalog(inputSearch.value);
