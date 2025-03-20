@@ -145,21 +145,23 @@ const renderCatalog = (filtroTexto = "") => {
 	}
 };
 
-const changepage = () => {
-	const inputName = document.querySelector(".input-name");
-	const btnLogin = document.querySelector(".continue-btn");
-	btnLogin.addEventListener("click", (event) => {
-		if (!inputName.value.trim()) {
-			event.preventDefault();
-			return alert("Por favor introduzca un nombre para iniciar sesion");
-		}
-		saveDataInStorage("userName", inputName.value);
-		window.location.href = "https://project-reply-amazon.netlify.app/pages/informatica.html";
-	});
-};
+// const changepage = () => {
+// 	const inputName = document.querySelector(".input-name");
+// 	const btnLogin = document.querySelector(".continue-btn");
+// 	btnLogin.addEventListener("click", (event) => {
+// 		if (!inputName.value.trim()) {
+// 			event.preventDefault();
+// 			return alert("Por favor introduzca un nombre para iniciar sesion");
+// 		}
+// 		saveDataInStorage("userName", inputName.value);
+// 		window.location.href = "http://127.0.0.1:5500/pages/informatica.html";
+// 		// window.location.href = "https://project-reply-amazon.netlify.app/pages/informatica.html";
+// 	});
+// };
 
 document.addEventListener("DOMContentLoaded", () => {
 	// SELECCION DE ELEMENTOS
+	// changepage();
 	const h3CategoryTitle = document.querySelector(".category-title");
 	const spanForProductsNumber = document.querySelector(".number-of-products");
 	const inputSearch = document.querySelector("#input-search-product");
@@ -170,8 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnTabletsProducts = document.querySelector(".btn-tablets-products");
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
-
-	inputSearch.value = getDataFromStorage("searchOnStorage");
+// console.log(inputSearch.value);
+// 	if (inputSearch.value.length) {
+// 		inputSearch.value = getDataFromStorage("searchOnStorage");
+// 	}
 	// ADDEVENTLISTENER
 	inputSearch.addEventListener("keyup", () => {
 		saveDataInStorage("searchOnStorage", inputSearch.value);
@@ -213,10 +217,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		renderCatalog();
 	});
 
-	changepage();
 	if (inputSearch.value) {
 		renderCatalog(inputSearch.value);
 	} else {
 		renderCatalog();
 	}
+
 });
