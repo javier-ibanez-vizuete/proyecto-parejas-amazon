@@ -147,7 +147,6 @@ const renderCatalog = (filtroTexto = "") => {
 
 const changepage = () => {
 	const inputName = document.querySelector(".input-name");
-	console.log(inputName);
 	const btnLogin = document.querySelector(".continue-btn");
 	btnLogin.addEventListener("click", (event) => {
 		if (!inputName.value.trim()) {
@@ -214,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		renderCatalog();
 	});
 
-	// changepage();
+	changepage();
 	if (inputSearch.value) {
 		renderCatalog(inputSearch.value);
 	} else {
