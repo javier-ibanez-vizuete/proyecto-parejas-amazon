@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="/styles/index.css" />
 	<script src="src/helpers/storage.js" defer></script>
-	<script src="script.js" defer></script>
+	<script src="src/app.js" defer></script>
 	<title>Iniciar Sesion | Amazon.es</title>
 </head>
 
@@ -27,7 +27,7 @@
 						<input class="input-name" type="name" name="name" placeholder="Introduce tu nombre" />
 
 						<div class="continue-btn-container">
-							<button type="submit" class="continue-btn">Continuar</button>
+							<a href="/pages/informatica.html"class="continue-btn">Continuar</a>
 						</div>
 					</form>
 
@@ -36,8 +36,8 @@
 							Al continuar, aceptas las
 							<a
 								href="https://www.amazon.es/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&nodeId=200545940">Condiciones
-								de uso y venta de Amazon.</a>
-							Consulta nuestro
+								de uso y venta</a>
+							de Amazon. Consulta nuestro
 							<a
 								href="https://www.amazon.es/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&nodeId=200545460">Aviso
 								de privacidad</a>, nuestro
@@ -50,31 +50,28 @@
 					</div>
 
 					<div class="help-container">
-						<div class="help-arrow">
-							<img src="" alt="" />
-						</div>
-
-						<div>
-							<a href="#">¿Necesitas ayuda?</a>
+						<h5>¿Necesitas Ayuda?</h5>
+						<div class="icon-container">
+							<img src="/media/icons/icon-arrow-down.png" alt="Icon black arrow">
 						</div>
 					</div>
 
 					<div class="separator"></div>
 
 					<div class="business-shop-container">
-						<div class="business-shop-content">
-							<h2>¿Compras para tu empresa?</h2>
-							<a
-								href="https://www.amazon.es/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.es%2Fbusiness%2Fregister%2Fcheck%2Fstatus%3Fref_%3Dab_reg_signin%26ref_%3Dab_welcome_bw_ckab_dsk%26originalRef%3Dab_reg_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_ab_reg_web_es&openid.mode=checkid_setup&marketPlaceId=A1RKKUPIHCS9HS&language=es_ES&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=ab_welcome_login_es&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.pape.preferred_auth_policies=Singlefactor&switch_account=signin&disableLoginPrepopulate=1&ref_=ab_welcome_bw_ap-sn_dsk">Comprar
-								en Amazon Business</a>
-						</div>
+						<h5>¿Compras para tu empresa?</h5>
+						<a
+							href="https://www.amazon.es/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.es%2Fbusiness%2Fregister%2Fcheck%2Fstatus%3Fref_%3Dab_reg_signin%26ref_%3Dab_welcome_bw_ckab_dsk%26originalRef%3Dab_reg_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_ab_reg_web_es&openid.mode=checkid_setup&marketPlaceId=A1RKKUPIHCS9HS&language=es_ES&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=ab_welcome_login_es&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.pape.preferred_auth_policies=Singlefactor&switch_account=signin&disableLoginPrepopulate=1&ref_=ab_welcome_bw_ap-sn_dsk">Comprar
+							en Amazon Business</a>
 					</div>
 				</div>
 			</section>
 
-			<section>
-				<div class="new-user-container">
-					<p>¿Eres nuevo en Amazon?</p>
+			<section class="new-on-amazon-section">
+				<div class="text-new-on-amazon-section-container">
+					<small>¿Eres nuevo en Amazon?</small>
+				</div>
+				<div class="button-new-on-amazon-section-container">
 					<button class="new-user-btn"><a href="/pages/informatica.html">Crea tu cuenta de Amazon</a></button>
 				</div>
 
@@ -82,14 +79,15 @@
 			</section>
 
 		</main>
+		<div class="separator"></div>
 		<footer class="footer-login">
 			<div class="footer-container-login">
 				<div class="footer-links-login">
-					<a href="">Condiciones de uso</a>
-					<a href="">Aviso de privacidad</a>
-					<a href="">Ayuda</a>
-					<a href="">Cookies</a>
-					<a href="">Publicidad</a>
+					<small>Condiciones de uso</small>
+					<small>Aviso de privacidad</small>
+					<small>Ayuda</small>
+					<small>Cookies</small>
+					<small>Publicidad</small>
 				</div>
 
 				<div class="copyright">

@@ -3,10 +3,17 @@
 /* TABLET */
 @media (min-width: 481px) {
 	:root {
+		--font-size-html: 15px;
 		--radius-card: 6px;
+		--container-width: 90%;
 	}
-	
+
 	/* --------------------- INDEX HTML------------------------- */
+	/* -------------header------------ */
+	.logo-container {
+		width: 180px;
+	}
+
 	/* -----------------------MAIN----------------- */
 	.card-container {
 		max-width: 360px;
@@ -156,14 +163,13 @@
 		justify-content: center;
 		font-size: 10px;
 		gap: 8px;
-		color: #FFF;
+		color: #fff;
 	}
 
 	.copyright-info {
 		justify-content: center;
 		gap: 10px;
 	}
-
 }
 
 /* DESKTOP */
@@ -175,7 +181,9 @@
 		--contrast-color: #232f3e;
 		--light-gray: #eaeaea;
 		--primary-color-btn: #f7ca00;
-	
+
+		--font-size-html: 16px;
+
 		--spacing-xs: 8px;
 		--spacing-sm: 12px;
 		--spacing-md: 16px;
@@ -184,24 +192,23 @@
 		--spacing-2xl: 40px;
 		--spacing-3xl: 52px;
 		--spacing-4xl: 64px;
-		
+
 		--radius-card: 8px;
 		--radius-button: 24px;
-		
-		--container-width: 90%;
+
+		--container-width: 85%;
 	}
-	
-	
+
 	/* -------------- INDEX HTML------------- */
 	/* --------------header----------- */
 	.logo-container {
-		width: 300px;
+		width: 200px;
 	}
-	
+
 	/* --------------------MAIN--------------------- */
-.card-container {
-	padding: var(--spacing-lg);
-}
+	.card-container {
+		padding: var(--spacing-lg);
+	}
 	/* .user-container,
 	.new-user-btn {
 		width: 50%;
@@ -252,6 +259,11 @@
 
 /* DESKTOP XXL */
 @media (min-width: 1040px) {
+	:root {
+		--font-size-html: 17px;
+		--container-width: 85%;
+	}
+
 	.user-container,
 	.new-user-btn {
 		width: 20%;
