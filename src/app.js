@@ -4,8 +4,6 @@ if (getDataFromStorage("productsOnStorage")) {
 	saveDataInStorage("productsOnStorage", productsOnStorage);
 }
 
-
-
 const clearContainer = () => {
 	const productsContainer = document.querySelector(".products-container");
 	console.log(productsContainer);
@@ -86,12 +84,12 @@ const createProductCard = (product) => {
 };
 
 const filterProductsByName = (name) => {
-	const filterByName = productsOnStorage.filter((product) =>
-		product.name.toLowerCase().includes(name.trim().toLowerCase())
-	);
 	if (!name) {
 		return productsOnStorage;
 	}
+	const filterByName = productsOnStorage.filter((product) =>
+		product.name.toLowerCase().includes(name.trim().toLowerCase())
+	);
 	return filterByName;
 };
 
@@ -129,18 +127,21 @@ const changepage = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 	const inputSearch = document.querySelector("#input-search-product");
-	inputSearch.value = getDataFromStorage("searchOnStorage")
+	inputSearch.value = getDataFromStorage("searchOnStorage");
 	inputSearch.addEventListener("keyup", () => {
 		saveDataInStorage("searchOnStorage", inputSearch.value);
 		const currentSearch = getDataFromStorage("searchOnStorage");
-		renderCatalog(currentSearch);
+		renderCatalog(inputSearch.value);
 	});
 
-	const btnSearch = document.querySelector(".btnSearch")
-	console.log("Este es el input de busqueda",inputSearch);
+	const btnSearch = document.querySelector(".btnSearch");
+	btnSearch.addEventListener("click", (event) => {
+		event.preventDefault();
+		renderCatalog(inputSearch.value)
+	});
 	// changepage();
 	if (inputSearch.value) {
-		renderCatalog(inputSearch.value)
+		renderCatalog(inputSearch.value);
 	} else {
 		renderCatalog();
 	}
