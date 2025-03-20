@@ -2,6 +2,8 @@
 
 /* TABLET */
 @media (min-width: 481px) {
+	/* --------------------- INDEX HTML------------------------- */
+	/* ---------------------------------------- */
 	.user-container {
 		width: 40%;
 	}
@@ -162,9 +164,15 @@
 
 /* DESKTOP */
 @media (min-width: 1024px) {
+	/* -------------- INDEX HTML------------- */
+	/* --------------header----------- */
+	.logo-container {
+		width: 300px;
+	}
+	
 	.user-container,
 	.new-user-btn {
-		width: 30%;
+		width: 50%;
 	}
 	/* PÁGINA ELECTRÓNICA */
 	.nav-logo {

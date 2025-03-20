@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/styles/index.css" />
-		<script src="src/helpers/storage.js" defer></script>
-		<script src="script.js" defer></script>
-		<title>Iniciar Sesion | Amazon.es</title>
-	</head>
-	<body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/styles/index.css" />
+	<script src="src/helpers/storage.js" defer></script>
+	<script src="script.js" defer></script>
+	<title>Iniciar Sesion | Amazon.es</title>
+</head>
+
+<body>
+	<div class="body-container container">
+		<header class="header-login">
+			<div class="logo-container">
+				<img src="/media/logos/amazon-logo.png" alt="Logo Amazon">
+			</div>
+		</header>
 		<main>
-			<section>
+			<section class="login-section">
 				<div class="card-container">
 					<div class="user-container">
 						<div class="user-content">
 							<form action="/login" method="POST">
 								<h1>Iniciar sesión</h1>
 								<p>Nombre</p>
-								
-								<input
-									class="input-name"
-									type="name"
-									name="name"
-									placeholder="Introduce tu nombre"
-								/>
+
+								<input class="input-name" type="name" name="name" placeholder="Introduce tu nombre" />
 
 								<div class="continue-btn-container">
 									<button type="submit" class="continue-btn">Continuar</button>
@@ -34,21 +37,17 @@
 								<p>
 									Al continuar, aceptas las
 									<a
-										href="https://www.amazon.es/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&nodeId=200545940"
-										>Condiciones de uso y venta de Amazon.</a
-									>
+										href="https://www.amazon.es/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&nodeId=200545940">Condiciones
+										de uso y venta de Amazon.</a>
 									Consulta nuestro
 									<a
-										href="https://www.amazon.es/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&nodeId=200545460"
-										>Aviso de privacidad</a
-									>, nuestro
-									<a href="https://www.amazon.es/gp/help/customer/display.html/?nodeId=201890250"
-										>Aviso sobre cookies</a
-									>
+										href="https://www.amazon.es/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&nodeId=200545460">Aviso
+										de privacidad</a>, nuestro
+									<a href="https://www.amazon.es/gp/help/customer/display.html/?nodeId=201890250">Aviso
+										sobre cookies</a>
 									y nuestro
-									<a href="https://www.amazon.es/gp/help/customer/display.html?nodeId=201909150"
-										>Aviso sobre anuncios basados en intereses.</a
-									>
+									<a href="https://www.amazon.es/gp/help/customer/display.html?nodeId=201909150">Aviso
+										sobre anuncios basados en intereses.</a>
 								</p>
 							</div>
 
@@ -68,9 +67,8 @@
 								<div class="business-shop-content">
 									<h2>¿Compras para tu empresa?</h2>
 									<a
-										href="https://www.amazon.es/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.es%2Fbusiness%2Fregister%2Fcheck%2Fstatus%3Fref_%3Dab_reg_signin%26ref_%3Dab_welcome_bw_ckab_dsk%26originalRef%3Dab_reg_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_ab_reg_web_es&openid.mode=checkid_setup&marketPlaceId=A1RKKUPIHCS9HS&language=es_ES&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=ab_welcome_login_es&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.pape.preferred_auth_policies=Singlefactor&switch_account=signin&disableLoginPrepopulate=1&ref_=ab_welcome_bw_ap-sn_dsk"
-										>Comprar en Amazon Business</a
-									>
+										href="https://www.amazon.es/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.es%2Fbusiness%2Fregister%2Fcheck%2Fstatus%3Fref_%3Dab_reg_signin%26ref_%3Dab_welcome_bw_ckab_dsk%26originalRef%3Dab_reg_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_ab_reg_web_es&openid.mode=checkid_setup&marketPlaceId=A1RKKUPIHCS9HS&language=es_ES&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=ab_welcome_login_es&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.pape.preferred_auth_policies=Singlefactor&switch_account=signin&disableLoginPrepopulate=1&ref_=ab_welcome_bw_ap-sn_dsk">Comprar
+										en Amazon Business</a>
 								</div>
 							</div>
 						</div>
@@ -87,21 +85,24 @@
 				<hr />
 			</section>
 
-			<section>
-				<div class="footer-container-login">
-					<div class="footer-links-login">
-						<a href="">Condiciones de uso</a>
-						<a href="">Aviso de privacidad</a>
-						<a href="">Ayuda</a>
-						<a href="">Cookies</a>
-						<a href="">Publicidad</a>
-					</div>
-
-					<div class="copyright">
-						<p>© 1996-2025, Amazon.com, Inc. o sus afiliados</p>
-					</div>
-				</div>
-			</section>
 		</main>
-	</body>
+		<footer class="footer-login">
+			<div class="footer-container-login">
+				<div class="footer-links-login">
+					<a href="">Condiciones de uso</a>
+					<a href="">Aviso de privacidad</a>
+					<a href="">Ayuda</a>
+					<a href="">Cookies</a>
+					<a href="">Publicidad</a>
+				</div>
+
+				<div class="copyright">
+					<p>© 1996-2025, Amazon.com, Inc. o sus afiliados</p>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+</body>
+
 </html>

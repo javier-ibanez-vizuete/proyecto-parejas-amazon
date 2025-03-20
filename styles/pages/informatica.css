@@ -1,0 +1,266 @@
+/* -----------------------PÁGINA INFORMATICA------------------------- */
+
+.nav-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	background-color: #131921;
+	color: #fff;
+}
+
+.nav-content {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+}
+
+.nav-logo {
+	width: 100%;
+}
+
+.nav-logo img,
+.user-icon img,
+.cart-img img {
+	width: 100%;
+}
+
+.shipping-information,
+.nav-categories,
+.cart-description,
+.language,
+.login-user,
+.repayment,
+.no-display,
+.secondary-menu-text,
+.categories-no-display {
+	display: none;
+}
+
+.user-icon,
+.cart-img {
+	width: 60%;
+}
+
+.secondary-menu-container {
+	width: 100%;
+	color: #000;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	background-color: var(--contrast-color);
+	color: #fff;
+	padding: 8px 0;
+}
+
+.secondary-menu-links {
+	display: flex;
+	flex-direction: row;
+}
+
+.secondary-menu-links ul {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 7px;
+	font-size: 11px;
+}
+
+.secondary-menu-links a:hover {
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	padding: 6px;
+}
+
+.electronics-categories-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	font-size: 10px;
+	padding: 10px 0;
+	border-bottom: 2px solid rgb(198, 198, 198);
+}
+
+.main-section-container,
+.products-container {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px 0;
+}
+
+.main-section-content,
+.main-section-content h3,
+.main-section-content p {
+	padding-bottom: 8px;
+}
+
+.main-section-content h3 {
+	font-size: 24px;
+}
+
+.main-section-content p {
+	font-size: 12px;
+}
+
+.main-section-content a {
+	color: var(--links-text-color);
+}
+
+.logitech-banner,
+.huawei-banner {
+	width: 100%;
+}
+
+.logitech-banner img,
+.huawei-banner img {
+	width: 100%;
+}
+
+.back {
+	width: 100%;
+	background-color: #37475a;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	font-size: 12px;
+	padding: 18px 0;
+}
+
+#products {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px;
+}
+
+.product-card {
+	display: flex;
+	flex-direction: column;
+
+	/* height: 200px; */
+	width: 100%;
+	border: 1px solid black;
+}
+
+.product-card .btn {
+	border-radius: 4px;
+	background-color: blue;
+	padding: 2px;
+}
+
+.product-card .product-name {
+	display: -webkit-box;
+	line-clamp: initial;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+
+	font-size: 12px;
+	width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid red;
+}
+
+.image-container img {
+	width: 100%;
+}
+
+.product-info-container {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	border: 1px solid var(--light-gray);
+}
+
+.info-container h3 {
+	width: 20%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: block;
+}
+
+.footer-links-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.footer-links {
+	width: 25%;
+	color: #fff;
+	background-color: var(--contrast-color);
+	display: flex;
+	flex-direction: column;
+	padding: 4px;
+}
+
+.footer-links h4 {
+	font-size: 12px;
+	font-weight: 400;
+	padding-bottom: 4px;
+	text-align: left;
+}
+
+.footer-links a {
+	font-size: 10px;
+	text-align: left;
+	padding: 6px 0;
+}
+
+.footer-links a:hover {
+	color: #fff;
+}
+
+.amazon-countries-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--contrast-color);
+}
+
+.amazon-logo {
+	width: 30%;
+	padding: 10px;
+}
+
+.amazon-logo img {
+	width: 100%;
+}
+
+.amazon-countries {
+	display: none;
+}
+
+.copyright-container {
+	width: 100%;
+	background-color: var(--contrast-color);
+	color: #fff;
+	padding: 20px 0;
+}
+
+.copyright-info {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	font-size: 10px;
+	text-align: center;
+}
+
+.copyright-content {
+	font-size: 10px;
+	text-align: center;
+}
