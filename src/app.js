@@ -108,6 +108,41 @@ const filterProductsByMonitors = () => {
 	return productsOnStorage;
 };
 
+const filterProductsByTablets = () => {
+	const filterByTablets= productsOnStorage.filter(({ category }) => category.toLowerCase() === "tablets");
+	if (filterByTablets.length) {
+		return filterByTablets;
+	}
+	return productsOnStorage;
+};
+
+const filterProductsByStorages = () => {
+	const filterByStorages= productsOnStorage.filter(({ category }) => category.toLowerCase() === "almacenamiento");
+	if (filterByStorages.length) {
+		return filterByStorages;
+	}
+	return productsOnStorage;
+};
+
+const filterProductsByGaming = () => {
+	const filterByGaming= productsOnStorage.filter(({ category }) => category.toLowerCase() === "gaming");
+	if (filterByGaming.length) {
+		return filterByGaming;
+	}
+	return productsOnStorage;
+};
+
+const filterProductsByHeadphones = () => {
+	const filterByHeadphones= productsOnStorage.filter(({ category }) => category.toLowerCase() === "auriculares");
+	if (filterByHeadphones.length) {
+		return filterByHeadphones;
+	}
+	return productsOnStorage;
+};
+
+
+
+
 const renderCatalog = (filtroTexto = "") => {
 	// SELECCION DE ELEMENTOS
 	// const spanForProductsNumber = document.querySelector(".number-of-products");
@@ -117,6 +152,7 @@ const renderCatalog = (filtroTexto = "") => {
 	const btnTabletsProducts = document.querySelector(".btn-tablets-products");
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
+	const btnGamingProducts = document.querySelector(".btn-gaming-products");
 	const productsContainer = document.querySelector(".products-container");
 	clearContainer();
 
@@ -143,6 +179,38 @@ const renderCatalog = (filtroTexto = "") => {
 			productsContainer.append(productCard);
 		});
 	}
+
+	if (btnTabletsProducts.classList.contains("open-tablets-products")) {
+		const onlyTabletsProducts = filterProductsByTablets();
+		onlyTabletsProducts.forEach((product) => {
+			const productCard = createProductCard(product);
+			productsContainer.append(productCard);
+		});
+	}
+
+	if (btnStoragesProducts.classList.contains("open-storages-products")) {
+        const onlyStoragesProducts = filterProductsByStorages();
+        onlyStoragesProducts.forEach((product) => {
+            const productCard = createProductCard(product);
+            productsContainer.append(productCard);
+        });
+    }
+
+	if (btnGamingProducts.classList.contains("open-gaming-products")) {
+        const onlyGamingProducts = filterProductsByGaming();
+        onlyGamingProducts.forEach((product) => {
+            const productCard = createProductCard(product);
+            productsContainer.append(productCard);
+        });
+    }
+
+	if (btnHeadphonesProducts.classList.contains("open-headphones-products")) {
+        const onlyHeadphonesProducts = filterProductsByHeadphones();
+        onlyHeadphonesProducts.forEach((product) => {
+            const productCard = createProductCard(product);
+            productsContainer.append(productCard);
+        });
+    }
 };
 
 // const changepage = () => {
@@ -172,6 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnTabletsProducts = document.querySelector(".btn-tablets-products");
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
+	const btnGamingProducts = document.querySelector(".btn-gaming-products");
 // console.log(inputSearch.value);
 // 	if (inputSearch.value.length) {
 // 		inputSearch.value = getDataFromStorage("searchOnStorage");
@@ -194,6 +263,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnTabletsProducts.classList.remove("open-tablets-products");
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
+		btnGamingProducts.classList.remove("open-storages-products");
+
 		renderCatalog();
 	});
 	btnLaptopsProducts.addEventListener("click", () => {
@@ -204,6 +275,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnTabletsProducts.classList.remove("open-tablets-products");
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
+		btnGamingProducts.classList.remove("open-storages-products");
+
 		renderCatalog();
 	});
 	btnMonitorsProducts.addEventListener("click", () => {
@@ -214,8 +287,63 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnTabletsProducts.classList.remove("open-tablets-products");
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
+		btnGamingProducts.classList.remove("open-storages-products");
+
 		renderCatalog();
 	});
+
+	btnTabletsProducts.addEventListener("click", () => {
+		h3CategoryTitle.textContent = "Tablets";
+		btnTabletsProducts.classList.add("open-tablets-products");
+		btnFullProducts.classList.remove("open-all-products");
+		btnLaptopsProducts.classList.remove("open-laptops-products");
+		btnMonitorsProducts.classList.remove("open-monitors-products");
+		btnHeadphonesProducts.classList.remove("open-headphones-products");
+		btnStoragesProducts.classList.remove("open-storages-products");
+		btnGamingProducts.classList.remove("open-storages-products");
+	
+		renderCatalog();
+	});
+
+	btnStoragesProducts.addEventListener("click", () => {
+		h3CategoryTitle.textContent = "Almacenamiento";
+		btnStoragesProducts.classList.add("open-storages-products");
+		btnFullProducts.classList.remove("open-all-products");
+		btnLaptopsProducts.classList.remove("open-laptops-products");
+		btnMonitorsProducts.classList.remove("open-monitors-products");
+		btnHeadphonesProducts.classList.remove("open-headphones-products");
+		btnTabletsProducts.classList.remove("open-tablets-products");
+		btnGamingProducts.classList.remove("open-storages-products");
+	
+		renderCatalog();
+	});
+
+	btnGamingProducts.addEventListener("click", () => {
+		h3CategoryTitle.textContent = "Gaming";
+		btnGamingProducts.classList.add("open-gaming-products");
+		btnFullProducts.classList.remove("open-all-products");
+		btnLaptopsProducts.classList.remove("open-laptops-products");
+		btnMonitorsProducts.classList.remove("open-monitors-products");
+		btnTabletsProducts.classList.remove("open-tablets-products");
+		btnHeadphonesProducts.classList.remove("open-headphones-products");
+		btnStoragesProducts.classList.remove("open-storages-products");
+	
+		renderCatalog();
+	});
+
+	btnHeadphonesProducts.addEventListener("click", () => {
+		h3CategoryTitle.textContent = "Auriculares";
+		btnHeadphonesProducts.classList.add("open-headphones-products");
+		btnFullProducts.classList.remove("open-all-products");
+		btnLaptopsProducts.classList.remove("open-laptops-products");
+		btnMonitorsProducts.classList.remove("open-monitors-products");
+		btnTabletsProducts.classList.remove("open-tablets-products");
+		btnStoragesProducts.classList.remove("open-storages-products");
+		btnGamingProducts.classList.remove("open-gaming-products");
+	
+		renderCatalog();
+	});
+	
 
 	if (inputSearch.value) {
 		renderCatalog(inputSearch.value);
