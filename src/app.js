@@ -1,13 +1,25 @@
+/**
+ * Guarda products en localStorage.
+ */
 let productsOnStorage = products;
 saveDataInStorage("productsOnStorage", products);
 if (getDataFromStorage("productsOnStorage")) {
 	saveDataInStorage("productsOnStorage", productsOnStorage);
 }
 
+/**
+ * Limpia el contenedor de los productos.
+ */
 const clearContainer = () => {
 	const productsContainer = document.querySelector(".products-container");
 	productsContainer.innerHTML = "";
 };
+
+/**
+ * Crea un contenedor que incluye una imagen.
+ * @param {*} image URL de la imagen que se va a mostrar.
+ * @returns Un contenedor que contiene la imagen.
+ */
 
 const createProductimage = (image) => {
 	const divImageContainer = document.createElement("div");
@@ -18,6 +30,13 @@ const createProductimage = (image) => {
 	divImageContainer.append(imgProduct);
 	return divImageContainer;
 };
+
+/**
+ * Genera un contenedor con dos botones:
+ * @param {*} isOnWishList Añade o elimina un producto de la wishlist
+ * @param {*} isOnTrolly Añade o elimina un producto del carrito de compra
+ * @returns Un contenedor donde añade estos botones.
+ */
 
 const createButtonsContainer = (isOnWishList, isOnTrolly) => {
 	const divButtonsContainer = document.createElement("div");
@@ -46,7 +65,13 @@ const createButtonsContainer = (isOnWishList, isOnTrolly) => {
 	return divButtonsContainer;
 };
 
-// FUNCION PARA CREAR EL CONTENEDOR DE INFO DEL PRODUCTO
+/**
+ * Crea un elemento HTML para cada producto
+ *
+ * Cada producto contiene dos botones para añadir o eliminar de la wishlist o del carrito.
+ * @param {*} product Objeto que contiene la información del producto.
+ * @returns HTML Element con estructura del producto.
+ */
 const createInfoProductContainer = (product) => {
 	const divInfoContainer = document.createElement("div");
 	divInfoContainer.classList.add("card-information-container");
@@ -68,6 +93,11 @@ const createInfoProductContainer = (product) => {
 	return divInfoContainer;
 };
 
+/**
+ *
+ * @param {*} product Objeto que contiene la información del producto.
+ * @returns Un contenedor con la estructura de la tarjeta del producto.
+ */
 const createProductCard = (product) => {
 	const divCardContainer = document.createElement("div");
 	divCardContainer.classList.add("product-card");
@@ -82,6 +112,11 @@ const createProductCard = (product) => {
 	return divCardContainer;
 };
 
+/**
+ *
+ * @param {*} name Nombre de un producto que se usará para buscar coincidencias
+ * @returns Devuelve un array con los productos que coincidan con el nombre.
+ */
 const filterProductsByName = (name) => {
 	if (!name) {
 		return productsOnStorage;
@@ -109,7 +144,7 @@ const filterProductsByMonitors = () => {
 };
 
 const filterProductsByTablets = () => {
-	const filterByTablets= productsOnStorage.filter(({ category }) => category.toLowerCase() === "tablets");
+	const filterByTablets = productsOnStorage.filter(({ category }) => category.toLowerCase() === "tablets");
 	if (filterByTablets.length) {
 		return filterByTablets;
 	}
@@ -117,7 +152,7 @@ const filterProductsByTablets = () => {
 };
 
 const filterProductsByStorages = () => {
-	const filterByStorages= productsOnStorage.filter(({ category }) => category.toLowerCase() === "almacenamiento");
+	const filterByStorages = productsOnStorage.filter(({ category }) => category.toLowerCase() === "almacenamiento");
 	if (filterByStorages.length) {
 		return filterByStorages;
 	}
@@ -125,7 +160,7 @@ const filterProductsByStorages = () => {
 };
 
 const filterProductsByGaming = () => {
-	const filterByGaming= productsOnStorage.filter(({ category }) => category.toLowerCase() === "gaming");
+	const filterByGaming = productsOnStorage.filter(({ category }) => category.toLowerCase() === "gaming");
 	if (filterByGaming.length) {
 		return filterByGaming;
 	}
@@ -133,16 +168,19 @@ const filterProductsByGaming = () => {
 };
 
 const filterProductsByHeadphones = () => {
-	const filterByHeadphones= productsOnStorage.filter(({ category }) => category.toLowerCase() === "auriculares");
+	const filterByHeadphones = productsOnStorage.filter(({ category }) => category.toLowerCase() === "auriculares");
 	if (filterByHeadphones.length) {
 		return filterByHeadphones;
 	}
 	return productsOnStorage;
 };
 
-
-
-
+/**
+ *
+ *  Renderiza el catálogo de productos en la interfaz según la categoría seleccionada o el texto de búsqueda.
+ *
+ * @param {*} filtroTexto Texto opcional para filtrar productos por nombre.
+ */
 const renderCatalog = (filtroTexto = "") => {
 	// SELECCION DE ELEMENTOS
 	// const spanForProductsNumber = document.querySelector(".number-of-products");
@@ -189,28 +227,28 @@ const renderCatalog = (filtroTexto = "") => {
 	}
 
 	if (btnStoragesProducts.classList.contains("open-storages-products")) {
-        const onlyStoragesProducts = filterProductsByStorages();
-        onlyStoragesProducts.forEach((product) => {
-            const productCard = createProductCard(product);
-            productsContainer.append(productCard);
-        });
-    }
+		const onlyStoragesProducts = filterProductsByStorages();
+		onlyStoragesProducts.forEach((product) => {
+			const productCard = createProductCard(product);
+			productsContainer.append(productCard);
+		});
+	}
 
 	if (btnGamingProducts.classList.contains("open-gaming-products")) {
-        const onlyGamingProducts = filterProductsByGaming();
-        onlyGamingProducts.forEach((product) => {
-            const productCard = createProductCard(product);
-            productsContainer.append(productCard);
-        });
-    }
+		const onlyGamingProducts = filterProductsByGaming();
+		onlyGamingProducts.forEach((product) => {
+			const productCard = createProductCard(product);
+			productsContainer.append(productCard);
+		});
+	}
 
 	if (btnHeadphonesProducts.classList.contains("open-headphones-products")) {
-        const onlyHeadphonesProducts = filterProductsByHeadphones();
-        onlyHeadphonesProducts.forEach((product) => {
-            const productCard = createProductCard(product);
-            productsContainer.append(productCard);
-        });
-    }
+		const onlyHeadphonesProducts = filterProductsByHeadphones();
+		onlyHeadphonesProducts.forEach((product) => {
+			const productCard = createProductCard(product);
+			productsContainer.append(productCard);
+		});
+	}
 };
 
 // const changepage = () => {
@@ -227,13 +265,22 @@ const renderCatalog = (filtroTexto = "") => {
 // 	});
 // };
 
+/**
+ * /**
+ * Ejecuta la inicialización de la página cuando el DOM ha cargado completamente.
+ * Configura los eventos para el filtrado y navegación entre categorías del catálogo de productos.
+ */
 document.addEventListener("DOMContentLoaded", () => {
 	// SELECCION DE ELEMENTOS
+
 	// changepage();
+
 	const h3CategoryTitle = document.querySelector(".category-title");
 	const spanForProductsNumber = document.querySelector(".number-of-products");
+
 	const inputSearch = document.querySelector("#input-search-product");
 	const btnSearch = document.querySelector(".btnSearch");
+
 	const btnFullProducts = document.querySelector(".btn-full-informatica");
 	const btnLaptopsProducts = document.querySelector(".btn-laptops-products");
 	const btnMonitorsProducts = document.querySelector(".btn-monitors-products");
@@ -241,20 +288,24 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
-// console.log(inputSearch.value);
-// 	if (inputSearch.value.length) {
-// 		inputSearch.value = getDataFromStorage("searchOnStorage");
-// 	}
+
+	// console.log(inputSearch.value);
+	// 	if (inputSearch.value.length) {
+	// 		inputSearch.value = getDataFromStorage("searchOnStorage");
+	// 	}
+
 	// ADDEVENTLISTENER
+
 	inputSearch.addEventListener("keyup", () => {
 		saveDataInStorage("searchOnStorage", inputSearch.value);
-		const currentSearch = getDataFromStorage("searchOnStorage");
 		renderCatalog(inputSearch.value);
 	});
+
 	btnSearch.addEventListener("click", (event) => {
 		event.preventDefault();
 		renderCatalog(inputSearch.value);
 	});
+
 	btnFullProducts.addEventListener("click", () => {
 		h3CategoryTitle.textContent = "Informática";
 		btnFullProducts.classList.add("open-all-products");
@@ -267,6 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		renderCatalog();
 	});
+
 	btnLaptopsProducts.addEventListener("click", () => {
 		h3CategoryTitle.textContent = "Portátiles";
 		btnLaptopsProducts.classList.add("open-laptops-products");
@@ -279,6 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		renderCatalog();
 	});
+
 	btnMonitorsProducts.addEventListener("click", () => {
 		h3CategoryTitle.textContent = "Monitores";
 		btnMonitorsProducts.classList.add("open-monitors-products");
@@ -301,7 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-storages-products");
-	
+
 		renderCatalog();
 	});
 
@@ -314,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnTabletsProducts.classList.remove("open-tablets-products");
 		btnGamingProducts.classList.remove("open-storages-products");
-	
+
 		renderCatalog();
 	});
 
@@ -327,7 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnTabletsProducts.classList.remove("open-tablets-products");
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
-	
+
 		renderCatalog();
 	});
 
@@ -340,15 +393,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnTabletsProducts.classList.remove("open-tablets-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-gaming-products");
-	
+
 		renderCatalog();
 	});
-	
 
 	if (inputSearch.value) {
 		renderCatalog(inputSearch.value);
 	} else {
 		renderCatalog();
 	}
-
 });
