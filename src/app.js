@@ -15,82 +15,91 @@ const clearContainer = () => {
 	productsContainer.innerHTML = "";
 };
 
+
 /**
- * Crea un contenedor que incluye una imagen.
+ * 
  * @param {*} image URL de la imagen que se va a mostrar.
  * @returns Un contenedor que contiene la imagen.
  */
 
 const createProductimage = (image) => {
-	const divImageContainer = document.createElement("div");
-	divImageContainer.classList.add("img-product-container");
+	const imageContainer = document.createElement("div");
+	imageContainer.classList.add("img-product-container");
 
 	const imgProduct = document.createElement("img");
 	imgProduct.src = image;
-	divImageContainer.append(imgProduct);
-	return divImageContainer;
+	imageContainer.append(imgProduct);
+	return imageContainer;
 };
 
+
 /**
- * Genera un contenedor con dos botones:
- * @param {*} isOnWishList Añade o elimina un producto de la wishlist
- * @param {*} isOnTrolly Añade o elimina un producto del carrito de compra
+ * 
+ * @param {*} wishlist Añade o elimina un producto de la wishlist
+ * @param {*} addcart Añade o elimina un producto del carrito de compra
  * @returns Un contenedor donde añade estos botones.
  */
 
-const createButtonsContainer = (isOnWishList, isOnTrolly) => {
-	const divButtonsContainer = document.createElement("div");
-	divButtonsContainer.classList.add("buttons-card-container");
+const createButtonsContainer = (wishlist, addcart) => {
+	const buttonsContainer = document.createElement("div");
+	buttonsContainer.classList.add("buttons-card-container");
 
-	const btnForWishLisst = document.createElement("button");
-	btnForWishLisst.classList.add("btn-add-to-wish-list", "btn-style");
-	btnForWishLisst.textContent = isOnWishList ? "Quitar de Deseados" : "Añadir a deseados";
-	btnForWishLisst.addEventListener("click", () => {
-		isOnWishList = !isOnWishList;
-		btnForWishLisst.textContent = isOnWishList ? "Quitar de Deseados" : "Añadir a deseados";
+	const wishlistBtn = document.createElement("button");
+	wishlistBtn.classList.add("btn-add-to-wish-list", "btn-style");
+
+	wishlistBtn.textContent = wishlist ? "Quitar de Deseados" : "Añadir a deseados";
+
+	wishlistBtn.addEventListener("click", () => {
+		wishlist = !wishlist;
+		wishlistBtn.textContent = wishlist ? "Quitar de Deseados" : "Añadir a deseados";
 		saveDataInStorage(productsOnStorage);
 	});
-	divButtonsContainer.append(btnForWishLisst);
 
-	const btnForTrolly = document.createElement("button");
-	btnForTrolly.classList.add("btn-add-to-trolly", "btn-style");
-	btnForTrolly.textContent = isOnTrolly ? "Eliminar del Carrito" : "Agregar al carrito";
-	btnForTrolly.addEventListener("click", () => {
-		isOnTrolly = !isOnTrolly;
-		btnForTrolly.textContent = isOnTrolly ? "Eliminar del Carrito" : "Agregar al carrito";
+
+	const addCartBtn = document.createElement("button");
+	addCartBtn.classList.add("btn-add-to-trolly", "btn-style");
+
+	addCartBtn.textContent = addcart ? "Eliminar del Carrito" : "Agregar al carrito";
+
+	addCartBtn.addEventListener("click", () => {
+		addcart = !addcart;
+		addCartBtn.textContent = addcart ? "Eliminar del Carrito" : "Agregar al carrito";
 		saveDataInStorage(productsOnStorage);
 	});
-	divButtonsContainer.append(btnForTrolly);
 
-	return divButtonsContainer;
+	buttonsContainer.append(wishlistBtn);
+	buttonsContainer.append(addCartBtn);
+
+	return buttonsContainer;
 };
+
 
 /**
  * Crea un elemento HTML para cada producto
  *
- * Cada producto contiene dos botones para añadir o eliminar de la wishlist o del carrito.
  * @param {*} product Objeto que contiene la información del producto.
  * @returns HTML Element con estructura del producto.
  */
 const createInfoProductContainer = (product) => {
-	const divInfoContainer = document.createElement("div");
-	divInfoContainer.classList.add("card-information-container");
+	const infoContainer = document.createElement("div");
+	infoContainer.classList.add("card-information-container");
 
-	const h3ProductPrice = document.createElement("h3");
-	h3ProductPrice.classList.add("product-price");
-	h3ProductPrice.textContent = `${product.price} €`;
-	divInfoContainer.append(h3ProductPrice);
+	const productPrice = document.createElement("h3");
+	productPrice.classList.add("product-price");
+	productPrice.textContent = `${product.price} €`;
 
-	const paragraphProductName = document.createElement("p");
-	paragraphProductName.classList.add("product-name");
-	paragraphProductName.textContent = product.name;
-	divInfoContainer.append(paragraphProductName);
+	const productName = document.createElement("p");
+	productName.classList.add("product-name");
+	productName.textContent = product.name;
 
-	const { isOnWishList, isOnTrolly } = product;
-	const divButtonsContainer = createButtonsContainer(isOnWishList, isOnTrolly);
-	divInfoContainer.append(divButtonsContainer);
+	const { wishlist, addcart } = product;
+	const buttonsContainer = createButtonsContainer(wishlist, addcart);
 
-	return divInfoContainer;
+	infoContainer.append(productPrice);
+	infoContainer.append(productName);
+	infoContainer.append(buttonsContainer);
+
+	return infoContainer;
 };
 
 /**
@@ -99,17 +108,18 @@ const createInfoProductContainer = (product) => {
  * @returns Un contenedor con la estructura de la tarjeta del producto.
  */
 const createProductCard = (product) => {
-	const divCardContainer = document.createElement("div");
-	divCardContainer.classList.add("product-card");
+	const cardContainer = document.createElement("div");
+	cardContainer.classList.add("product-card");
 
 	const { image } = product;
 	const divImageContainer = createProductimage(image);
-	divCardContainer.append(divImageContainer);
 
 	const divInfoProductContainer = createInfoProductContainer(product);
-	divCardContainer.append(divInfoProductContainer);
 
-	return divCardContainer;
+	cardContainer.append(divImageContainer);
+	cardContainer.append(divInfoProductContainer);
+
+	return cardContainer;
 };
 
 /**
