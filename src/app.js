@@ -21,7 +21,7 @@ if (getDataFromStorage("trolly")) {
 }
 
 // Array para productos en la WishList
-let productsOnWishList = productsOnStorage.filter(({wishlist}) => wishlist);
+let productsOnWishList = productsOnStorage.filter(({ wishlist }) => wishlist);
 if (getDataFromStorage("wishlist")) {
 	productsOnWishList = JSON.parse(localStorage.getItem("wishlist"));
 }
@@ -67,17 +67,17 @@ const recalculateProductsInTheWishList = () => {
 	const spanForProductsOnWishList = document.querySelector(".span-products-on-wish-list");
 	const numberOfProducts = productsOnWishList.length;
 	spanForProductsOnWishList.textContent = numberOfProducts;
-}
+};
 
 const removeProductFromTrolly = (product) => {
 	const indexOfProduct = productsOnTrolly.indexOf((product) => product.id);
 	productsOnTrolly.splice(indexOfProduct, 1);
-}
+};
 
 const removeProductFromWishList = (product) => {
 	const indexOfProduct = productsOnWishList.indexOf((product) => product.id);
 	productsOnWishList.splice(indexOfProduct, 1);
-}
+};
 
 const createButtonsContainer = (product, index) => {
 	const buttonsContainer = document.createElement("div");
@@ -194,8 +194,12 @@ const filterProductsByName = (name) => {
 	return filterByName;
 };
 
-const filterProductsByLaptops = () => {
-	const filterByLaptops = productsOnStorage.filter(({ category }) => category.toLowerCase() === "laptops");
+const filterProductsByLaptops = (name) => {
+	const filterByLaptops = productsOnStorage.filter((product) => {
+		const categoryFilter = product.category.toLowerCase() === "laptops";
+		const nameFilter = product.name.toLowerCase().includes(name.trim().toLowerCase())
+		return categoryFilter && nameFilter;
+	});
 	if (filterByLaptops.length) {
 		renderTitleCatalog(filterByLaptops);
 		return filterByLaptops;
@@ -276,7 +280,7 @@ const renderCatalog = (filtroTexto = "") => {
 	}
 
 	if (btnLaptopsProducts.classList.contains("open-laptops-products")) {
-		const onlyLaptopProducts = filterProductsByLaptops();
+		const onlyLaptopProducts = filterProductsByLaptops(filtroTexto);
 		onlyLaptopProducts.forEach((product, index) => {
 			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
@@ -373,6 +377,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		divLoginContainer.style.display = "none";
 		saveDataInStorage("username", inputLogin.value);
 		spanForUserName.textContent = getDataFromStorage("username");
+		window.scrollTo(0, 0);
 	});
 
 	inputSearch.addEventListener("keyup", () => {
@@ -395,7 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-storages-products");
 
-		renderCatalog();
+		renderCatalog(inputSearch.value);
 	});
 
 	btnLaptopsProducts.addEventListener("click", () => {
@@ -408,7 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-storages-products");
 
-		renderCatalog();
+		renderCatalog(inputSearch.value);
 	});
 
 	btnMonitorsProducts.addEventListener("click", () => {
@@ -421,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-storages-products");
 
-		renderCatalog();
+		renderCatalog(inputSearch.value);
 	});
 
 	btnTabletsProducts.addEventListener("click", () => {
@@ -434,7 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-storages-products");
 
-		renderCatalog();
+		renderCatalog(inputSearch.value);
 	});
 
 	btnStoragesProducts.addEventListener("click", () => {
@@ -447,7 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnTabletsProducts.classList.remove("open-tablets-products");
 		btnGamingProducts.classList.remove("open-storages-products");
 
-		renderCatalog();
+		renderCatalog(inputSearch.value);
 	});
 
 	btnGamingProducts.addEventListener("click", () => {
@@ -460,7 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
 
-		renderCatalog();
+		renderCatalog(inputSearch.value);
 	});
 
 	btnHeadphonesProducts.addEventListener("click", () => {
@@ -473,7 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-gaming-products");
 
-		renderCatalog();
+		renderCatalog(inputSearch.value);
 	});
 
 	spanForUserName.textContent = getDataFromStorage("username");
