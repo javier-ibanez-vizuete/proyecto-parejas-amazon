@@ -101,18 +101,16 @@ const createButtonsContainer = (product, index) => {
 		saveDataInStorage("productsOnStorage", productsOnStorage);
 		renderCatalog();
 	});
-
+	
 	const addCartBtn = document.createElement("button");
 	addCartBtn.classList.add("btn-add-to-trolly", "btn-style");
-
+	
 	addCartBtn.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";
-
+	
 	addCartBtn.addEventListener("click", () => {
 		product.addcart = !product.addcart;
 		if (product.addcart && !productsOnTrolly.some(({ id }) => id === product.id)) {
 			productsOnTrolly.push(product);
-			console.log("HE entrado en el push");
-			console.log(productsOnTrolly.length);
 		}
 		if (!product.addcart) {
 			removeProductFromTrolly(product);
@@ -122,6 +120,7 @@ const createButtonsContainer = (product, index) => {
 		recalculateProductsInTheCar();
 		saveDataInStorage("productsOnStorage", productsOnStorage);
 		renderCatalog();
+		renderTrolly();
 	});
 
 	buttonsContainer.append(wishlistBtn);
@@ -253,10 +252,17 @@ const filterProductsByHeadphones = () => {
 };
 
 const removeFromTrollyCatalog = (product) => {
-	const indexOfProduct = productsOnTrolly.findIndex(({ id }) => id === product);
+	const indexOfProduct = productsOnTrolly.findIndex((element) => {
+		console.log(`${element.id}`);
+		return element.id === product.id;
+	});
 	productsOnTrolly.splice(indexOfProduct, 1);
+	const productToRemoveFromTrolly = productsOnStorage.findIndex((productOnCloud) => productOnCloud.id === product.id);
+	productsOnStorage[productToRemoveFromTrolly].addcart = false;
+	
+	saveDataInStorage("productsOnStorage", productsOnStorage)
 	saveDataInStorage("trolly", productsOnTrolly);
-	console.log(indexOfProduct);
+
 };
 
 const createTrollyCard = (product) => {
@@ -288,6 +294,7 @@ const createTrollyCard = (product) => {
 	btnForRemoveFromTrolly.addEventListener("click", () => {
 		removeFromTrollyCatalog(product);
 		recalculateProductsInTheCar();
+		renderCatalog();
 		renderTrolly();
 	});
 	divInfoTrollyCardContainer.appendChild(btnForRemoveFromTrolly);
@@ -371,6 +378,9 @@ const renderCatalog = (filtroTexto = "") => {
 			productsContainer.append(productCard);
 		});
 	}
+
+	recalculateProductsInTheWishList()
+	recalculateProductsInTheCar()
 };
 
 const renderTitleCatalog = (catalog) => {
@@ -407,7 +417,6 @@ const renderTrolly = () => {
 
 	divTrollySectionContainer.append(trollyCardsContainer);
 };
-renderTrolly();
 /**
  * /**
  * Ejecuta la inicialización de la página cuando el DOM ha cargado completamente.
@@ -423,10 +432,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnSearch = document.querySelector(".btnSearch");
 
 	const spanForUserName = document.querySelector(".span-for-user-name");
-	const btnForTrollyCatalog = document.querySelector(".btn-trolly-catalog")
+	const btnForTrollyCatalog = document.querySelector(".btn-trolly-catalog");
 	const h3CategoryTitle = document.querySelector(".category-title");
 
-	const catalogSection = document.querySelector(".catalog-section")
+	const catalogSection = document.querySelector(".catalog-section");
 	const btnFullProducts = document.querySelector(".btn-full-informatica");
 	const btnLaptopsProducts = document.querySelector(".btn-laptops-products");
 	const btnMonitorsProducts = document.querySelector(".btn-monitors-products");
@@ -435,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
 
-	const trollyCatalog = document.querySelector(".trolly-container")
+	const trollyCatalog = document.querySelector(".trolly-container");
 
 	// ADDEVENTLISTENER
 	btnContinue.addEventListener("click", (event) => {
@@ -463,13 +472,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	btnForTrollyCatalog.addEventListener("click", () => {
 		if (!productsOnTrolly.length) {
 			alert("Tu Carrito esta vacio");
+			catalogSection.classList.remove("dont-show")
 		}
 		if (productsOnTrolly.length) {
 			catalogSection.classList.toggle("dont-show");
 			trollyCatalog.classList.toggle("dont-show");
 		}
 		renderCatalog();
-	})
+	});
 
 	btnFullProducts.addEventListener("click", () => {
 		h3CategoryTitle.textContent = "Informática";
@@ -573,3 +583,4 @@ document.addEventListener("DOMContentLoaded", () => {
 	recalculateProductsInTheWishList();
 	recalculateProductsInTheCar();
 });
+
