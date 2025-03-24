@@ -14,11 +14,16 @@ if (getDataFromStorage("productsOnStorage")) {
 }
 
 // Array para productos en el carrito
-
 let productsOnTrolly = productsOnStorage.filter(({ addcart }) => addcart);
 if (getDataFromStorage("trolly")) {
 	productsOnTrolly = JSON.parse(localStorage.getItem("trolly"));
 	// console.log("Esto vale El carrito",productsOnTrolly);
+}
+
+// Array para productos en la WishList
+let productsOnWishList = productsOnStorage.filter(({wishlist}) => wishlist);
+if (getDataFromStorage("wishlist")) {
+	productsOnWishList = JSON.parse(localStorage.getItem("wishlist"));
 }
 
 /**
@@ -58,9 +63,20 @@ const recalculateProductsInTheCar = () => {
 	spanForProductsOnTrolly.textContent = numberOfProducts;
 };
 
+const recalculateProductsInTheWishList = () => {
+	const spanForProductsOnWishList = document.querySelector(".span-products-on-wish-list");
+	const numberOfProducts = productsOnWishList.length;
+	spanForProductsOnWishList.textContent = numberOfProducts;
+}
+
 const removeProductFromTrolly = (product) => {
 	const indexOfProduct = productsOnTrolly.indexOf((product) => product.id);
 	productsOnTrolly.splice(indexOfProduct, 1);
+}
+
+const removeProductFromWishList = (product) => {
+	const indexOfProduct = productsOnWishList.indexOf((product) => product.id);
+	productsOnWishList.splice(indexOfProduct, 1);
 }
 
 const createButtonsContainer = (product, index) => {
@@ -73,11 +89,15 @@ const createButtonsContainer = (product, index) => {
 	wishlistBtn.textContent = product.wishlist ? "Quitar de Deseados" : "Añadir a deseados";
 	wishlistBtn.addEventListener("click", () => {
 		product.wishlist = !product.wishlist;
-		if (product.wishlist) {
+		if (product.wishlist && !productsOnWishList.includes(product.id)) {
+			productsOnWishList.push(product);
 		}
 		if (!product.wishlist) {
+			removeProductFromWishList(product);
 		}
 		wishlistBtn.textContent = product.wishlist ? "Quitar de Deseados" : "Añadir a deseados";
+		saveDataInStorage("wishlist", productsOnWishList);
+		recalculateProductsInTheWishList();
 		saveDataInStorage("productsOnStorage", productsOnStorage);
 	});
 
@@ -464,5 +484,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		renderCatalog();
 	}
 
+	recalculateProductsInTheWishList();
 	recalculateProductsInTheCar();
 });

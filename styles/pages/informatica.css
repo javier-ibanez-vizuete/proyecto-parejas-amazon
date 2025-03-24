@@ -101,9 +101,17 @@ header span {
 
 .wishlist-container {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 0.5rem;
+}
+
+.wishlist-container .div-icon-heart-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 2rem;
 }
 
 
