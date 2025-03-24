@@ -297,9 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnTabletsProducts = document.querySelector(".btn-tablets-products");
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
-<<<<<<< HEAD
-	
-=======
+
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
 
 	// console.log(inputSearch.value);
@@ -307,7 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	// 		inputSearch.value = getDataFromStorage("searchOnStorage");
 	// 	}
 
->>>>>>> raquelruiz
 	// ADDEVENTLISTENER
 
 	inputSearch.addEventListener("keyup", () => {
