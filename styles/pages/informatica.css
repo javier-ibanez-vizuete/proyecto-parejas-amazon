@@ -99,20 +99,13 @@ header span {
 	gap: 2rem;
 }
 
-.language-selector {
+.wishlist-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 0.5rem;
 }
 
-.icon-language-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	width: 2rem;
-}
 
 .account-container {
 	display: flex;
@@ -162,7 +155,7 @@ main {
 	align-items: center;
 	gap: var(--spacing-2xl);
 	
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;

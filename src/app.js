@@ -7,9 +7,18 @@ if (getDataFromStorage("username")) {
  * Guarda products en localStorage.
  */
 let productsOnStorage = products;
-saveDataInStorage("productsOnStorage", products);
+// saveDataInStorage("productsOnStorage", products);
 if (getDataFromStorage("productsOnStorage")) {
-	saveDataInStorage("productsOnStorage", productsOnStorage);
+	productsOnStorage = JSON.parse(localStorage.getItem("productsOnStorage"));
+	// saveDataInStorage("productsOnStorage", productsOnStorage);
+}
+
+// Array para productos en el carrito
+
+let productsOnTrolly = productsOnStorage.filter(({ addcart }) => addcart);
+if (getDataFromStorage("trolly")) {
+	productsOnTrolly = JSON.parse(localStorage.getItem("trolly"));
+	// console.log("Esto vale El carrito",productsOnTrolly);
 }
 
 /**
@@ -20,9 +29,8 @@ const clearContainer = () => {
 	productsContainer.innerHTML = "";
 };
 
-
 /**
- * 
+ *
  * @param {*} image URL de la imagen que se va a mostrar.
  * @returns Un contenedor que contiene la imagen.
  */
@@ -37,39 +45,63 @@ const createProductimage = (image) => {
 	return imageContainer;
 };
 
-
 /**
- * 
+ *
  * @param {*} wishlist Añade o elimina un producto de la wishlist
  * @param {*} addcart Añade o elimina un producto del carrito de compra
  * @returns Un contenedor donde añade estos botones.
  */
 
-const createButtonsContainer = (wishlist, addcart) => {
+const recalculateProductsInTheCar = () => {
+	const spanForProductsOnTrolly = document.querySelector(".span-products-on-trolly");
+	const numberOfProducts = productsOnTrolly.length;
+	spanForProductsOnTrolly.textContent = numberOfProducts;
+};
+
+const removeProductFromTrolly = (product) => {
+	const indexOfProduct = productsOnTrolly.indexOf((product) => product.id);
+	productsOnTrolly.splice(indexOfProduct, 1);
+}
+
+const createButtonsContainer = (product, index) => {
 	const buttonsContainer = document.createElement("div");
 	buttonsContainer.classList.add("buttons-card-container");
 
 	const wishlistBtn = document.createElement("button");
 	wishlistBtn.classList.add("btn-add-to-wish-list", "btn-style");
 
-	wishlistBtn.textContent = wishlist ? "Quitar de Deseados" : "Añadir a deseados";
-
+	wishlistBtn.textContent = product.wishlist ? "Quitar de Deseados" : "Añadir a deseados";
 	wishlistBtn.addEventListener("click", () => {
-		wishlist = !wishlist;
-		wishlistBtn.textContent = wishlist ? "Quitar de Deseados" : "Añadir a deseados";
-		saveDataInStorage(productsOnStorage);
+		product.wishlist = !product.wishlist;
+		if (product.wishlist) {
+		}
+		if (!product.wishlist) {
+		}
+		wishlistBtn.textContent = product.wishlist ? "Quitar de Deseados" : "Añadir a deseados";
+		saveDataInStorage("productsOnStorage", productsOnStorage);
 	});
-
 
 	const addCartBtn = document.createElement("button");
 	addCartBtn.classList.add("btn-add-to-trolly", "btn-style");
 
-	addCartBtn.textContent = addcart ? "Eliminar del Carrito" : "Agregar al carrito";
+	addCartBtn.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";
 
 	addCartBtn.addEventListener("click", () => {
-		addcart = !addcart;
-		addCartBtn.textContent = addcart ? "Eliminar del Carrito" : "Agregar al carrito";
-		saveDataInStorage(productsOnStorage);
+		console.log("Esto vale productos en el carrito", productsOnTrolly);
+		console.log("Esto vale index", index);
+		product.addcart = !product.addcart;
+		if (product.addcart && !productsOnTrolly.includes(product.id)) {
+			console.log("He entrado en el push");
+			productsOnTrolly.push(product);
+			console.log(productsOnTrolly);
+		}
+		if (!product.addcart) {
+			removeProductFromTrolly(product);
+		}
+		addCartBtn.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";
+		saveDataInStorage("trolly", productsOnTrolly);
+		recalculateProductsInTheCar();
+		saveDataInStorage("productsOnStorage", productsOnStorage);
 	});
 
 	buttonsContainer.append(wishlistBtn);
@@ -78,14 +110,13 @@ const createButtonsContainer = (wishlist, addcart) => {
 	return buttonsContainer;
 };
 
-
 /**
  * Crea un elemento HTML para cada producto
  *
  * @param {*} product Objeto que contiene la información del producto.
  * @returns HTML Element con estructura del producto.
  */
-const createInfoProductContainer = (product) => {
+const createInfoProductContainer = (product, index) => {
 	const infoContainer = document.createElement("div");
 	infoContainer.classList.add("card-information-container");
 
@@ -97,8 +128,7 @@ const createInfoProductContainer = (product) => {
 	productName.classList.add("product-name");
 	productName.textContent = product.name;
 
-	const { wishlist, addcart } = product;
-	const buttonsContainer = createButtonsContainer(wishlist, addcart);
+	const buttonsContainer = createButtonsContainer(product, index);
 
 	infoContainer.append(productPrice);
 	infoContainer.append(productName);
@@ -112,14 +142,14 @@ const createInfoProductContainer = (product) => {
  * @param {*} product Objeto que contiene la información del producto.
  * @returns Un contenedor con la estructura de la tarjeta del producto.
  */
-const createProductCard = (product) => {
+const createProductCard = (product, index) => {
 	const cardContainer = document.createElement("div");
 	cardContainer.classList.add("product-card");
 
 	const { image } = product;
 	const divImageContainer = createProductimage(image);
 
-	const divInfoProductContainer = createInfoProductContainer(product);
+	const divInfoProductContainer = createInfoProductContainer(product, index);
 
 	cardContainer.append(divImageContainer);
 	cardContainer.append(divInfoProductContainer);
@@ -218,56 +248,56 @@ const renderCatalog = (filtroTexto = "") => {
 
 	if (btnFullProducts.classList.contains("open-all-products")) {
 		const productsByName = filterProductsByName(filtroTexto);
-		productsByName.forEach((product) => {
-			const productCard = createProductCard(product);
+		productsByName.forEach((product, index) => {
+			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
 		});
 	}
 
 	if (btnLaptopsProducts.classList.contains("open-laptops-products")) {
 		const onlyLaptopProducts = filterProductsByLaptops();
-		onlyLaptopProducts.forEach((product) => {
-			const productCard = createProductCard(product);
+		onlyLaptopProducts.forEach((product, index) => {
+			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
 		});
 	}
 
 	if (btnMonitorsProducts.classList.contains("open-monitors-products")) {
 		const onlyMonitorsProducts = filterProductsByMonitors();
-		onlyMonitorsProducts.forEach((product) => {
-			const productCard = createProductCard(product);
+		onlyMonitorsProducts.forEach((product, index) => {
+			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
 		});
 	}
 
 	if (btnTabletsProducts.classList.contains("open-tablets-products")) {
 		const onlyTabletsProducts = filterProductsByTablets();
-		onlyTabletsProducts.forEach((product) => {
-			const productCard = createProductCard(product);
+		onlyTabletsProducts.forEach((product, index) => {
+			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
 		});
 	}
 
 	if (btnStoragesProducts.classList.contains("open-storages-products")) {
 		const onlyStoragesProducts = filterProductsByStorages();
-		onlyStoragesProducts.forEach((product) => {
-			const productCard = createProductCard(product);
+		onlyStoragesProducts.forEach((product, index) => {
+			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
 		});
 	}
 
 	if (btnGamingProducts.classList.contains("open-gaming-products")) {
 		const onlyGamingProducts = filterProductsByGaming();
-		onlyGamingProducts.forEach((product) => {
-			const productCard = createProductCard(product);
+		onlyGamingProducts.forEach((product, index) => {
+			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
 		});
 	}
 
 	if (btnHeadphonesProducts.classList.contains("open-headphones-products")) {
 		const onlyHeadphonesProducts = filterProductsByHeadphones();
-		onlyHeadphonesProducts.forEach((product) => {
-			const productCard = createProductCard(product);
+		onlyHeadphonesProducts.forEach((product, index) => {
+			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
 		});
 	}
@@ -280,26 +310,10 @@ const renderTitleCatalog = (catalog) => {
 	const H3titleForCatalog = document.createElement("h3");
 	H3titleForCatalog.classList.add("number-of-products");
 	H3titleForCatalog.textContent = `(${catalog.length})`;
-	divTitleCatalogContainer.append(H3titleForCatalog)
+	divTitleCatalogContainer.append(H3titleForCatalog);
 
 	return divTitleCatalogContainer;
-}
-
-
-
-// const changepage = () => {
-// 	const inputName = document.querySelector(".input-name");
-// 	const btnLogin = document.querySelector(".continue-btn");
-// 	btnLogin.addEventListener("click", (event) => {
-// 		if (!inputName.value.trim()) {
-// 			event.preventDefault();
-// 			return alert("Por favor introduzca un nombre para iniciar sesion");
-// 		}
-// 		saveDataInStorage("userName", inputName.value);
-// 		window.location.href = "http://127.0.0.1:5500/pages/informatica.html";
-// 		// window.location.href = "https://project-reply-amazon.netlify.app/pages/informatica.html";
-// 	});
-// };
+};
 
 /**
  * /**
@@ -309,15 +323,15 @@ const renderTitleCatalog = (catalog) => {
 document.addEventListener("DOMContentLoaded", () => {
 	// SELECCION DE ELEMENTOS
 
-	// changepage();
-
 	const inputLogin = document.querySelector("#loginInput");
-	const btnContinue = document.querySelector(".continue-btn")
-
-	const h3CategoryTitle = document.querySelector(".category-title");
+	const btnContinue = document.querySelector(".continue-btn");
 
 	const inputSearch = document.querySelector("#input-search-product");
 	const btnSearch = document.querySelector(".btnSearch");
+
+	const spanForUserName = document.querySelector(".span-for-user-name");
+
+	const h3CategoryTitle = document.querySelector(".category-title");
 
 	const btnFullProducts = document.querySelector(".btn-full-informatica");
 	const btnLaptopsProducts = document.querySelector(".btn-laptops-products");
@@ -337,8 +351,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		const divLoginContainer = document.querySelector(".login-background-container");
 		divLoginContainer.style.display = "none";
 		saveDataInStorage("username", inputLogin.value);
-	})
-	
+		spanForUserName.textContent = getDataFromStorage("username");
+	});
+
 	inputSearch.addEventListener("keyup", () => {
 		saveDataInStorage("searchOnStorage", inputSearch.value);
 		renderCatalog(inputSearch.value);
@@ -440,9 +455,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		renderCatalog();
 	});
 
+	spanForUserName.textContent = getDataFromStorage("username");
+
 	if (inputSearch.value) {
 		renderCatalog(inputSearch.value);
 	} else {
 		renderCatalog();
 	}
+
+	recalculateProductsInTheCar();
 });
