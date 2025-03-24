@@ -70,7 +70,6 @@ const recalculateProductsInTheWishList = () => {
 
 const removeProductFromTrolly = (product) => {
 	const indexOfProduct = productsOnTrolly.findIndex((product) => product.id);
-	console.log(indexOfProduct);
 	productsOnTrolly.splice(indexOfProduct, 1);
 };
 
@@ -101,12 +100,12 @@ const createButtonsContainer = (product, index) => {
 		saveDataInStorage("productsOnStorage", productsOnStorage);
 		renderCatalog();
 	});
-	
+
 	const addCartBtn = document.createElement("button");
 	addCartBtn.classList.add("btn-add-to-trolly", "btn-style");
-	
+
 	addCartBtn.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";
-	
+
 	addCartBtn.addEventListener("click", () => {
 		product.addcart = !product.addcart;
 		if (product.addcart && !productsOnTrolly.some(({ id }) => id === product.id)) {
@@ -252,17 +251,15 @@ const filterProductsByHeadphones = () => {
 };
 
 const removeFromTrollyCatalog = (product) => {
-	const indexOfProduct = productsOnTrolly.findIndex((element) => {
-		console.log(`${element.id}`);
-		return element.id === product.id;
-	});
+	const indexOfProduct = productsOnTrolly.findIndex((element) => element.id === product.id);
 	productsOnTrolly.splice(indexOfProduct, 1);
 	const productToRemoveFromTrolly = productsOnStorage.findIndex((productOnCloud) => productOnCloud.id === product.id);
 	productsOnStorage[productToRemoveFromTrolly].addcart = false;
-	
-	saveDataInStorage("productsOnStorage", productsOnStorage)
-	saveDataInStorage("trolly", productsOnTrolly);
 
+	renderCatalog();
+
+	saveDataInStorage("productsOnStorage", productsOnStorage);
+	saveDataInStorage("trolly", productsOnTrolly);
 };
 
 const createTrollyCard = (product) => {
@@ -313,6 +310,7 @@ const createTrollyCard = (product) => {
 const renderCatalog = (filtroTexto = "") => {
 	// SELECCION DE ELEMENTOS
 	// const spanForProductsNumber = document.querySelector(".number-of-products");
+	const catalogSection = document.querySelector(".catalog-section");
 	const btnFullProducts = document.querySelector(".btn-full-informatica");
 	const btnLaptopsProducts = document.querySelector(".btn-laptops-products");
 	const btnMonitorsProducts = document.querySelector(".btn-monitors-products");
@@ -321,6 +319,7 @@ const renderCatalog = (filtroTexto = "") => {
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
 	const productsContainer = document.querySelector(".products-container");
+	const trollyCatalog = document.querySelector(".trolly-container");
 	clearContainer();
 
 	if (btnFullProducts.classList.contains("open-all-products")) {
@@ -379,8 +378,13 @@ const renderCatalog = (filtroTexto = "") => {
 		});
 	}
 
-	recalculateProductsInTheWishList()
-	recalculateProductsInTheCar()
+	if (!productsOnTrolly.length) {
+		trollyCatalog.classList.add("dont-show");
+		catalogSection.classList.remove("dont-show");
+	}
+
+	recalculateProductsInTheWishList();
+	recalculateProductsInTheCar();
 };
 
 const renderTitleCatalog = (catalog) => {
@@ -445,6 +449,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
 
 	const trollyCatalog = document.querySelector(".trolly-container");
+	if (!productsOnTrolly.length) {
+		trollyCatalog.classList.add("dont-show");
+	}
 
 	// ADDEVENTLISTENER
 	btnContinue.addEventListener("click", (event) => {
@@ -472,7 +479,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	btnForTrollyCatalog.addEventListener("click", () => {
 		if (!productsOnTrolly.length) {
 			alert("Tu Carrito esta vacio");
-			catalogSection.classList.remove("dont-show")
+			catalogSection.classList.remove("dont-show");
 		}
 		if (productsOnTrolly.length) {
 			catalogSection.classList.toggle("dont-show");
@@ -583,4 +590,3 @@ document.addEventListener("DOMContentLoaded", () => {
 	recalculateProductsInTheWishList();
 	recalculateProductsInTheCar();
 });
-
