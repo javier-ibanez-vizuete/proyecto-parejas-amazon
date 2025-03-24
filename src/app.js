@@ -172,10 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnTabletsProducts = document.querySelector(".btn-tablets-products");
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
-// console.log(inputSearch.value);
-// 	if (inputSearch.value.length) {
-// 		inputSearch.value = getDataFromStorage("searchOnStorage");
-// 	}
+	
 	// ADDEVENTLISTENER
 	inputSearch.addEventListener("keyup", () => {
 		saveDataInStorage("searchOnStorage", inputSearch.value);
