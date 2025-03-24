@@ -205,6 +205,7 @@ const filterProductsByStorages = () => {
 	const filterByStorages = productsOnStorage.filter(({ category }) => category.toLowerCase() === "almacenamiento");
 	if (filterByStorages.length) {
 		renderTitleCatalog(filterByStorages);
+		return filterByStorages;
 	}
 	return productsOnStorage;
 };
