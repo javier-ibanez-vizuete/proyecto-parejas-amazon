@@ -134,17 +134,20 @@ const createProductCard = (product) => {
  */
 const filterProductsByName = (name) => {
 	if (!name) {
+		renderTitleCatalog(productsOnStorage);
 		return productsOnStorage;
 	}
 	const filterByName = productsOnStorage.filter((product) =>
 		product.name.toLowerCase().includes(name.trim().toLowerCase())
 	);
+	renderTitleCatalog(filterByName);
 	return filterByName;
 };
 
 const filterProductsByLaptops = () => {
 	const filterByLaptops = productsOnStorage.filter(({ category }) => category.toLowerCase() === "laptops");
 	if (filterByLaptops.length) {
+		renderTitleCatalog(filterByLaptops);
 		return filterByLaptops;
 	}
 	return productsOnStorage;
@@ -153,6 +156,7 @@ const filterProductsByLaptops = () => {
 const filterProductsByMonitors = () => {
 	const filterByMonitors = productsOnStorage.filter(({ category }) => category.toLowerCase() === "monitor");
 	if (filterByMonitors.length) {
+		renderTitleCatalog(filterByMonitors);
 		return filterByMonitors;
 	}
 	return productsOnStorage;
@@ -161,6 +165,7 @@ const filterProductsByMonitors = () => {
 const filterProductsByTablets = () => {
 	const filterByTablets = productsOnStorage.filter(({ category }) => category.toLowerCase() === "tablets");
 	if (filterByTablets.length) {
+		renderTitleCatalog(filterByTablets);
 		return filterByTablets;
 	}
 	return productsOnStorage;
@@ -169,7 +174,7 @@ const filterProductsByTablets = () => {
 const filterProductsByStorages = () => {
 	const filterByStorages = productsOnStorage.filter(({ category }) => category.toLowerCase() === "almacenamiento");
 	if (filterByStorages.length) {
-		return filterByStorages;
+		renderTitleCatalog(filterByStorages);
 	}
 	return productsOnStorage;
 };
@@ -177,6 +182,7 @@ const filterProductsByStorages = () => {
 const filterProductsByGaming = () => {
 	const filterByGaming = productsOnStorage.filter(({ category }) => category.toLowerCase() === "gaming");
 	if (filterByGaming.length) {
+		renderTitleCatalog(filterByGaming);
 		return filterByGaming;
 	}
 	return productsOnStorage;
@@ -185,6 +191,7 @@ const filterProductsByGaming = () => {
 const filterProductsByHeadphones = () => {
 	const filterByHeadphones = productsOnStorage.filter(({ category }) => category.toLowerCase() === "auriculares");
 	if (filterByHeadphones.length) {
+		renderTitleCatalog(filterByHeadphones);
 		return filterByHeadphones;
 	}
 	return productsOnStorage;
@@ -266,6 +273,20 @@ const renderCatalog = (filtroTexto = "") => {
 	}
 };
 
+const renderTitleCatalog = (catalog) => {
+	const divTitleCatalogContainer = document.querySelector(".title-catalog-container");
+	divTitleCatalogContainer.innerHTML = "";
+
+	const H3titleForCatalog = document.createElement("h3");
+	H3titleForCatalog.classList.add("number-of-products");
+	H3titleForCatalog.textContent = `(${catalog.length})`;
+	divTitleCatalogContainer.append(H3titleForCatalog)
+
+	return divTitleCatalogContainer;
+}
+
+
+
 // const changepage = () => {
 // 	const inputName = document.querySelector(".input-name");
 // 	const btnLogin = document.querySelector(".continue-btn");
@@ -294,7 +315,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnContinue = document.querySelector(".continue-btn")
 
 	const h3CategoryTitle = document.querySelector(".category-title");
-	const spanForProductsNumber = document.querySelector(".number-of-products");
 
 	const inputSearch = document.querySelector("#input-search-product");
 	const btnSearch = document.querySelector(".btnSearch");
@@ -315,7 +335,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			window.location.reload();
 		}
 		const divLoginContainer = document.querySelector(".login-background-container");
-		console.log("HACIENDO CLICK EN CONTINUAR");
 		divLoginContainer.style.display = "none";
 		saveDataInStorage("username", inputLogin.value);
 	})
