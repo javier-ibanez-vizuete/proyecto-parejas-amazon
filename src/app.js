@@ -1,3 +1,8 @@
+// EVITAR QUE SALTE EL LOGIN
+if (getDataFromStorage("username")) {
+	document.querySelector(".login-background-container").style.display = "none";
+}
+
 /**
  * Guarda products en localStorage.
  */
@@ -285,6 +290,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// changepage();
 
+	const inputLogin = document.querySelector("#loginInput");
+	const btnContinue = document.querySelector(".continue-btn")
+
 	const h3CategoryTitle = document.querySelector(".category-title");
 	const spanForProductsNumber = document.querySelector(".number-of-products");
 
@@ -300,13 +308,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
 
-	// console.log(inputSearch.value);
-	// 	if (inputSearch.value.length) {
-	// 		inputSearch.value = getDataFromStorage("searchOnStorage");
-	// 	}
-
 	// ADDEVENTLISTENER
-
+	btnContinue.addEventListener("click", (event) => {
+		event.preventDefault();
+		if (!inputLogin.value) {
+			window.location.reload();
+		}
+		const divLoginContainer = document.querySelector(".login-background-container");
+		console.log("HACIENDO CLICK EN CONTINUAR");
+		divLoginContainer.style.display = "none";
+		saveDataInStorage("username", inputLogin.value);
+	})
+	
 	inputSearch.addEventListener("keyup", () => {
 		saveDataInStorage("searchOnStorage", inputSearch.value);
 		renderCatalog(inputSearch.value);
