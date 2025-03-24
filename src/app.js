@@ -197,7 +197,7 @@ const filterProductsByName = (name) => {
 const filterProductsByLaptops = (name) => {
 	const filterByLaptops = productsOnStorage.filter((product) => {
 		const categoryFilter = product.category.toLowerCase() === "laptops";
-		const nameFilter = product.name.toLowerCase().includes(name.trim().toLowerCase())
+		const nameFilter = product.name.toLowerCase().includes(name.trim().toLowerCase());
 		return categoryFilter && nameFilter;
 	});
 	if (filterByLaptops.length) {
@@ -250,6 +250,44 @@ const filterProductsByHeadphones = () => {
 		return filterByHeadphones;
 	}
 	return productsOnStorage;
+};
+
+const removeFromTrolly = (product) => {
+	
+};
+
+const createTrollyCard = (product) => {
+	const divTrollyCard = document.createElement("div");
+	divTrollyCard.classList.add("trolly-card");
+
+	const divImageTrollyCardContainer = document.createElement("div");
+	divImageTrollyCardContainer.classList.add("card-trolly-image-container");
+
+	const imageTrollyCard = document.createElement("img");
+	console.log("Que es product.image => ", product.image);
+	imageTrollyCard.src = product.image;
+	divImageTrollyCardContainer.append(imageTrollyCard);
+
+	const divInfoTrollyCardContainer = document.createElement("div");
+	divInfoTrollyCardContainer.classList.add("card-info-trolly-container");
+
+	const h3PriceTrollyCard = document.createElement("h3");
+	h3PriceTrollyCard.textContent = `${product.price}€`;
+	divInfoTrollyCardContainer.appendChild(h3PriceTrollyCard);
+
+	const productTrollyName = document.createElement("p");
+	productTrollyName.classList.add("product-trolly-name");
+	productTrollyName.textContent = product.name;
+	divInfoTrollyCardContainer.appendChild(productTrollyName);
+
+	const btnForRemoveFromTrolly = document.createElement("button");
+	btnForRemoveFromTrolly.classList.add("btn-remove-from-trolly", "btn-style")
+	btnForRemoveFromTrolly.textContent = "Eliminar del carrito";
+	divInfoTrollyCardContainer.appendChild(btnForRemoveFromTrolly);
+
+	divTrollyCard.append(divImageTrollyCardContainer, divInfoTrollyCardContainer);
+
+	return divTrollyCard;
 };
 
 /**
@@ -340,6 +378,30 @@ const renderTitleCatalog = (catalog) => {
 	return divTitleCatalogContainer;
 };
 
+const renderTrolly = () => {
+	const divTrollySectionContainer = document.querySelector(".trolly-container");
+	divTrollySectionContainer.innerHTML = "";
+
+	const titleForTrolly = document.createElement("h3");
+	titleForTrolly.classList.add("title-of-trolly");
+	titleForTrolly.textContent = "Productos en Carrito";
+	divTrollySectionContainer.append(titleForTrolly);
+
+	const trollyCardsContainer = document.createElement("div");
+	trollyCardsContainer.classList.add("product-on-trolly-container");
+	if (!productsOnTrolly.length) {
+		console.log(productsOnTrolly);
+		alert("No hay elementos en el carrito!");
+	}
+	productsOnTrolly.forEach((product) => {
+		const productOnTrollyCard = createTrollyCard(product);
+
+		trollyCardsContainer.append(productOnTrollyCard);
+	});
+
+	divTrollySectionContainer.append(trollyCardsContainer);
+};
+renderTrolly();
 /**
  * /**
  * Ejecuta la inicialización de la página cuando el DOM ha cargado completamente.
