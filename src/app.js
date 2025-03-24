@@ -17,7 +17,6 @@ if (getDataFromStorage("productsOnStorage")) {
 let productsOnTrolly = productsOnStorage.filter(({ addcart }) => addcart);
 if (getDataFromStorage("trolly")) {
 	productsOnTrolly = JSON.parse(localStorage.getItem("trolly"));
-	// console.log("Esto vale El carrito",productsOnTrolly);
 }
 
 // Array para productos en la WishList
@@ -70,12 +69,13 @@ const recalculateProductsInTheWishList = () => {
 };
 
 const removeProductFromTrolly = (product) => {
-	const indexOfProduct = productsOnTrolly.indexOf((product) => product.id);
+	const indexOfProduct = productsOnTrolly.findIndex((product) => product.id);
+	console.log(indexOfProduct);
 	productsOnTrolly.splice(indexOfProduct, 1);
 };
 
 const removeProductFromWishList = (product) => {
-	const indexOfProduct = productsOnWishList.indexOf((product) => product.id);
+	const indexOfProduct = productsOnWishList.findIndex((product) => product.id);
 	productsOnWishList.splice(indexOfProduct, 1);
 };
 
@@ -89,7 +89,7 @@ const createButtonsContainer = (product, index) => {
 	wishlistBtn.textContent = product.wishlist ? "Quitar de Deseados" : "Añadir a deseados";
 	wishlistBtn.addEventListener("click", () => {
 		product.wishlist = !product.wishlist;
-		if (product.wishlist && !productsOnWishList.includes(product.id)) {
+		if (product.wishlist && !productsOnWishList.some(({ id }) => id === product.id)) {
 			productsOnWishList.push(product);
 		}
 		if (!product.wishlist) {
@@ -99,6 +99,7 @@ const createButtonsContainer = (product, index) => {
 		saveDataInStorage("wishlist", productsOnWishList);
 		recalculateProductsInTheWishList();
 		saveDataInStorage("productsOnStorage", productsOnStorage);
+		renderCatalog();
 	});
 
 	const addCartBtn = document.createElement("button");
@@ -107,13 +108,11 @@ const createButtonsContainer = (product, index) => {
 	addCartBtn.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";
 
 	addCartBtn.addEventListener("click", () => {
-		console.log("Esto vale productos en el carrito", productsOnTrolly);
-		console.log("Esto vale index", index);
 		product.addcart = !product.addcart;
-		if (product.addcart && !productsOnTrolly.includes(product.id)) {
-			console.log("He entrado en el push");
+		if (product.addcart && !productsOnTrolly.some(({ id }) => id === product.id)) {
 			productsOnTrolly.push(product);
-			console.log(productsOnTrolly);
+			console.log("HE entrado en el push");
+			console.log(productsOnTrolly.length);
 		}
 		if (!product.addcart) {
 			removeProductFromTrolly(product);
@@ -122,6 +121,7 @@ const createButtonsContainer = (product, index) => {
 		saveDataInStorage("trolly", productsOnTrolly);
 		recalculateProductsInTheCar();
 		saveDataInStorage("productsOnStorage", productsOnStorage);
+		renderCatalog();
 	});
 
 	buttonsContainer.append(wishlistBtn);
@@ -252,8 +252,11 @@ const filterProductsByHeadphones = () => {
 	return productsOnStorage;
 };
 
-const removeFromTrolly = (product) => {
-	
+const removeFromTrollyCatalog = (product) => {
+	const indexOfProduct = productsOnTrolly.findIndex(({ id }) => id === product);
+	productsOnTrolly.splice(indexOfProduct, 1);
+	saveDataInStorage("trolly", productsOnTrolly);
+	console.log(indexOfProduct);
 };
 
 const createTrollyCard = (product) => {
@@ -264,7 +267,6 @@ const createTrollyCard = (product) => {
 	divImageTrollyCardContainer.classList.add("card-trolly-image-container");
 
 	const imageTrollyCard = document.createElement("img");
-	console.log("Que es product.image => ", product.image);
 	imageTrollyCard.src = product.image;
 	divImageTrollyCardContainer.append(imageTrollyCard);
 
@@ -281,8 +283,13 @@ const createTrollyCard = (product) => {
 	divInfoTrollyCardContainer.appendChild(productTrollyName);
 
 	const btnForRemoveFromTrolly = document.createElement("button");
-	btnForRemoveFromTrolly.classList.add("btn-remove-from-trolly", "btn-style")
+	btnForRemoveFromTrolly.classList.add("btn-remove-from-trolly", "btn-style");
 	btnForRemoveFromTrolly.textContent = "Eliminar del carrito";
+	btnForRemoveFromTrolly.addEventListener("click", () => {
+		removeFromTrollyCatalog(product);
+		recalculateProductsInTheCar();
+		renderTrolly();
+	});
 	divInfoTrollyCardContainer.appendChild(btnForRemoveFromTrolly);
 
 	divTrollyCard.append(divImageTrollyCardContainer, divInfoTrollyCardContainer);
@@ -390,8 +397,7 @@ const renderTrolly = () => {
 	const trollyCardsContainer = document.createElement("div");
 	trollyCardsContainer.classList.add("product-on-trolly-container");
 	if (!productsOnTrolly.length) {
-		console.log(productsOnTrolly);
-		alert("No hay elementos en el carrito!");
+		// alert("No hay elementos en el carrito!");
 	}
 	productsOnTrolly.forEach((product) => {
 		const productOnTrollyCard = createTrollyCard(product);
@@ -417,17 +423,19 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnSearch = document.querySelector(".btnSearch");
 
 	const spanForUserName = document.querySelector(".span-for-user-name");
-
+	const btnForTrollyCatalog = document.querySelector(".btn-trolly-catalog")
 	const h3CategoryTitle = document.querySelector(".category-title");
 
+	const catalogSection = document.querySelector(".catalog-section")
 	const btnFullProducts = document.querySelector(".btn-full-informatica");
 	const btnLaptopsProducts = document.querySelector(".btn-laptops-products");
 	const btnMonitorsProducts = document.querySelector(".btn-monitors-products");
 	const btnTabletsProducts = document.querySelector(".btn-tablets-products");
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
-
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
+
+	const trollyCatalog = document.querySelector(".trolly-container")
 
 	// ADDEVENTLISTENER
 	btnContinue.addEventListener("click", (event) => {
@@ -451,6 +459,17 @@ document.addEventListener("DOMContentLoaded", () => {
 		event.preventDefault();
 		renderCatalog(inputSearch.value);
 	});
+
+	btnForTrollyCatalog.addEventListener("click", () => {
+		if (!productsOnTrolly.length) {
+			alert("Tu Carrito esta vacio");
+		}
+		if (productsOnTrolly.length) {
+			catalogSection.classList.toggle("dont-show");
+			trollyCatalog.classList.toggle("dont-show");
+		}
+		renderCatalog();
+	})
 
 	btnFullProducts.addEventListener("click", () => {
 		h3CategoryTitle.textContent = "Informática";
