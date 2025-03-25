@@ -8,11 +8,11 @@
 		--container-width: 90%;
 	}
 
-	/* --------------------- INDEX HTML------------------------- */
-	/* -------------header------------ */
+	/* ---------------LOGIN SECTION----------------------- */
 	.logo-container {
-		width: 180px;
+		width: 160px;
 	}
+	/* -------------------HEADER---------------------------- */
 
 	/* -----------------------MAIN----------------- */
 	.card-container {
@@ -199,11 +199,47 @@
 		--container-width: 85%;
 	}
 
-	/* -------------- INDEX HTML------------- */
-	/* --------------header----------- */
-	.logo-container {
-		width: 200px;
+	.login-background-container {
+		gap: var(--spacing-md);
+
+		padding: var(--spacing-sm);
 	}
+
+	.login-section {
+		gap: var(--spacing-xs);
+
+		max-width: 340px;
+	}
+
+	.user-content .input-name {
+		padding: var(--spacing-xs);
+	}
+
+	.help-container {
+		padding: var(--spacing-sm) 0px;
+	}
+
+	.help-container > .icon-container {
+		width: 0.6rem;
+	}
+
+	.business-shop-container {
+		padding: var(--spacing-sm) 0px;
+	}
+
+	.new-on-amazon-section {
+		padding: var(--spacing-xs) 0;
+	}
+
+	.button-new-on-amazon-section-container {
+		max-width: 260px;
+		margin: 0 auto;
+	}
+
+	.new-user-btn {
+		flex: 1;
+	}
+	/* --------------header----------- */
 
 	/* --------------------MAIN--------------------- */
 	.card-container {
@@ -258,29 +294,10 @@
 }
 
 /* DESKTOP XXL */
-@media (min-width: 1040px) {
+@media (min-width: 1440px) {
 	:root {
 		--font-size-html: 17px;
 		--container-width: 85%;
-	}
-
-	.user-container,
-	.new-user-btn {
-		width: 20%;
-	}
-
-	.user-content,
-	.help-container a,
-	.business-shop-content h2,
-	.business-shop-content a {
-		font-size: 18px;
-	}
-
-	.new-user-container,
-	.new-user-btn,
-	.footer-links,
-	.copyright {
-		font-size: 14px;
 	}
 
 	/* PÁGINA ELECTRÓNICA */
