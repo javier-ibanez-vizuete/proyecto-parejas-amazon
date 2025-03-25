@@ -493,7 +493,7 @@ main {
 
 	padding: var(--spacing-md);
 	border-bottom: 1px solid lightgray;
-	overflow: scroll;
+	overflow: auto;
 }
 
 .electronics-categories-container button {
