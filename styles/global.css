@@ -161,6 +161,12 @@ footer {
 	margin: 0 auto;
 }
 
+.btn-style {
+	padding: var(--spacing-sm);
+	border: none;
+	border-radius: var(--radius-button);
+}
+
 /* ---------------LOGIN SECTION----------------------- */
 .login-background-container {
 	display: flex;
@@ -469,25 +475,25 @@ header span {
 	cursor: pointer;
 }
 
-/* -------MAIN------ */
+/* ----------------------------------MAIN----------------------------- */
 
 main {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: stretch;
 	flex: 1;
 }
 
 /* -------------BARRA ACCESO FILTRADO (CATEGORIAS)------------- */
 .electronics-categories-container {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
-	gap: 2rem;
+	gap: 1rem;
 
 	padding: var(--spacing-md);
 	border-bottom: 1px solid lightgray;
-	overflow-x: auto;
+	overflow: scroll;
 }
 
 .electronics-categories-container button {
@@ -513,51 +519,11 @@ main {
 	width: 0.5rem;
 }
 
-
-
-/* ----------SECCION 'NUEVO EN AMAZON'------------- */
-
-/* -----------FOOTER------------- */
-:root {
-	--accent-bg-color: #f4ede4;
-	--primary-text-color: #000;
-	--links-text-color: #2162a1;
-	--contrast-color: #232f3e;
-	--light-gray: #eaeaea;
-	--primary-color-btn: #f4bb71;
-	--secondary-color-btn: #f3a847;
-
-	--font-size-html: 14px;
-
-	--spacing-xs: 4px;
-	--spacing-sm: 8px;
-	--spacing-md: 12px;
-	--spacing-lg: 16px;
-	--spacing-xl: 24px;
-	--spacing-2xl: 36px;
-	--spacing-3xl: 48px;
-	--spacing-4xl: 60px;
-
-	--radius-card: 4px;
-	--radius-button: 16px;
-
-	--container-width: 95%;
-}
-
-/* -----------------------PÁGINA INFORMATICA------------------------- */
-
-/* ------------------------CLASES PARA OCULTAR Y MOSTRAR ------------------- */
-
-/* ----------HEADER---------- */
-
-/* ---------------MAIN---------------- */
-
-
 /* --------------SECCION DE PRODUCTOS ------------------- */
 .catalog-section {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 1rem;
 }
 
 .catalog-section .category-title {
@@ -566,9 +532,10 @@ main {
 }
 
 .products-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	gap: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2rem;
 }
 
 .product-card {
@@ -576,7 +543,7 @@ main {
 	flex-direction: column;
 	justify-content: space-between;
 
-	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 	padding: var(--spacing-xs);
 	border-radius: var(--radius-card);
 }
@@ -630,6 +597,44 @@ main {
 	background-color: var(--secondary-color-btn);
 }
 
+/* ----------SECCION 'NUEVO EN AMAZON'------------- */
+
+/* -----------FOOTER------------- */
+:root {
+	--accent-bg-color: #f4ede4;
+	--primary-text-color: #000;
+	--links-text-color: #2162a1;
+	--contrast-color: #232f3e;
+	--light-gray: #eaeaea;
+	--primary-color-btn: #f4bb71;
+	--secondary-color-btn: #f3a847;
+
+	--font-size-html: 14px;
+
+	--spacing-xs: 4px;
+	--spacing-sm: 8px;
+	--spacing-md: 12px;
+	--spacing-lg: 16px;
+	--spacing-xl: 24px;
+	--spacing-2xl: 36px;
+	--spacing-3xl: 48px;
+	--spacing-4xl: 60px;
+
+	--radius-card: 4px;
+	--radius-button: 16px;
+
+	--container-width: 95%;
+}
+
+/* -----------------------PÁGINA INFORMATICA------------------------- */
+
+/* ------------------------CLASES PARA OCULTAR Y MOSTRAR ------------------- */
+
+/* ----------HEADER---------- */
+
+/* ---------------MAIN---------------- */
+
+
 /* --------------SECTION FOR TROLLY CATALOG----------- */
 .trolly-container {
 	display: flex;
@@ -674,13 +679,6 @@ main {
 
 .product-trolly-name {
 	display: block;
-	/* line-clamp: initial;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical; */
-
-	/* overflow: hidden; */
-	/* text-overflow: ellipsis;
-	transition: all 2s ease-in-out; */
 }
 
 .product-trolly-name:hover {
