@@ -99,6 +99,7 @@ const createButtonsContainer = (product, index) => {
 		recalculateProductsInTheWishList();
 		saveDataInStorage("productsOnStorage", productsOnStorage);
 		renderCatalog();
+		renderWishList();
 	});
 
 	const addCartBtn = document.createElement("button");
@@ -320,6 +321,76 @@ const createTrollyCard = (product) => {
 
 	return divTrollyCard;
 };
+const createImageForWishedProduct = (image) => {
+	const imageContainer = document.createElement("div");
+	imageContainer.classList.add("wished-product-image-container");
+
+	const imgWishedProduct = document.createElement("img");
+	imgWishedProduct.src = image;
+	imageContainer.append(imgWishedProduct);
+
+	return imageContainer;
+};
+
+const removeFromWishList = (id) => {
+	const indexOfProduct = productsOnWishList.findIndex((product) => product.id === id);
+	productsOnWishList.splice(indexOfProduct, 1);
+
+	const productToRemoveFromWishList = productsOnStorage.findIndex((element) => element.id === id);
+	console.log("Que vale id", id);
+	console.log("Que vale ProductToRemove", productToRemoveFromWishList);
+	productsOnStorage[productToRemoveFromWishList].wishlist = false;
+
+	saveDataInStorage("wishlist", productsOnWishList);
+	saveDataInStorage("productsOnStorage", productsOnStorage);
+}
+
+const createButtonForWishedCard = (id) => {
+	const btnForWishedCard = document.createElement("button");
+	btnForWishedCard.classList.add("btn-style", "btn-remove-wish-list");
+	btnForWishedCard.textContent = "Eliminar de Deseados";
+
+	btnForWishedCard.addEventListener("click", () => {
+		removeFromWishList(id);
+		recalculateProductsInTheWishList();
+
+		renderWishList();
+	})
+
+	return btnForWishedCard;
+};
+
+const createInfoWishedCard = (product) => {
+	const divInfoContainer = document.createElement("div");
+	divInfoContainer.classList.add("wished-product-info-container");
+
+	const h3PriceContainer = document.createElement("h3");
+	h3PriceContainer.textContent = `${product.price}€`;
+
+	const paragraphWishedProductName = document.createElement("p");
+	paragraphWishedProductName.textContent = product.name;
+
+	const {id} = product;
+	const btnWishedCard = createButtonForWishedCard(id);
+
+	divInfoContainer.append(h3PriceContainer, paragraphWishedProductName, btnWishedCard);
+
+	return divInfoContainer;
+};
+
+const createWishListCard = (product) => {
+	const divWishedCard = document.createElement("div");
+	divWishedCard.classList.add("wished-product-card");
+
+	const { image } = product;
+	const imageWishedProduct = createImageForWishedProduct(image);
+	divWishedCard.append(imageWishedProduct);
+
+	const infoCardContainer = createInfoWishedCard(product);
+	divWishedCard.append(infoCardContainer);
+
+	return divWishedCard;
+};
 
 /**
  *
@@ -419,6 +490,25 @@ const renderTitleCatalog = (catalog) => {
 	return divTitleCatalogContainer;
 };
 
+const renderWishList = () => {
+	const divWishListSectionContainer = document.querySelector(".wishlist-container-section");
+	divWishListSectionContainer.innerHTML = "";
+
+	const titleForWishList = document.createElement("h3");
+	titleForWishList.classList.add("title-of-wish-list");
+	titleForWishList.textContent = "Productos Deseados";
+	divWishListSectionContainer.append(titleForWishList);
+
+	const wishListProductsContainer = document.createElement("div");
+	wishListProductsContainer.classList.add("products-on-wish-list-container");
+
+	productsOnWishList.forEach((product) => {
+		const wishListProductCard = createWishListCard(product);
+		wishListProductsContainer.append(wishListProductCard);
+	});
+	divWishListSectionContainer.append(wishListProductsContainer);
+};
+
 const renderTrolly = () => {
 	const divTrollySectionContainer = document.querySelector(".trolly-container");
 	divTrollySectionContainer.innerHTML = "";
@@ -430,9 +520,7 @@ const renderTrolly = () => {
 
 	const trollyCardsContainer = document.createElement("div");
 	trollyCardsContainer.classList.add("product-on-trolly-container");
-	if (!productsOnTrolly.length) {
-		// alert("No hay elementos en el carrito!");
-	}
+
 	productsOnTrolly.forEach((product) => {
 		const productOnTrollyCard = createTrollyCard(product);
 
@@ -457,6 +545,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const spanForUserName = document.querySelector(".span-for-user-name");
 	const btnForTrollyCatalog = document.querySelector(".btn-trolly-catalog");
+	const btnForWishList = document.querySelector(".wishlist-container");
 	const h3CategoryTitle = document.querySelector(".category-title");
 
 	const catalogSection = document.querySelector(".catalog-section");
@@ -468,6 +557,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
 
+	const wishListCatalog = document.querySelector(".wishlist-container-section");
 	const trollyCatalog = document.querySelector(".trolly-container");
 	if (!productsOnTrolly.length) {
 		trollyCatalog.classList.add("dont-show");
@@ -501,12 +591,46 @@ document.addEventListener("DOMContentLoaded", () => {
 			alert("Tu Carrito esta vacio");
 			catalogSection.classList.remove("dont-show");
 		}
-		if (productsOnTrolly.length) {
-			catalogSection.classList.toggle("dont-show");
-			trollyCatalog.classList.toggle("dont-show");
+
+		if (productsOnTrolly.length && !trollyCatalog.classList.contains("dont-show")) {
+			console.log("NO TIENE LA CLASE DONT SHOW");
+			catalogSection.classList.remove("dont-show");
+			trollyCatalog.classList.add("dont-show");
+			wishListCatalog.classList.add("dont-show");
+			return;
+		}
+		if (productsOnTrolly.length && trollyCatalog.classList.contains("dont-show")) {
+			console.log("SI TIENE LA CLASE");
+			catalogSection.classList.add("dont-show");
+			trollyCatalog.classList.remove("dont-show");
+			wishListCatalog.classList.add("dont-show");
+			return;
 		}
 		renderCatalog();
 	});
+
+	btnForWishList.addEventListener("click", () => {
+		if (!productsOnWishList.length) {
+			alert("Tu Lista de Deseados esta Vacia");
+			catalogSection.classList.remove("dont-show")
+			trollyCatalog.classList.add("dont-show");
+			wishListCatalog.classList.add("dont-show");
+		}
+		if (productsOnWishList.length && !wishListCatalog.classList.contains("dont-show")) {
+			catalogSection.classList.remove("dont-show");
+			wishListCatalog.classList.add("dont-show");
+			trollyCatalog.classList.add("dont-show");
+			return;
+		}
+		if (productsOnWishList.length && wishListCatalog.classList.contains("dont-show")) {
+			catalogSection.classList.add("dont-show");
+			wishListCatalog.classList.remove("dont-show");
+			trollyCatalog.classList.add("dont-show");
+			return;
+		}
+		renderCatalog();
+		renderWishList();
+	})
 
 	btnFullProducts.addEventListener("click", () => {
 		h3CategoryTitle.textContent = "Informática";
@@ -607,6 +731,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		renderCatalog();
 	}
 
+	renderTrolly();
+	renderWishList();
 	recalculateProductsInTheWishList();
 	recalculateProductsInTheCar();
 });
