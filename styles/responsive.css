@@ -5,14 +5,34 @@
 	:root {
 		--font-size-html: 15px;
 		--radius-card: 6px;
-		--container-width: 90%;
+		--container-width: 95%;
 	}
 
 	/* ---------------LOGIN SECTION----------------------- */
 	.logo-container {
 		width: 160px;
 	}
-	/* -------------------HEADER---------------------------- */
+
+	/* ----------------  HEADER   -------------------------- */
+	header {
+		padding: var(--spacing-lg);
+	}
+
+	.logo-header-container {
+		width: 160px;
+	}
+
+	.user-trolly-container {
+		gap: 1rem;
+	}
+
+	.title-for-account-and-icon-container {
+		gap: 0.4rem;
+	}
+
+	.icon-account-arrow-container {
+		width: 0.6rem;
+	}
 
 	/* -----------------------MAIN----------------- */
 	.card-container {
@@ -199,6 +219,7 @@
 		--container-width: 85%;
 	}
 
+/* ---------------------  LOGIN SECTION -------------------------- */
 	.login-background-container {
 		gap: var(--spacing-md);
 
@@ -239,7 +260,49 @@
 	.new-user-btn {
 		flex: 1;
 	}
-	/* --------------header----------- */
+
+/* ----------------  HEADER   -------------------------- */
+header {
+	flex-direction: row;
+	align-items: center;
+	gap: 2rem;
+
+	padding: var(--spacing-md);
+}
+
+.logo-header-container {
+	width: 120px;
+}
+
+.search-container {
+	display: flex;
+	justify-content: center;
+	flex: 1;
+}
+
+.user-trolly-container {
+	justify-content: flex-end;
+	gap: 2rem;
+}
+
+/* .account-container {
+	flex: 0;
+} */
+.title-for-account-and-icon-container {
+	gap: 0.5rem;
+}
+
+.icon-account-arrow-container {
+	width: 1rem;
+}
+
+.wishlist-container {
+	flex: 0;
+}
+
+.trolly-for-products-container {
+	flex: 0;
+}
 
 	/* --------------------MAIN--------------------- */
 	.card-container {

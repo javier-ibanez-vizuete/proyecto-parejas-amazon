@@ -131,8 +131,26 @@ body .dont-show {
 }
 
 body {
+	height: 100%;
 	overflow-x: hidden;
 }
+
+html {
+	overflow-x: hidden;
+}
+body {
+	overflow-x: hidden;
+}
+header {
+	overflow-x: hidden;
+}
+main {
+	overflow-x: hidden;
+}
+footer {
+	overflow-x: hidden;
+}
+
 .body-container {
 	display: flex;
 	flex-direction: column;
@@ -178,7 +196,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	gap: var(--spacing-sm);
-	
+
 	border: 1px solid #e1e1e1;
 	border-radius: var(--radius-card);
 	max-width: 320px;
@@ -193,7 +211,7 @@ body {
 
 .user-content .input-name {
 	background-color: #e8f0fe;
-	border: 1px solid  #e1e1e1;
+	border: 1px solid #e1e1e1;
 	border-radius: var(--radius-card);
 	padding: var(--spacing-sm);
 	outline: none;
@@ -319,63 +337,18 @@ body {
 }
 
 .new-user-btn:hover {
-background-color: rgb(230, 230, 230, 0.5);
+	background-color: rgb(230, 230, 230, 0.5);
 }
 
-/* ----------------MAIN-------------------------- */
-
-main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	flex: 1;
-}
-
-/* -------MAIN / FORM------ */
-
-/* ----------SECCION 'NUEVO EN AMAZON'------------- */
-
-/* -----------FOOTER------------- */
-:root {
-	--accent-bg-color: #f4ede4;
-	--primary-text-color: #000;
-	--links-text-color: #2162a1;
-	--contrast-color: #232f3e;
-	--light-gray: #eaeaea;
-	--primary-color-btn: #f4bb71;
-	--secondary-color-btn: #f3a847;
-
-	--font-size-html: 14px;
-
-	--spacing-xs: 4px;
-	--spacing-sm: 8px;
-	--spacing-md: 12px;
-	--spacing-lg: 16px;
-	--spacing-xl: 24px;
-	--spacing-2xl: 36px;
-	--spacing-3xl: 48px;
-	--spacing-4xl: 60px;
-
-	--radius-card: 4px;
-	--radius-button: 16px;
-
-	--container-width: 95%;
-}
-
-/* -----------------------PÁGINA INFORMATICA------------------------- */
-
-/* ------------------------CLASES PARA OCULTAR Y MOSTRAR ------------------- */
-
-/* ----------HEADER---------- */
+/* ----------------  HEADER   -------------------------- */
 header {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	gap: 2rem;
+	gap: 1rem;
 
 	background-color: #131921;
-	padding: var(--spacing-sm);
-	overflow-x: auto;
+	padding: var(--spacing-md);
 }
 
 header p,
@@ -391,15 +364,14 @@ header span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-shrink: 0;
+	align-self: center;
 
-	width: 12rem;
+	width: 200px;
 }
 
 .search-container {
 	display: flex;
 	justify-content: center;
-	flex: 1;
 }
 
 .search-container input {
@@ -431,11 +403,35 @@ header span {
 	gap: 2rem;
 }
 
+.account-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+}
+.title-for-account-and-icon-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.1rem;
+}
+
+.icon-account-arrow-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 0.5rem;
+}
+
 .wishlist-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	flex: 1;
+
+	cursor: pointer;
 }
 
 .wishlist-container .div-icon-heart-container {
@@ -446,31 +442,12 @@ header span {
 	width: 2rem;
 }
 
-.account-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.title-for-account-and-icon-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-.icon-account-arrow-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	width: 1rem;
-}
-
 .trolly-for-products-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	flex: 1;
 
 	cursor: pointer;
 }
@@ -492,11 +469,13 @@ header span {
 	cursor: pointer;
 }
 
-/* ---------------MAIN---------------- */
+/* -------MAIN------ */
 
 main {
-	overflow-x: hidden;
-	align-items: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
 }
 
 /* -------------BARRA ACCESO FILTRADO (CATEGORIAS)------------- */
@@ -533,6 +512,46 @@ main {
 
 	width: 0.5rem;
 }
+
+
+
+/* ----------SECCION 'NUEVO EN AMAZON'------------- */
+
+/* -----------FOOTER------------- */
+:root {
+	--accent-bg-color: #f4ede4;
+	--primary-text-color: #000;
+	--links-text-color: #2162a1;
+	--contrast-color: #232f3e;
+	--light-gray: #eaeaea;
+	--primary-color-btn: #f4bb71;
+	--secondary-color-btn: #f3a847;
+
+	--font-size-html: 14px;
+
+	--spacing-xs: 4px;
+	--spacing-sm: 8px;
+	--spacing-md: 12px;
+	--spacing-lg: 16px;
+	--spacing-xl: 24px;
+	--spacing-2xl: 36px;
+	--spacing-3xl: 48px;
+	--spacing-4xl: 60px;
+
+	--radius-card: 4px;
+	--radius-button: 16px;
+
+	--container-width: 95%;
+}
+
+/* -----------------------PÁGINA INFORMATICA------------------------- */
+
+/* ------------------------CLASES PARA OCULTAR Y MOSTRAR ------------------- */
+
+/* ----------HEADER---------- */
+
+/* ---------------MAIN---------------- */
+
 
 /* --------------SECCION DE PRODUCTOS ------------------- */
 .catalog-section {
