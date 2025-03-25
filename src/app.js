@@ -205,8 +205,12 @@ const filterProductsByLaptops = (name) => {
 	return productsOnStorage;
 };
 
-const filterProductsByMonitors = () => {
-	const filterByMonitors = productsOnStorage.filter(({ category }) => category.toLowerCase() === "monitor");
+const filterProductsByMonitors = (name) => {
+	const filterByMonitors = productsOnStorage.filter((product) => {
+		const categoryFilter = product.category.toLowerCase() === "monitor";
+		const nameFilter = product.name.toLowerCase().includes(name.trim().toLowerCase());
+		return categoryFilter && nameFilter;
+	});
 	if (filterByMonitors.length) {
 		renderTitleCatalog(filterByMonitors);
 		return filterByMonitors;
@@ -214,8 +218,12 @@ const filterProductsByMonitors = () => {
 	return productsOnStorage;
 };
 
-const filterProductsByTablets = () => {
-	const filterByTablets = productsOnStorage.filter(({ category }) => category.toLowerCase() === "tablets");
+const filterProductsByTablets = (name) => {
+	const filterByTablets = productsOnStorage.filter((product) => {
+		const categoryFilter = product.category.toLowerCase() === "tablets";
+		const nameFilter = product.name.toLowerCase().includes(name.trim().toLowerCase());
+		return categoryFilter && nameFilter;
+	});
 	if (filterByTablets.length) {
 		renderTitleCatalog(filterByTablets);
 		return filterByTablets;
@@ -223,8 +231,12 @@ const filterProductsByTablets = () => {
 	return productsOnStorage;
 };
 
-const filterProductsByStorages = () => {
-	const filterByStorages = productsOnStorage.filter(({ category }) => category.toLowerCase() === "almacenamiento");
+const filterProductsByStorages = (name) => {
+	const filterByStorages = productsOnStorage.filter((product) => {
+		const categoryFilter = product.category.toLowerCase() === "almacenamiento";
+		const nameFilter = product.name.toLowerCase().includes(name.trim().toLowerCase());
+		return categoryFilter && nameFilter;
+	});
 	if (filterByStorages.length) {
 		renderTitleCatalog(filterByStorages);
 		return filterByStorages;
@@ -232,8 +244,12 @@ const filterProductsByStorages = () => {
 	return productsOnStorage;
 };
 
-const filterProductsByGaming = () => {
-	const filterByGaming = productsOnStorage.filter(({ category }) => category.toLowerCase() === "gaming");
+const filterProductsByGaming = (name) => {
+	const filterByGaming = productsOnStorage.filter((product) => {
+		const categoryFilter = product.category.toLowerCase() === "gaming";
+		const nameFilter = product.name.toLowerCase().includes(name.trim().toLowerCase());
+		return categoryFilter && nameFilter;
+	});
 	if (filterByGaming.length) {
 		renderTitleCatalog(filterByGaming);
 		return filterByGaming;
@@ -241,8 +257,12 @@ const filterProductsByGaming = () => {
 	return productsOnStorage;
 };
 
-const filterProductsByHeadphones = () => {
-	const filterByHeadphones = productsOnStorage.filter(({ category }) => category.toLowerCase() === "auriculares");
+const filterProductsByHeadphones = (name) => {
+	const filterByHeadphones = productsOnStorage.filter((product) => {
+		const categoryFilter = product.category.toLowerCase() === "auriculares";
+		const nameFilter = product.name.toLowerCase().includes(name.trim().toLowerCase());
+		return categoryFilter && nameFilter;
+	});
 	if (filterByHeadphones.length) {
 		renderTitleCatalog(filterByHeadphones);
 		return filterByHeadphones;
@@ -339,7 +359,7 @@ const renderCatalog = (filtroTexto = "") => {
 	}
 
 	if (btnMonitorsProducts.classList.contains("open-monitors-products")) {
-		const onlyMonitorsProducts = filterProductsByMonitors();
+		const onlyMonitorsProducts = filterProductsByMonitors(filtroTexto);
 		onlyMonitorsProducts.forEach((product, index) => {
 			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
@@ -347,7 +367,7 @@ const renderCatalog = (filtroTexto = "") => {
 	}
 
 	if (btnTabletsProducts.classList.contains("open-tablets-products")) {
-		const onlyTabletsProducts = filterProductsByTablets();
+		const onlyTabletsProducts = filterProductsByTablets(filtroTexto);
 		onlyTabletsProducts.forEach((product, index) => {
 			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
@@ -355,7 +375,7 @@ const renderCatalog = (filtroTexto = "") => {
 	}
 
 	if (btnStoragesProducts.classList.contains("open-storages-products")) {
-		const onlyStoragesProducts = filterProductsByStorages();
+		const onlyStoragesProducts = filterProductsByStorages(filtroTexto);
 		onlyStoragesProducts.forEach((product, index) => {
 			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
@@ -363,7 +383,7 @@ const renderCatalog = (filtroTexto = "") => {
 	}
 
 	if (btnGamingProducts.classList.contains("open-gaming-products")) {
-		const onlyGamingProducts = filterProductsByGaming();
+		const onlyGamingProducts = filterProductsByGaming(filtroTexto);
 		onlyGamingProducts.forEach((product, index) => {
 			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
@@ -371,7 +391,7 @@ const renderCatalog = (filtroTexto = "") => {
 	}
 
 	if (btnHeadphonesProducts.classList.contains("open-headphones-products")) {
-		const onlyHeadphonesProducts = filterProductsByHeadphones();
+		const onlyHeadphonesProducts = filterProductsByHeadphones(filtroTexto);
 		onlyHeadphonesProducts.forEach((product, index) => {
 			const productCard = createProductCard(product, index);
 			productsContainer.append(productCard);
