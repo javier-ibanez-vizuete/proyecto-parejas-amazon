@@ -9,7 +9,7 @@ if (getDataFromStorage("username")) {
 let productsOnStorage = products;
 // saveDataInStorage("productsOnStorage", products);
 if (getDataFromStorage("productsOnStorage")) {
-	productsOnStorage = getDataFromStorage("productsOnStorage");
+	productsOnStorage = JSON.parse(localStorage.getItem("productsOnStorage"));
 	// saveDataInStorage("productsOnStorage", productsOnStorage);
 }
 
@@ -47,6 +47,10 @@ const createProductimage = (image) => {
 	imgProduct.src = image;
 	imageContainer.append(imgProduct);
 	return imageContainer;
+};
+
+const calculateTotalPrice = () => {
+	return productsOnTrolly.reduce((total, product) => total + product.price, 0);
 };
 
 /**
@@ -528,16 +532,33 @@ const renderTrolly = () => {
 	});
 
 	divTrollySectionContainer.append(trollyCardsContainer);
+
+	const totalPriceContainer = document.createElement("div");
+	totalPriceContainer.classList.add("total-price-container");
+
+	const totalPriceLabel = document.createElement("h3");
+	totalPriceLabel.textContent = `Total: ${calculateTotalPrice()}€`;
+	totalPriceContainer.append(totalPriceLabel);
+
+	const payButton = document.createElement("button");
+	payButton.classList.add("btn-pay");
+	payButton.textContent = "Pagar";
+	payButton.addEventListener("click", () => {
+		alert("Redirigiendo al pago...");
+	});
+
+	totalPriceContainer.append(payButton);
+	divTrollySectionContainer.append(totalPriceContainer);
 };
+
 /**
  * /**
  * Ejecuta la inicialización de la página cuando el DOM ha cargado completamente.
  * Configura los eventos para el filtrado y navegación entre categorías del catálogo de productos.
  */
 document.addEventListener("DOMContentLoaded", () => {
-	createBackToTopButton();
 	// SELECCION DE ELEMENTOS
-	const bodyContainer = document.querySelector(".body-container");
+
 	const inputLogin = document.querySelector("#loginInput");
 	const btnContinue = document.querySelector(".continue-btn");
 
@@ -557,9 +578,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
-
-	const btnBackToTop = document.querySelector(".btn-back-to-top");
-	console.log(btnBackToTop);
 
 	const wishListCatalog = document.querySelector(".wishlist-container-section");
 	const trollyCatalog = document.querySelector(".trolly-container");
@@ -725,22 +743,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnGamingProducts.classList.remove("open-gaming-products");
 
 		renderCatalog(inputSearch.value);
-	});
-
-	window.addEventListener("scroll", () => {
-		console.log("HAciendo SCROLL");
-		if (window.scrollY > 500) {
-			btnBackToTop.style.bottom = "40px";
-			btnBackToTop.style.pointerEvents = "auto";
-		} else {
-			btnBackToTop.style.bottom = "-50px";
-			btnBackToTop.style.pointerEvents = "none";
-		}
-	});
-
-	btnBackToTop.addEventListener("click", (event) => {
-		event.preventDefault();
-		window.scrollTo({ top: 0, behavior: "smooth" });
 	});
 
 	spanForUserName.textContent = getDataFromStorage("username");
