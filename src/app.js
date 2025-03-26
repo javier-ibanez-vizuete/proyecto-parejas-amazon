@@ -510,7 +510,23 @@ const renderWishList = () => {
 		const wishListProductCard = createWishListCard(product);
 		wishListProductsContainer.append(wishListProductCard);
 	});
+
 	divWishListSectionContainer.append(wishListProductsContainer);
+
+	const wishlistBtnsContainer = document.createElement("div");
+	wishlistBtnsContainer.classList.add("wislist-buttons-container");
+
+	const moveToCartBtn = document.createElement("button");
+	moveToCartBtn.classList.add("move-to-cart-btn");
+	moveToCartBtn.textContent = "Mover al carrito";
+
+	const resetWishlist = document.createElement("button");
+	resetWishlist.classList.add("reset-wishlist");
+	resetWishlist.textContent = "Vaciar lista de deseos";
+
+	divWishListSectionContainer.appendChild(wishlistBtnsContainer);
+	wishlistBtnsContainer.appendChild(moveToCartBtn);
+	wishlistBtnsContainer.appendChild(resetWishlist);
 };
 
 const renderTrolly = () => {
