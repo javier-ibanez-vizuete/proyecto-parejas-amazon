@@ -1,3 +1,5 @@
+const bodyContainer = document.querySelector(".body-container")
+
 const createBackToTopButton = () => {
 	const btnBackToTop = document.createElement("button");
 	btnBackToTop.classList.add("btn-back-to-top");
@@ -8,4 +10,24 @@ const createBackToTopButton = () => {
 				</path>
 			</svg>`;
 	document.body.appendChild(btnBackToTop);
+};
+
+const createFloatingTrollyButton = () => {
+	
+	const divFloatingTrollyContainer = document.createElement("div");
+	divFloatingTrollyContainer.classList.add("floating-trolly-button");
+
+	const spanFloatingTrolly = document.createElement("span");
+	spanFloatingTrolly.classList.add("span-floating-products-on-trolly");
+	spanFloatingTrolly.textContent = 0;
+	divFloatingTrollyContainer.append(spanFloatingTrolly);
+
+	const btnFloatingTrolly = document.createElement("button");
+	const imgFloatingTrolly = document.createElement("img");
+	imgFloatingTrolly.src = "/media/icons/icon-trolly-products-white.png"
+	imgFloatingTrolly.alt = "black basket";
+	btnFloatingTrolly.append(imgFloatingTrolly);
+	divFloatingTrollyContainer.append(btnFloatingTrolly);
+
+	bodyContainer.append(divFloatingTrollyContainer);
 };

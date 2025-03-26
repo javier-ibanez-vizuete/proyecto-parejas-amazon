@@ -575,6 +575,7 @@ const renderTrolly = () => {
 document.addEventListener("DOMContentLoaded", () => {
 	// SELECCION DE ELEMENTOS
 	createBackToTopButton();
+	createFloatingTrollyButton();
 	const inputLogin = document.querySelector("#loginInput");
 	const btnContinue = document.querySelector(".continue-btn");
 
@@ -583,6 +584,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const spanForUserName = document.querySelector(".span-for-user-name");
 	const btnForTrollyCatalog = document.querySelector(".btn-trolly-catalog");
+	const btnFloatingTrollyContainer = document.querySelector(".floating-trolly-button")
 	const btnForWishList = document.querySelector(".wishlist-container");
 	const h3CategoryTitle = document.querySelector(".category-title");
 
@@ -648,6 +650,30 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 		renderCatalog();
 	});
+
+	btnFloatingTrollyContainer.addEventListener("click", () => {
+		window.scrollTo({top: 0, behavior: "smooth"});
+		if (!productsOnTrolly.length) {
+			alert("Tu Carrito esta vacio");
+			catalogSection.classList.remove("dont-show");
+		}
+
+		if (productsOnTrolly.length && !trollyCatalog.classList.contains("dont-show")) {
+			console.log("NO TIENE LA CLASE DONT SHOW");
+			catalogSection.classList.remove("dont-show");
+			trollyCatalog.classList.add("dont-show");
+			wishListCatalog.classList.add("dont-show");
+			return;
+		}
+		if (productsOnTrolly.length && trollyCatalog.classList.contains("dont-show")) {
+			console.log("SI TIENE LA CLASE");
+			catalogSection.classList.add("dont-show");
+			trollyCatalog.classList.remove("dont-show");
+			wishListCatalog.classList.add("dont-show");
+			return;
+		}
+		renderCatalog();
+	})
 
 	btnForWishList.addEventListener("click", () => {
 		if (!productsOnWishList.length) {
@@ -765,8 +791,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	window.addEventListener("scroll", () => {
 		if (window.scrollY > 500) {
+			btnFloatingTrollyContainer.style.top = "40px";
 			btnGoToTop.style.bottom = "40px";
 		} else {
+			btnFloatingTrollyContainer.style.top = "-50px";
 			btnGoToTop.style.bottom = "-50px";
 		}
 	});
