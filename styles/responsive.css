@@ -1,7 +1,7 @@
 /* MOBILE FIRST */
 
 /* TABLET */
-@media (min-width: 481px) {
+@media (min-width: 768px) {
 	:root {
 		--font-size-html: 15px;
 		--radius-card: 6px;
@@ -83,9 +83,9 @@
 }
 /* ---------XXXXXXX---------- */
 
-.footer {
+/* .footer {
 	padding: 0px var(--spacing-md) var(--spacing-md);
-}
+} */
 
 .amazon-countries-container {
 	gap: 1rem;

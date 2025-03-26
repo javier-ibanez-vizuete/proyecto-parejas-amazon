@@ -574,7 +574,7 @@ const renderTrolly = () => {
  */
 document.addEventListener("DOMContentLoaded", () => {
 	// SELECCION DE ELEMENTOS
-
+	createBackToTopButton();
 	const inputLogin = document.querySelector("#loginInput");
 	const btnContinue = document.querySelector(".continue-btn");
 
@@ -594,7 +594,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
-
+	
+	const btnGoToTop = document.querySelector(".btn-back-to-top");
+	
 	const wishListCatalog = document.querySelector(".wishlist-container-section");
 	const trollyCatalog = document.querySelector(".trolly-container");
 	if (!productsOnTrolly.length) {
@@ -760,6 +762,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		renderCatalog(inputSearch.value);
 	});
+
+	window.addEventListener("scroll", () => {
+		if (window.scrollY > 500) {
+			btnGoToTop.style.bottom = "40px";
+		} else {
+			btnGoToTop.style.bottom = "-50px";
+		}
+	});
+
+	btnGoToTop.addEventListener("click", () => {
+		window.scrollTo({top: 0, behavior: "smooth"})
+	})
 
 	spanForUserName.textContent = getDataFromStorage("username");
 
