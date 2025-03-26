@@ -6,15 +6,21 @@
  ** Si es un objeto, devuelve objeto parseado. Si es una cadena, devuelve igual que está.
  * Si no se encuentra el valor, devuelve null.
  */
+
 const getDataFromStorage = (key) => {
 	const data = localStorage.getItem(key);
-	if (data && typeof data !== "string") {
-		return JSON.parse(data);
+
+	if (!data) return null; // SI NO HAY NADA EN LOCALSTORAGE RETURNA NULL
+
+	try {
+		const parsed = JSON.parse(data);
+		if (typeof parsed === "object" && parsed !== null) {
+			return parsed; // SI ES UN OBJETO/ARRAY RETURNA EL MISMO (OBJETO/ARRAY)
+		}
+		return data; // POR SI ACASO 'NO DEBERIA DE SER USADO'
+	} catch (error) {
+		return data; // SI ES UNA STRING RETORNA SOLO 'DATA'
 	}
-	if (data && typeof data === "string") {
-		return data;
-	}
-	return null;
 };
 
 /**
@@ -32,7 +38,7 @@ const saveDataInStorage = (key, data) => {
 };
 
 /**
- * 
+ *
  * @returns productos del carrito desde localStorage
  */
 const getCartFromStorage = () => {
@@ -40,9 +46,9 @@ const getCartFromStorage = () => {
 };
 
 /**
- * 
+ *
  * @param {*} cart guarda el carrito en localStorage
  */
 const saveCartToStorage = (cart) => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+	localStorage.setItem("cart", JSON.stringify(cart));
 };

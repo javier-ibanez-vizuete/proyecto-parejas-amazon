@@ -9,7 +9,7 @@ if (getDataFromStorage("username")) {
 let productsOnStorage = products;
 // saveDataInStorage("productsOnStorage", products);
 if (getDataFromStorage("productsOnStorage")) {
-	productsOnStorage = JSON.parse(localStorage.getItem("productsOnStorage"));
+	productsOnStorage = getDataFromStorage("productsOnStorage");
 	// saveDataInStorage("productsOnStorage", productsOnStorage);
 }
 
