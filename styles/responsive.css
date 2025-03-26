@@ -14,7 +14,7 @@
 	}
 
 	/* ----------------  HEADER   -------------------------- */
-	header {
+	.header {
 		padding: var(--spacing-lg);
 	}
 
@@ -45,175 +45,63 @@
 	.product-card {
 		padding: var(--spacing-lg);
 	}
-	/* ------------------------------------------------ */
 
-	.card-container {
-		max-width: 360px;
+	/* --------------------SECTION FOR WISH LIST PRODUCTS -------------------------- */
+
+	.wishlist-container-section {
+		gap: 1rem;
 	}
 
-	.new-user-btn {
-		width: 40%;
-		display: flex;
-		flex-direction: column;
+	.products-on-wish-list-container {
+		gap: 1rem;
+
+		padding: 0px var(--spacing-3xl);
 	}
 
-	/* PÁGINA ELECTRÓNICA */
-	.user-icon,
-	.user-icon img,
-	.cart,
-	.cart-img {
-		display: none;
+	/* --------------SECTION FOR TROLLY CATALOG----------- */
+	.trolly-container {
+		gap: 1rem;
 	}
 
-	.nav-logo {
-		width: 20%;
+	.product-on-trolly-container {
+		gap: 1.5rem;
+
+		padding: 0 var(--spacing-3xl);
 	}
 
-	.shipping-information {
-		display: flex;
-	}
+	.trolly-card {
+		gap: 1rem;
 
-	.nav-search {
-		width: 80%;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		font-size: 14px;
-		padding: 0 8px;
-	}
-
-	.nav-categories p {
-		background-color: #e6e6e6;
-		padding: 11px;
-		color: #000;
-	}
-
-	.nav-categories {
-		display: flex;
-		flex-direction: row;
-	}
-
-	.nav-search-input {
-		width: 80%;
-		padding: 10px;
-	}
-
-	.language {
-		width: 10%;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 10px;
-	}
-
-	.spain-language {
-		width: 30%;
-	}
-
-	.spain-language img {
-		width: 100%;
-	}
-
-	.login-user,
-	.repayment,
-	.cart {
-		width: 10%;
-	}
-
-	.cart {
-		display: flex;
-	}
-
-	.login-text,
-	.repayment p {
-		font-size: 12px;
-	}
-
-	.login-account p,
-	.repayment-strong p,
-	.cart p {
-		font-size: 14px;
-		font-weight: 500;
-	}
-
-	.repayment {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.cart-description {
-		display: flex;
-		flex-direction: row;
-	}
-
-	.secondary-menu-links ul {
-		gap: 6px;
-		font-size: 12px;
-	}
-
-	.no-display {
-		display: flex;
-	}
-
-	.no-display:hover {
-		color: #fff;
-		border: 1px solid #fff;
-		border-radius: 4px;
-		padding: 0 8px;
-	}
-
-	/* .electronics-categories-container {
-		width: 100%;
-	} */
-
-	.electronics-categories {
-		width: 90%;
-		font-size: 10px;
-	}
-
-	.categories-no-display {
-		display: flex;
-		font-size: 8px;
-	}
-
-	.footer-links {
-		font-size: 12px;
-	}
-
-	.amazon-countries-container {
-		padding: 20px 0;
-	}
-
-	.amazon-logo {
-		width: 20%;
-	}
-
-	.amazon-countries {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		font-size: 10px;
-		gap: 8px;
-		color: #fff;
-	}
-
-	.copyright-info {
-		justify-content: center;
-		gap: 10px;
+		padding: var(--spacing-lg) var(--spacing-sm);
 	}
 }
+/* -----------FOOTER------------- */
+
+.footer {
+	padding: 0px var(--spacing-md) var(--spacing-md);
+}
+
+.amazon-countries-container {
+	gap: 1rem;
+}
+
+.amazon-countries {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+.amazon-countries a {
+	text-align: center;
+}
+
+.copyright-info {
+	gap: 2rem;
+}
+
+/* ------------------------------------------------ */
 
 /* DESKTOP */
 @media (min-width: 1024px) {
 	:root {
-		--accent-bg-color: #f4ede4;
-		--primary-text-color: #000;
-		--links-text-color: #2162a1;
-		--contrast-color: #232f3e;
-		--light-gray: #eaeaea;
-		--primary-color-btn: #f7ca00;
-
 		--font-size-html: 16px;
 
 		--spacing-xs: 8px;
@@ -274,7 +162,7 @@
 	}
 
 	/* ----------------  HEADER   -------------------------- */
-	header {
+	.header {
 		flex-direction: row;
 		align-items: center;
 		gap: 2rem;
@@ -297,9 +185,6 @@
 		gap: 2rem;
 	}
 
-	/* .account-container {
-	flex: 0;
-} */
 	.title-for-account-and-icon-container {
 		gap: 0.5rem;
 	}
@@ -349,54 +234,74 @@
 		padding: var(--spacing-xs);
 	}
 
+	/* --------------------SECTION FOR WISH LIST PRODUCTS -------------------------- */
+
+	.wishlist-container-section {
+		gap: 2rem;
+	}
+
+	.products-on-wish-list-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: stretch;
+	}
+
+	.btn-remove-wish-list {
+		padding: var(--spacing-xs);
+	}
+
+	/* --------------SECTION FOR TROLLY CATALOG----------- */
+	.trolly-container {
+		gap: 1rem;
+	}
+
+	.product-on-trolly-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: stretch;
+	}
+
+	.trolly-card {
+		gap: 1rem;
+	}
+
+	.card-info-trolly-container {
+		flex: 1;
+	}
+
+	.btn-remove-from-trolly {
+		padding: var(--spacing-xs);
+	}
+
 	/* ------------------------------------ */
 
-	.card-container {
-		padding: var(--spacing-lg);
-	}
-	.nav-logo {
-		width: 20%;
+	/* -----------FOOTER------------- */
+
+	.footer {
+		gap: 1.5rem;
+
+		padding: 0px var(--spacing-lg) var(--spacing-lg);
 	}
 
-	.nav-search-input {
-		width: 100%;
-		padding: 10px;
+	.footer-links-container {
+		grid-template-columns: repeat(4, 1fr);
 	}
 
-	.secondary-menu-links ul {
-		gap: 14px;
-		font-size: 14px;
+	.amazon-countries-container {
+		gap: 1rem;
 	}
 
-	.electronics-categories-container,
-	.categories-no-display {
-		font-size: 10px;
-	}
-
-	.back {
-		font-size: 14px;
-	}
-
-	.footer-links h4 {
-		font-size: 20px;
-		font-weight: 600;
-	}
-
-	.footer-links a {
-		font-size: 16px;
-		font-weight: 400;
+	.amazon-logo-container {
+		width: 140px;
 	}
 
 	.amazon-countries {
-		font-size: 12px;
-	}
-
-	.copyright-info,
-	.copyright-content {
-		font-size: 12px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 1rem;
 	}
 }
-
 /* DESKTOP XXL */
 @media (min-width: 1440px) {
 	:root {
@@ -407,12 +312,19 @@
 	/* ---------------------- SECCION DE PRODUCTOS ------------------- */
 
 	.products-container {
-		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		align-items: stretch;
-		gap: 1rem;
 	}
 
+	/* ---------------------SECCION DE WISHLIST ---------------------- */
+
+	.products-on-wish-list-container {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	/* ------------------ SECCION PARA PRODUCTOS DEL CARRITO ----------------- */
+	.product-on-trolly-container {
+		grid-template-columns: repeat(4, 1fr);
+	}
 
 	/* PÁGINA ELECTRÓNICA */
 	.nav-logo {
