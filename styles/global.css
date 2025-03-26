@@ -15,8 +15,7 @@ body {
 }
 
 html,
-body,
-.body-container {
+body {
 	height: 100%;
 }
 
@@ -133,28 +132,9 @@ img {
 
 body .dont-show {
 	display: none;
+
 }
 
-body {
-	height: 100%;
-	overflow-x: hidden;
-}
-
-html {
-	overflow-x: hidden;
-}
-body {
-	overflow-x: hidden;
-}
-header {
-	overflow-x: hidden;
-}
-main {
-	overflow-x: hidden;
-}
-footer {
-	overflow-x: hidden;
-}
 
 .body-container {
 	display: flex;
@@ -712,6 +692,70 @@ main {
 
 /* -----------FOOTER------------- */
 
+/* --------styles for btn BackToTop-------- */
+.btn-back-to-top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: fixed;
+	bottom: -50px;
+	right: 40px;
+
+	background-color: rgb(20, 20, 20);
+	border: none;
+	box-shadow: 0px 0px 0px 4px var(--primary-color-btn);
+	cursor: pointer;
+	font-weight: 500;
+	height: 38px;
+	opacity: 0.8;
+	overflow: hidden;
+	transition-duration: 0.3s;
+	width: 38px;
+	border-radius: 50%;
+}
+
+.svgIcon {
+	width: 8px;
+	transition-duration: 0.3s;
+}
+
+.svgIcon path {
+	fill: var(--primary-color-btn);
+}
+
+.btn-back-to-top:hover {
+	align-items: center;
+
+	background-color: var(--secondary-color-btn);
+	border-radius: 50px;
+	opacity: 1;
+	transition-duration: 0.3s;
+	transform: translateX(40px);
+	width: 140px;
+}
+
+.btn-back-to-top:hover .svgIcon {
+	transition-duration: 0.1s;
+	transform: translateY(-250%);
+}
+
+.btn-back-to-top::before {
+	position: relative;
+	bottom: -20px;
+	content: "Back to Top";
+	color: var(--primary-text-color);
+	transition-duration: 0.3s;
+	font-size: 0px;
+}
+
+.btn-back-to-top:hover::before {
+	font-size: 0.9rem;
+	opacity: 1;
+	bottom: unset;
+	transition-duration: 0.5s;
+}
+/* --------------------------------------------------------------- */
 .footer {
 	display: flex;
 	flex-direction: column;

@@ -77,6 +77,12 @@
 }
 /* -----------FOOTER------------- */
 
+/* -------styles for button back to top------- */
+.btn-back-to-top {
+	right: 60px;
+}
+/* ---------XXXXXXX---------- */
+
 .footer {
 	padding: 0px var(--spacing-md) var(--spacing-md);
 }
@@ -273,9 +279,19 @@
 		padding: var(--spacing-xs);
 	}
 
-	/* ------------------------------------ */
-
 	/* -----------FOOTER------------- */
+/* --------styles for btn BackToTop-------- */
+.btn-back-to-top {
+	right: 80px;
+	height: 52px;
+	opacity: 0.9;
+	width: 52px;
+}
+
+.svgIcon {
+	width: 10px;
+}
+/* --------------------------------------------------------------- */
 
 	.footer {
 		gap: 1.5rem;
@@ -324,48 +340,5 @@
 	/* ------------------ SECCION PARA PRODUCTOS DEL CARRITO ----------------- */
 	.product-on-trolly-container {
 		grid-template-columns: repeat(4, 1fr);
-	}
-
-	/* PÁGINA ELECTRÓNICA */
-	.nav-logo {
-		width: 20%;
-	}
-
-	.nav-search-input {
-		width: 90%;
-		padding: 10px;
-	}
-
-	.secondary-menu-links ul {
-		gap: 20px;
-		font-size: 20px;
-	}
-
-	.electronics-categories-container,
-	.categories-no-display {
-		font-size: 14px;
-	}
-
-	.back {
-		font-size: 14px;
-	}
-
-	.footer-links h4 {
-		font-size: 20px;
-		font-weight: 600;
-	}
-
-	.footer-links a {
-		font-size: 16px;
-		font-weight: 400;
-	}
-
-	.amazon-countries {
-		font-size: 16px;
-	}
-
-	.copyright-info,
-	.copyright-content {
-		font-size: 14px;
 	}
 }

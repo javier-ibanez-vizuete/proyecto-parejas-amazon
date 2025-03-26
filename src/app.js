@@ -343,7 +343,7 @@ const removeFromWishList = (id) => {
 
 	saveDataInStorage("wishlist", productsOnWishList);
 	saveDataInStorage("productsOnStorage", productsOnStorage);
-}
+};
 
 const createButtonForWishedCard = (id) => {
 	const btnForWishedCard = document.createElement("button");
@@ -355,7 +355,7 @@ const createButtonForWishedCard = (id) => {
 		recalculateProductsInTheWishList();
 
 		renderWishList();
-	})
+	});
 
 	return btnForWishedCard;
 };
@@ -370,7 +370,7 @@ const createInfoWishedCard = (product) => {
 	const paragraphWishedProductName = document.createElement("p");
 	paragraphWishedProductName.textContent = product.name;
 
-	const {id} = product;
+	const { id } = product;
 	const btnWishedCard = createButtonForWishedCard(id);
 
 	divInfoContainer.append(h3PriceContainer, paragraphWishedProductName, btnWishedCard);
@@ -535,8 +535,9 @@ const renderTrolly = () => {
  * Configura los eventos para el filtrado y navegación entre categorías del catálogo de productos.
  */
 document.addEventListener("DOMContentLoaded", () => {
+	createBackToTopButton();
 	// SELECCION DE ELEMENTOS
-
+	const bodyContainer = document.querySelector(".body-container");
 	const inputLogin = document.querySelector("#loginInput");
 	const btnContinue = document.querySelector(".continue-btn");
 
@@ -556,6 +557,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	const btnHeadphonesProducts = document.querySelector(".btn-headphones-products");
 	const btnStoragesProducts = document.querySelector(".btn-storages-products");
 	const btnGamingProducts = document.querySelector(".btn-gaming-products");
+
+	const btnBackToTop = document.querySelector(".btn-back-to-top");
+	console.log(btnBackToTop);
 
 	const wishListCatalog = document.querySelector(".wishlist-container-section");
 	const trollyCatalog = document.querySelector(".trolly-container");
@@ -612,7 +616,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	btnForWishList.addEventListener("click", () => {
 		if (!productsOnWishList.length) {
 			alert("Tu Lista de Deseados esta Vacia");
-			catalogSection.classList.remove("dont-show")
+			catalogSection.classList.remove("dont-show");
 			trollyCatalog.classList.add("dont-show");
 			wishListCatalog.classList.add("dont-show");
 		}
@@ -630,7 +634,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 		renderCatalog();
 		renderWishList();
-	})
+	});
 
 	btnFullProducts.addEventListener("click", () => {
 		h3CategoryTitle.textContent = "Informática";
@@ -721,6 +725,22 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnGamingProducts.classList.remove("open-gaming-products");
 
 		renderCatalog(inputSearch.value);
+	});
+
+	window.addEventListener("scroll", () => {
+		console.log("HAciendo SCROLL");
+		if (window.scrollY > 500) {
+			btnBackToTop.style.bottom = "40px";
+			btnBackToTop.style.pointerEvents = "auto";
+		} else {
+			btnBackToTop.style.bottom = "-50px";
+			btnBackToTop.style.pointerEvents = "none";
+		}
+	});
+
+	btnBackToTop.addEventListener("click", (event) => {
+		event.preventDefault();
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	});
 
 	spanForUserName.textContent = getDataFromStorage("username");

@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="/src/components/button.js" defer></script>
 	<script src="/src/helpers/storage.js" defer></script>
 	<script src="/src/utils/products.js" defer></script>
 	<script src="/src/app.js" defer></script>
@@ -13,264 +14,267 @@
 </head>
 
 <body>
-	<header class="header">
-		<div class="logo-header-container">
-			<img src="/media/logos/amazon-logo-white.png" alt="Logo amazon White" />
-		</div>
-		<form action="" class="search-container">
-			<input type="search" name="input-search-product" id="input-search-product"
-				placeholder="Buscar producto..." />
-			<button class="btnSearch">
-				<img src="/media/icons/icon-search-black-removebg-preview.png" alt="Icon search black" />
-			</button>
-		</form>
-		<div class="user-trolly-container">
-			<div class="account-container">
-				<p>Hola <span class="span-for-user-name"></span></p>
-				<div class="title-for-account-and-icon-container">
-					<h5>Cuenta y listas</h5>
-					<div class="icon-account-arrow-container">
-						<a href="#">
-							<img src="/media/icons/icon-arrow-down-white.png" alt="Icon arrow black" />
-						</a>
+	<div class="body-container">
+		<header class="header">
+			<div class="logo-header-container">
+				<img src="/media/logos/amazon-logo-white.png" alt="Logo amazon White" />
+			</div>
+			<form action="" class="search-container">
+				<input type="search" name="input-search-product" id="input-search-product"
+					placeholder="Buscar producto..." />
+				<button class="btnSearch">
+					<img src="/media/icons/icon-search-black-removebg-preview.png" alt="Icon search black" />
+				</button>
+			</form>
+			<div class="user-trolly-container">
+				<div class="account-container">
+					<p>Hola <span class="span-for-user-name"></span></p>
+					<div class="title-for-account-and-icon-container">
+						<h5>Cuenta y listas</h5>
+						<div class="icon-account-arrow-container">
+							<a href="#">
+								<img src="/media/icons/icon-arrow-down-white.png" alt="Icon arrow black" />
+							</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="wishlist-container">
-				<span class="span-products-on-wish-list">0</span>
-				<div class="div-icon-heart-container">
-					<img src="/media/icons/icon-heart-white-wishlist.png" alt="Icon White Heart">
-				</div>
-			</div>
-			<div class="trolly-for-products-container btn-trolly-catalog">
-				<span class="span-products-on-trolly">0</span>
-				<div class="icon-trolly-container">
-					<button>
-						<img src="/media/icons/icon-trolly-products-white.png" alt="black basket" />
-					</button>
-				</div>
-				<h5>Cesta</h5>
-			</div>
-		</div>
-	</header>
-
-	<main>
-		<!-- ---------------VENTANA DE INICIO DE SESION------- -->
-		<div class="login-background-container">
-			<div class="header-login">
-				<div class="logo-container">
-					<img src="/media/logos/amazon-logo.png" alt="Logo Amazon">
-				</div>
-			</div>
-
-			<section class="login-section">
-				<form action="#" method="POST" class="user-content">
-					<h1>Iniciar sesión</h1>
-					<p>Nombre</p>
-
-					<input id="loginInput" class="input-name" type="name" name="name"
-						placeholder="Introduce tu nombre" />
-
-					<div class="continue-btn-container">
-						<button class="continue-btn">Continuar</button>
+				<div class="wishlist-container">
+					<span class="span-products-on-wish-list">0</span>
+					<div class="div-icon-heart-container">
+						<img src="/media/icons/icon-heart-white-wishlist.png" alt="Icon White Heart">
 					</div>
-				</form>
+				</div>
+				<div class="trolly-for-products-container btn-trolly-catalog">
+					<span class="span-products-on-trolly">0</span>
+					<div class="icon-trolly-container">
+						<button>
+							<img src="/media/icons/icon-trolly-products-white.png" alt="black basket" />
+						</button>
+					</div>
+					<h5>Cesta</h5>
+				</div>
+			</div>
+		</header>
 
-				<div class="user-info">
-					<p>
-						Al continuar, aceptas las
+		<main>
+			<!-- ---------------VENTANA DE INICIO DE SESION------- -->
+			<div class="login-background-container">
+				<div class="header-login">
+					<div class="logo-container">
+						<img src="/media/logos/amazon-logo.png" alt="Logo Amazon">
+					</div>
+				</div>
+
+				<section class="login-section">
+					<form action="#" method="POST" class="user-content">
+						<h1>Iniciar sesión</h1>
+						<p>Nombre</p>
+
+						<input id="loginInput" class="input-name" type="name" name="name"
+							placeholder="Introduce tu nombre" />
+
+						<div class="continue-btn-container">
+							<button class="continue-btn">Continuar</button>
+						</div>
+					</form>
+
+					<div class="user-info">
+						<p>
+							Al continuar, aceptas las
+							<a
+								href="https://www.amazon.es/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&nodeId=200545940">Condiciones
+								de uso y venta</a>
+							de Amazon. Consulta nuestro
+							<a
+								href="https://www.amazon.es/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&nodeId=200545460">Aviso
+								de privacidad</a>, nuestro
+							<a href="https://www.amazon.es/gp/help/customer/display.html/?nodeId=201890250">Aviso
+								sobre cookies</a>
+							y nuestro
+							<a href="https://www.amazon.es/gp/help/customer/display.html?nodeId=201909150">Aviso
+								sobre anuncios basados en intereses.</a>
+						</p>
+					</div>
+
+					<div class="help-container">
+						<h5>¿Necesitas Ayuda?</h5>
+						<div class="icon-container">
+							<img src="/media/icons/icon-arrow-down.png" alt="Icon black arrow">
+						</div>
+					</div>
+
+					<div class="separator"></div>
+
+					<div class="business-shop-container">
+						<h5>¿Compras para tu empresa?</h5>
 						<a
-							href="https://www.amazon.es/gp/help/customer/display.html/ref=ap_signin_notification_condition_of_use?ie=UTF8&nodeId=200545940">Condiciones
-							de uso y venta</a>
-						de Amazon. Consulta nuestro
-						<a
-							href="https://www.amazon.es/gp/help/customer/display.html/ref=ap_signin_notification_privacy_notice?ie=UTF8&nodeId=200545460">Aviso
-							de privacidad</a>, nuestro
-						<a href="https://www.amazon.es/gp/help/customer/display.html/?nodeId=201890250">Aviso
-							sobre cookies</a>
-						y nuestro
-						<a href="https://www.amazon.es/gp/help/customer/display.html?nodeId=201909150">Aviso
-							sobre anuncios basados en intereses.</a>
-					</p>
-				</div>
-
-				<div class="help-container">
-					<h5>¿Necesitas Ayuda?</h5>
-					<div class="icon-container">
-						<img src="/media/icons/icon-arrow-down.png" alt="Icon black arrow">
+							href="https://www.amazon.es/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.es%2Fbusiness%2Fregister%2Fcheck%2Fstatus%3Fref_%3Dab_reg_signin%26ref_%3Dab_welcome_bw_ckab_dsk%26originalRef%3Dab_reg_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_ab_reg_web_es&openid.mode=checkid_setup&marketPlaceId=A1RKKUPIHCS9HS&language=es_ES&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=ab_welcome_login_es&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.pape.preferred_auth_policies=Singlefactor&switch_account=signin&disableLoginPrepopulate=1&ref_=ab_welcome_bw_ap-sn_dsk">Comprar
+							en Amazon Business</a>
 					</div>
+				</section>
+				<section class="new-on-amazon-section">
+					<div class="text-new-on-amazon-section-container">
+						<small>¿Eres nuevo en Amazon?</small>
+					</div>
+					<div class="button-new-on-amazon-section-container">
+						<button class="new-user-btn"><a href="/index.html">Crea tu cuenta de Amazon</a></button>
+					</div>
+				</section>
+			</div>
+			<!-- --------------CATEGORY BUTTONS---------- -->
+			<aside class="electronics-categories-container">
+				<button class="btn-full-informatica open-all-products">Informática</button>
+				<button class="btn-laptops-products">
+					<span>Portátiles</span>
+					<div class="arrow-icon-container">
+						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
+					</div>
+				</button>
+				<button class="btn-monitors-products">
+					<span>Monitores</span>
+					<div class="arrow-icon-container">
+						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
+					</div>
+				</button>
+				<button class="btn-tablets-products">
+					<span>Tablets</span>
+					<div class="arrow-icon-container">
+						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
+					</div>
+				</button>
+				<button class="btn-gaming-products">
+					<span>Gaming</span>
+					<div class="arrow-icon-container">
+						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
+					</div>
+				</button>
+				<button class="btn-headphones-products">
+					<span>Auriculares</span>
+					<div class="arrow-icon-container">
+						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
+					</div>
+				</button>
+				<button class="btn-storages-products">
+					<span>Almacenamiento</span>
+					<div class="arrow-icon-container">
+						<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
+					</div>
+				</button>
+			</aside>
+			<!-- --------------PRODUCTS' SECTION------------ -->
+			<section class="catalog-section container">
+				<h3 class="category-title">Informática</h3>
+				<div class="title-catalog-container">
 				</div>
-
-				<div class="separator"></div>
-
-				<div class="business-shop-container">
-					<h5>¿Compras para tu empresa?</h5>
-					<a
-						href="https://www.amazon.es/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.es%2Fbusiness%2Fregister%2Fcheck%2Fstatus%3Fref_%3Dab_reg_signin%26ref_%3Dab_welcome_bw_ckab_dsk%26originalRef%3Dab_reg_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_ab_reg_web_es&openid.mode=checkid_setup&marketPlaceId=A1RKKUPIHCS9HS&language=es_ES&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=ab_welcome_login_es&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.pape.preferred_auth_policies=Singlefactor&switch_account=signin&disableLoginPrepopulate=1&ref_=ab_welcome_bw_ap-sn_dsk">Comprar
-						en Amazon Business</a>
+				<div class="products-container">
 				</div>
 			</section>
-			<section class="new-on-amazon-section">
-				<div class="text-new-on-amazon-section-container">
-					<small>¿Eres nuevo en Amazon?</small>
+			<!-- ---------------TROLLY SECTION-------------- -->
+			<section class="trolly-container container dont-show"></section>
+			<!-- ----------------WISH LIST SECTION-------------- -->
+			<section class="wishlist-container-section container dont-show"></section>
+		</main>
+		<footer class="footer">
+			<!-- <button class="btn-back-to-top">
+				<svg class="svgIcon" viewBox="0 0 384 512">
+					<path
+						d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z">
+					</path>
+				</svg>
+			</button> -->
+			<section class="footer-links-container">
+				<div class="footer-links">
+					<h5>Gana dinero con nosotros</h5>
+					<a href="#">Vender en Amazon</a>
+					<a href="#">Vender en Amazon Business</a>
+					<a href="#">Vender en Amazon Handmade</a>
+					<a href="#">Desarrolla y protege tu marca</a>
+					<a href="#">Programa de afiliados</a>
+					<a href="#">Logística de Amazon</a>
+					<a href="#">Suministrar a Amazon</a>
+					<a href="#">Promociona tus productos</a>
+					<a href="#">Publica tu libro en Kindle</a>
+					<a href="#">Amazon Pay</a>
+					<a href="#">Alojar un Amazon Hub</a>
 				</div>
-				<div class="button-new-on-amazon-section-container">
-					<button class="new-user-btn"><a href="/index.html">Crea tu cuenta de Amazon</a></button>
+
+				<div class="footer-links">
+					<h5>¿Necesitas ayuda?</h5>
+					<a href="#">Localizar compras</a>
+					<a href="#">Tarifas y políticas de envío</a>
+					<a href="#">Amazon Prime</a>
+					<a href="#">Devolver productos</a>
+					<a href="#">Reciclaje</a>
+					<a href="#">Gestionar contenido</a>
+					<a href="#">App Amazon</a>
+					<a href="#">Atención al cliente</a>
+					<a href="#">Accesibilidad</a>
+					<a href="#">Listas de regalos</a>
+					<a href="#"></a>
+				</div>
+
+				<div class="footer-links">
+					<h5>Conócenos</h5>
+					<a href="#">Trabajar en Amazon</a>
+					<a href="#">Sobre amazon.es</a>
+					<a href="#">Sostenibilidad</a>
+					<a href="#">Amazon Science</a>
+				</div>
+
+				<div class="footer-links">
+					<h5>Métodos de pago</h5>
+					<a href="#">Métodos de pago</a>
+					<a href="#">Conversor de divisas Amazon</a>
+					<a href="#">Tarjetas regalo</a>
+					<a href="#">Recarga online</a>
+					<a href="#">Recarga en tienda</a>
 				</div>
 			</section>
-		</div>
-		<!-- --------------CATEGORY BUTTONS---------- -->
-		<aside class="electronics-categories-container">
-			<button class="btn-full-informatica open-all-products">Informática</button>
-			<button class="btn-laptops-products">
-				<span>Portátiles</span>
-				<div class="arrow-icon-container">
-					<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
+
+			<div class="separator footer-separator"></div>
+
+			<section class="amazon-countries-container">
+				<div class="amazon-logo-container">
+					<img src="/media/logos/amazon-logo-white.png" alt="" />
 				</div>
-			</button>
-			<button class="btn-monitors-products">
-				<span>Monitores</span>
-				<div class="arrow-icon-container">
-					<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
+
+				<div class="amazon-countries">
+					<a href="#">Australia</a>
+					<a href="#">Alemania</a>
+					<a href="#">Brasil</a>
+					<a href="#">Canadá</a>
+					<a href="#">China</a>
+					<a href="#">EEUU</a>
+					<a href="#">Francia</a>
+					<a href="#">India</a>
+					<a href="#">Italia</a>
+					<a href="#">Japón</a>
+					<a href="#">México</a>
+					<a href="#">Países Bajos</a>
+					<a href="#">Polonia</a>
+					<a href="#">Emiratos Árabes</a>
+					<a href="#">Singapur</a>
+					<a href="#">Turquía</a>
 				</div>
-			</button>
-			<button class="btn-tablets-products">
-				<span>Tablets</span>
-				<div class="arrow-icon-container">
-					<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
+			</section>
+
+			<div class="separator footer-separator"></div>
+
+			<section class="copyright-container">
+				<div class="copyright-info">
+					<a href="#">Condiciones de uso</a>
+					<a href="#">Aviso de privacidad</a>
+					<a href="#">Área legal</a>
+					<a href="#">Cookies</a>
+					<a href="#">Publicidad</a>
 				</div>
-			</button>
-			<button class="btn-gaming-products">
-				<span>Gaming</span>
-				<div class="arrow-icon-container">
-					<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
+
+				<div class="copyright-content">
+					<p>© 1996-2025, Amazon.com, Inc. o sus afiliados</p>
 				</div>
-			</button>
-			<button class="btn-headphones-products">
-				<span>Auriculares</span>
-				<div class="arrow-icon-container">
-					<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
-				</div>
-			</button>
-			<button class="btn-storages-products">
-				<span>Almacenamiento</span>
-				<div class="arrow-icon-container">
-					<img src="/media/icons/icon-arrow-down.png" alt="Icon arrow down black" />
-				</div>
-			</button>
-		</aside>
-		<!-- --------------PRODUCTS' SECTION------------ -->
-		<section class="catalog-section container">
-			<h3 class="category-title">Informática</h3>
-			<div class="title-catalog-container">
-			</div>
-			<div class="products-container">
-			</div>
-		</section>
-		<!-- ---------------TROLLY SECTION-------------- -->
-		<section class="trolly-container container dont-show"></section>
-		<!-- ----------------WISH LIST SECTION-------------- -->
-		<section class="wishlist-container-section container dont-show"></section>
-	</main>
-	<footer class="footer">
-		<section>
-			<div class="back">
-				<p>Volver arriba</p>
-			</div>
-		</section>
-
-		<section class="footer-links-container">
-			<div class="footer-links">
-				<h5>Gana dinero con nosotros</h5>
-				<a href="#">Vender en Amazon</a>
-				<a href="#">Vender en Amazon Business</a>
-				<a href="#">Vender en Amazon Handmade</a>
-				<a href="#">Desarrolla y protege tu marca</a>
-				<a href="#">Programa de afiliados</a>
-				<a href="#">Logística de Amazon</a>
-				<a href="#">Suministrar a Amazon</a>
-				<a href="#">Promociona tus productos</a>
-				<a href="#">Publica tu libro en Kindle</a>
-				<a href="#">Amazon Pay</a>
-				<a href="#">Alojar un Amazon Hub</a>
-			</div>
-
-			<div class="footer-links">
-				<h5>¿Necesitas ayuda?</h5>
-				<a href="#">Localizar compras</a>
-				<a href="#">Tarifas y políticas de envío</a>
-				<a href="#">Amazon Prime</a>
-				<a href="#">Devolver productos</a>
-				<a href="#">Reciclaje</a>
-				<a href="#">Gestionar contenido</a>
-				<a href="#">App Amazon</a>
-				<a href="#">Atención al cliente</a>
-				<a href="#">Accesibilidad</a>
-				<a href="#">Listas de regalos</a>
-				<a href="#"></a>
-			</div>
-
-			<div class="footer-links">
-				<h5>Conócenos</h5>
-				<a href="#">Trabajar en Amazon</a>
-				<a href="#">Sobre amazon.es</a>
-				<a href="#">Sostenibilidad</a>
-				<a href="#">Amazon Science</a>
-			</div>
-
-			<div class="footer-links">
-				<h5>Métodos de pago</h5>
-				<a href="#">Métodos de pago</a>
-				<a href="#">Conversor de divisas Amazon</a>
-				<a href="#">Tarjetas regalo</a>
-				<a href="#">Recarga online</a>
-				<a href="#">Recarga en tienda</a>
-			</div>
-		</section>
-
-		<div class="separator footer-separator"></div>
-
-		<section class="amazon-countries-container">
-			<div class="amazon-logo-container">
-				<img src="/media/logos/amazon-logo-white.png" alt="" />
-			</div>
-
-			<div class="amazon-countries">
-				<a href="#">Australia</a>
-				<a href="#">Alemania</a>
-				<a href="#">Brasil</a>
-				<a href="#">Canadá</a>
-				<a href="#">China</a>
-				<a href="#">EEUU</a>
-				<a href="#">Francia</a>
-				<a href="#">India</a>
-				<a href="#">Italia</a>
-				<a href="#">Japón</a>
-				<a href="#">México</a>
-				<a href="#">Países Bajos</a>
-				<a href="#">Polonia</a>
-				<a href="#">Emiratos Árabes</a>
-				<a href="#">Singapur</a>
-				<a href="#">Turquía</a>
-			</div>
-		</section>
-
-		<div class="separator footer-separator"></div>
-
-		<section class="copyright-container">
-			<div class="copyright-info">
-				<a href="#">Condiciones de uso</a>
-				<a href="#">Aviso de privacidad</a>
-				<a href="#">Área legal</a>
-				<a href="#">Cookies</a>
-				<a href="#">Publicidad</a>
-			</div>
-
-			<div class="copyright-content">
-				<p>© 1996-2025, Amazon.com, Inc. o sus afiliados</p>
-			</div>
-		</section>
-	</footer>
+			</section>
+		</footer>
+	</div>
 </body>
 
 </html>
