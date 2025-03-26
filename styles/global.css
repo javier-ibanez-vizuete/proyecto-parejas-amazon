@@ -686,8 +686,25 @@ main {
 	padding: var(--spacing-sm);
 }
 
-.btn-remove-from-trolly:hover {
+.btn-remove-from-trolly:hover,
+.btn-pay:hover {
 	filter: brightness(95%);
+}
+
+.total-price-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.btn-pay {
+	font-size: 18px;
+	border-radius: 8px;
+	border: none;
+	background-color: var(--secondary-color-btn);
+	padding: var(--spacing-sm);
 }
 
 /* -----------FOOTER------------- */
