@@ -64,6 +64,9 @@ const recalculateProductsInTheCar = () => {
 	const spanForProductsOnTrolly = document.querySelector(".span-products-on-trolly");
 	const numberOfProducts = productsOnTrolly.length;
 	spanForProductsOnTrolly.textContent = numberOfProducts;
+
+	const spanFloatingTrolly = document.querySelector(".span-floating-products-on-trolly")
+	spanFloatingTrolly.textContent = productsOnTrolly.length;
 };
 
 const recalculateProductsInTheWishList = () => {
