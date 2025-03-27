@@ -1,13 +1,6 @@
 const calculateTotalTrollyPrice = () => {
 	return productsOnTrolly.reduce((total, product) => {
-		console.log(`
-			Total Acumulado => ${total}
-			Precio del producto => ${product.price}
-			Cantidad de Producto => ${product.quantity}
-			precio total segun cantidad => ${product.price * product.quantity}
-			TOTAL => ${total + (product.price * product.quantity)}
-			`);
-		return total + (product.price * product.quantity);
+		return total + product.price * product.quantity;
 	}, 0);
 };
 
@@ -25,14 +18,70 @@ const removeFromTrollyCatalog = (product) => {
 };
 
 const clearTrolly = () => {
-	productsOnTrolly.length = 0; 
-    productsOnStorage.forEach(product => product.addcart = false); 
-    saveDataInStorage("productsOnStorage", productsOnStorage);
-    saveDataInStorage("trolly", productsOnTrolly);
-	renderTrolly(); 
+	productsOnTrolly.length = 0;
+	productsOnStorage.forEach((product) => (product.addcart = false));
+	saveDataInStorage("productsOnStorage", productsOnStorage);
+	saveDataInStorage("trolly", productsOnTrolly);
+	renderTrolly();
 	if (!productsOnTrolly.length) {
 		renderCatalog();
 	}
+};
+
+const createquantityButtonsControls = (quantity, id) => {
+	const divButtonsQuantityContainer = document.createElement("div");
+	divButtonsQuantityContainer.classList.add("div-control-quantity-buttons-container");
+
+	const btnDecreaseProductQuantity = document.createElement("button");
+	btnDecreaseProductQuantity.classList.add("btn-decrease-quantity-product");
+	btnDecreaseProductQuantity.textContent = "-";
+	btnDecreaseProductQuantity.addEventListener("click", () => {
+		const product = productsOnTrolly.find((product) => product.id === id);
+		const indexOfProduct = productsOnTrolly.findIndex((p) => p.id === id);
+		if (!product) {
+			return;
+		}
+		product.quantity -= 1;
+		if (product.quantity === 0) {
+			productsOnTrolly.splice(indexOfProduct, 1);
+			productsOnStorage[indexOfProduct].addcart = false;
+			saveDataInStorage("productsOnStorage", productsOnStorage);
+			renderCatalog();
+			recalculateProductsInTheCar();
+		}
+
+		saveDataInStorage("trolly", productsOnTrolly);
+		renderTrolly();
+	});
+
+	const containerQuantityProductDisplay = document.createElement("div");
+	containerQuantityProductDisplay.classList.add("container-quantity-product-display");
+
+	const spanQuantityProductDisplay = document.createElement("span");
+	spanQuantityProductDisplay.classList.add("span-quantity-product-display");
+	spanQuantityProductDisplay.textContent = quantity;
+	containerQuantityProductDisplay.append(spanQuantityProductDisplay);
+
+	const btnIncreaseProductQuantity = document.createElement("button");
+	btnIncreaseProductQuantity.classList.add("btn-increase-quantity-product");
+	btnIncreaseProductQuantity.textContent = "+";
+	btnIncreaseProductQuantity.addEventListener("click", () => {
+		const product = productsOnTrolly.find((product) => product.id === id);
+		if (!product) {
+			return;
+		}
+		product.quantity += 1;
+		saveDataInStorage("trolly", productsOnTrolly);
+		renderTrolly();
+	});
+
+	divButtonsQuantityContainer.append(
+		btnDecreaseProductQuantity,
+		containerQuantityProductDisplay,
+		btnIncreaseProductQuantity
+	);
+
+	return divButtonsQuantityContainer;
 };
 
 const createTrollyCard = (product) => {
@@ -57,6 +106,10 @@ const createTrollyCard = (product) => {
 	productTrollyName.classList.add("product-trolly-name");
 	productTrollyName.textContent = product.name;
 	divInfoTrollyCardContainer.appendChild(productTrollyName);
+
+	const { quantity, id } = product;
+	const containerButtonsQuantity = createquantityButtonsControls(quantity, id);
+	productTrollyName.after(containerButtonsQuantity);
 
 	const btnForRemoveFromTrolly = document.createElement("button");
 	btnForRemoveFromTrolly.classList.add("btn-remove-from-trolly", "btn-style");
@@ -116,7 +169,7 @@ const renderTrolly = () => {
 		if (confirm("¿Estás seguro de que quieres vaciar el carrito?")) {
 			clearTrolly();
 		}
-	})
+	});
 
 	totalPriceContainer.append(clearCartBtn);
 	divTrollySectionContainer.append(totalPriceContainer);
