@@ -11,6 +11,8 @@ const createLoginAndUserName = () => {
 		const divLoginContainer = document.querySelector(".login-background-container");
 		divLoginContainer.style.display = "none";
 		saveDataInStorage("username", inputLogin.value);
+        document.title = "Informatica | Amazon.es"
+        saveDataInStorage("document-title", document.title);
 		spanForUserName.textContent = getDataFromStorage("username");
 		window.location.reload();
 	});

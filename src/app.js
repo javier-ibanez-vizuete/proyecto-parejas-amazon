@@ -3,6 +3,11 @@ if (getDataFromStorage("username")) {
 	document.querySelector(".login-background-container").style.display = "none";
 }
 
+// RENAME THE TITLE OF DOCUMENT.
+if (getDataFromStorage("document-title")) {
+	document.title = getDataFromStorage("document-title");
+}
+
 /**
  * Guarda products en localStorage.
  */
