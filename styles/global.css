@@ -750,11 +750,14 @@ main {
 }
 
 .btn-remove-from-trolly:hover,
-.btn-pay:hover {
+.btn-pay:hover,
+.btn-clear-cart:hover,
+.reset-wishlist:hover {
 	filter: brightness(95%);
 }
 
-.total-price-container {
+.total-price-container,
+.wishlist-buttons-container {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -762,7 +765,9 @@ main {
 	gap: 20px;
 }
 
-.btn-pay {
+.btn-pay,
+.btn-clear-cart,
+.reset-wishlist {
 	font-size: 18px;
 	border-radius: 8px;
 	border: none;

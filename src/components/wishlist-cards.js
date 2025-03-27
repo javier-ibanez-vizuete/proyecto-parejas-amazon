@@ -99,7 +99,7 @@ const renderWishList = () => {
 	divWishListSectionContainer.append(wishListProductsContainer);
 
 	const wishlistBtnsContainer = document.createElement("div");
-	wishlistBtnsContainer.classList.add("wislist-buttons-container");
+	wishlistBtnsContainer.classList.add("wishlist-buttons-container");
 
 	const clearWishlist = document.createElement("button");
 	clearWishlist.classList.add("reset-wishlist", "btn-style");
