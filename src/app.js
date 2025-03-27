@@ -42,7 +42,6 @@ const calculateTotalPrice = () => {
 	return productsOnTrolly.reduce((total, product) => total + product.price, 0);
 };
 
-
 const recalculateProductsInTheCar = () => {
 	const spanForProductsOnTrolly = document.querySelector(".span-products-on-trolly");
 	const numberOfProducts = productsOnTrolly.length;
