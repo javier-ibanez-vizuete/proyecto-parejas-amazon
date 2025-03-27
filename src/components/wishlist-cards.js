@@ -13,6 +13,14 @@ const removeFromWishList = (id) => {
 	saveDataInStorage("productsOnStorage", productsOnStorage);
 };
 
+const clearWishList = () => {
+    productsOnWishList.length = 0;
+    productsOnStorage.forEach(product => product.wishlist = false);
+    saveDataInStorage("wishlist", productsOnWishList);
+    saveDataInStorage("productsOnStorage", productsOnStorage);
+    renderWishList(); 
+};
+
 const createButtonForWishedCard = (id) => {
 	const btnForWishedCard = document.createElement("button");
 	btnForWishedCard.classList.add("btn-style", "btn-remove-wish-list");
@@ -93,15 +101,15 @@ const renderWishList = () => {
 	const wishlistBtnsContainer = document.createElement("div");
 	wishlistBtnsContainer.classList.add("wislist-buttons-container");
 
-	const moveToCartBtn = document.createElement("button");
-	moveToCartBtn.classList.add("move-to-cart-btn");
-	moveToCartBtn.textContent = "Mover al carrito";
-
-	const resetWishlist = document.createElement("button");
-	resetWishlist.classList.add("reset-wishlist");
-	resetWishlist.textContent = "Vaciar lista de deseos";
+	const clearWishlist = document.createElement("button");
+	clearWishlist.classList.add("reset-wishlist", "btn-style");
+	clearWishlist.textContent = "Vaciar lista de deseos";
+	clearWishlist.addEventListener("click", () => {
+        if (confirm("¿Estás seguro de que quieres vaciar la lista de deseos?")) {
+            clearWishList();
+        }
+    });
 
 	divWishListSectionContainer.appendChild(wishlistBtnsContainer);
-	wishlistBtnsContainer.appendChild(moveToCartBtn);
-	wishlistBtnsContainer.appendChild(resetWishlist);
+	wishlistBtnsContainer.appendChild(clearWishlist);
 };

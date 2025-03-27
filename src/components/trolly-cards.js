@@ -13,7 +13,7 @@ const removeFromTrollyCatalog = (product) => {
 
 const clearTrolly = () => {
 	productsOnTrolly.length = 0; 
-    productsOnStorage.forEach(product => product.addcart = false); // Actualizar estado de los productos
+    productsOnStorage.forEach(product => product.addcart = false); 
     saveDataInStorage("productsOnStorage", productsOnStorage);
     saveDataInStorage("trolly", productsOnTrolly);
     renderTrolly(); 
