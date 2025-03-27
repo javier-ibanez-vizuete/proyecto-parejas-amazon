@@ -4,11 +4,19 @@ const removeFromTrollyCatalog = (product) => {
 	const productToRemoveFromTrolly = productsOnStorage.findIndex((productOnCloud) => productOnCloud.id === product.id);
 	productsOnStorage[productToRemoveFromTrolly].addcart = false;
 
-if (!productsOnTrolly.length) {
-	renderCatalog();
-}
+	if (!productsOnTrolly.length) {
+		renderCatalog();
+	}
 	saveDataInStorage("productsOnStorage", productsOnStorage);
 	saveDataInStorage("trolly", productsOnTrolly);
+};
+
+const clearTrolly = () => {
+	productsOnTrolly.length = 0; 
+    productsOnStorage.forEach(product => product.addcart = false); // Actualizar estado de los productos
+    saveDataInStorage("productsOnStorage", productsOnStorage);
+    saveDataInStorage("trolly", productsOnTrolly);
+    renderTrolly(); 
 };
 
 const createTrollyCard = (product) => {
@@ -84,5 +92,16 @@ const renderTrolly = () => {
 	});
 
 	totalPriceContainer.append(payButton);
+
+	const clearCartBtn = document.createElement("button");
+	clearCartBtn.classList.add("btn-clear-cart", "btn-style");
+	clearCartBtn.textContent = "Vaciar Carrito";
+	clearCartBtn.addEventListener("click", () => {
+		if (confirm("¿Estás seguro de que quieres vaciar el carrito?")) {
+			clearTrolly();
+		}
+	})
+
+	totalPriceContainer.append(clearCartBtn);
 	divTrollySectionContainer.append(totalPriceContainer);
 };
