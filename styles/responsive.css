@@ -79,6 +79,17 @@
 
 		padding: var(--spacing-lg) var(--spacing-sm);
 	}
+
+	/*  QuantityProductsDisplay Styles */
+
+	.btn-decrease-quantity-product {
+		flex-basis: 15%;
+	}
+	
+	.btn-increase-quantity-product {
+		flex-basis: 15%;
+	}
+
 	/* -----------FOOTER------------- */
 	/* -------styles for button back to top------- */
 	.btn-back-to-top {
@@ -288,6 +299,21 @@
 	.card-info-trolly-container {
 		flex: 1;
 	}
+
+	/*  QuantityProductsDisplay Styles */
+.div-control-quantity-buttons-container {
+	padding: 0 0;
+}
+
+.btn-decrease-quantity-product {
+	flex-basis: 20%;
+	padding: var(--spacing-xs) 0;
+}
+
+.btn-increase-quantity-product {
+	flex-basis: 20%;
+	padding: var(--spacing-xs) 0;
+}
 
 	.btn-remove-from-trolly {
 		padding: var(--spacing-xs);

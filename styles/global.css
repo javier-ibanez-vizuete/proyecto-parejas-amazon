@@ -629,47 +629,6 @@ main {
 	text-overflow: ellipsis;
 }
 
-/*  QuantityProductsDisplay Styles */
-.div-control-quantity-buttons-container {
-	display: flex;
-	justify-content: center;
-
-	padding: 0 var(--spacing-4xl);
-}
-
-.btn-decrease-quantity-product {
-	background-color: var(--primary-color-btn);
-	border: none;
-	border-top-left-radius: var(--radius-button);
-	border-bottom-left-radius: var(--radius-button);
-	flex-basis: 10%;
-	padding: var(--spacing-sm) 0;
-}
-
-.container-quantity-product-display {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex: 1;
-
-	border-top: 1px solid var(--primary-color-btn);
-	border-bottom: 1px solid var(--primary-color-btn);
-}
-
-.btn-increase-quantity-product {
-	background-color: var(--primary-color-btn);
-	border: none;
-	border-top-right-radius: var(--radius-button);
-	border-bottom-right-radius: var(--radius-button);
-	flex-basis: 10%;
-	padding: var(--spacing-sm) 0;
-}
-
-.btn-decrease-quantity-product:hover, .btn-increase-quantity-product:hover {
-	filter: brightness(85%);
-	transition-duration: 0.3s;
-}
-
 .buttons-card-container {
 	display: flex;
 	justify-content: space-between;
@@ -783,6 +742,46 @@ main {
 	flex-direction: column;
 	justify-content: flex-end;
 	gap: 0.5rem;
+}
+/*  QuantityProductsDisplay Styles */
+.div-control-quantity-buttons-container {
+	display: flex;
+	justify-content: center;
+
+	padding: 0 var(--spacing-4xl);
+}
+
+.btn-decrease-quantity-product {
+	background-color: var(--primary-color-btn);
+	border: none;
+	border-top-left-radius: var(--radius-button);
+	border-bottom-left-radius: var(--radius-button);
+	flex-basis: 20%;
+	padding: var(--spacing-sm) 0;
+}
+
+.container-quantity-product-display {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+
+	border-top: 1px solid var(--primary-color-btn);
+	border-bottom: 1px solid var(--primary-color-btn);
+}
+
+.btn-increase-quantity-product {
+	background-color: var(--primary-color-btn);
+	border: none;
+	border-top-right-radius: var(--radius-button);
+	border-bottom-right-radius: var(--radius-button);
+	flex-basis: 20%;
+	padding: var(--spacing-sm) 0;
+}
+
+.btn-decrease-quantity-product:hover, .btn-increase-quantity-product:hover {
+	filter: brightness(85%);
+	transition-duration: 0.3s;
 }
 
 .btn-remove-from-trolly {

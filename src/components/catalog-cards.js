@@ -41,15 +41,10 @@ const createButtonsContainer = (product, index) => {
 	addCartBtn.addEventListener("click", () => {
 		product.addcart = !product.addcart;
 		if (product.addcart && !productsOnTrolly.some(({ id }) => id === product.id)) {
-			console.log("Que tiene productToBuy", productToBuy);
 			productsOnTrolly.push(productToBuy);
 		}
 		if (!product.addcart) {
-			console.log("Quiero eliminarlo", productToBuy);
 			removeProductFromTrolly(productToBuy);
-			console.log("Lo he eliminado de trolly",productToBuy);
-			console.log(productsOnTrolly);
-			console.log(productsOnStorage);
 		}
 		addCartBtn.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";
 		saveDataInStorage("trolly", productsOnTrolly);
