@@ -1,3 +1,16 @@
+const calculateTotalTrollyPrice = () => {
+	return productsOnTrolly.reduce((total, product) => {
+		console.log(`
+			Total Acumulado => ${total}
+			Precio del producto => ${product.price}
+			Cantidad de Producto => ${product.quantity}
+			precio total segun cantidad => ${product.price * product.quantity}
+			TOTAL => ${total + (product.price * product.quantity)}
+			`);
+		return total + (product.price * product.quantity);
+	}, 0);
+};
+
 const removeFromTrollyCatalog = (product) => {
 	const indexOfProduct = productsOnTrolly.findIndex((element) => element.id === product.id);
 	productsOnTrolly.splice(indexOfProduct, 1);
@@ -16,7 +29,10 @@ const clearTrolly = () => {
     productsOnStorage.forEach(product => product.addcart = false); 
     saveDataInStorage("productsOnStorage", productsOnStorage);
     saveDataInStorage("trolly", productsOnTrolly);
-    renderTrolly(); 
+	renderTrolly(); 
+	if (!productsOnTrolly.length) {
+		renderCatalog();
+	}
 };
 
 const createTrollyCard = (product) => {
@@ -81,7 +97,7 @@ const renderTrolly = () => {
 	totalPriceContainer.classList.add("total-price-container");
 
 	const totalPriceLabel = document.createElement("h3");
-	totalPriceLabel.textContent = `Total: ${calculateTotalPrice()}€`;
+	totalPriceLabel.textContent = `Total: ${calculateTotalTrollyPrice()}€`;
 	totalPriceContainer.append(totalPriceLabel);
 
 	const payButton = document.createElement("button");

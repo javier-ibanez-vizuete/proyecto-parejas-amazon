@@ -29,12 +29,10 @@ const createLogOutMenu = () => {
         })
     } else {
         accountMenuContainer.addEventListener("mouseenter", () => {
-            console.log("Entrando en el div");
             divMenuTextContainer.style.visibility = "visible";
         })
 
         accountMenuContainer.addEventListener("mouseleave", () => {
-            console.log("SAliendo del div");
             divMenuTextContainer.style.visibility = "hidden";
         })
     }

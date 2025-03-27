@@ -19,6 +19,9 @@ const clearWishList = () => {
     saveDataInStorage("wishlist", productsOnWishList);
     saveDataInStorage("productsOnStorage", productsOnStorage);
     renderWishList(); 
+	if (!productsOnWishList.length) {
+		renderCatalog();
+	}
 };
 
 const createButtonForWishedCard = (id) => {
