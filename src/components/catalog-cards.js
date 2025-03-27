@@ -1,5 +1,5 @@
-const removeProductFromTrolly = (product) => {
-	const indexOfProduct = productsOnTrolly.findIndex((product) => product.id);
+const removeProductFromTrolly = (productToBuy) => {
+	const indexOfProduct = productsOnTrolly.findIndex((product) => product.id === productToBuy.id);
 	productsOnTrolly.splice(indexOfProduct, 1);
 };
 
@@ -11,10 +11,10 @@ const removeProductFromWishList = ({id}) => {
 const createButtonsContainer = (product, index) => {
 	const buttonsContainer = document.createElement("div");
 	buttonsContainer.classList.add("buttons-card-container");
-
+	
 	const wishlistBtn = document.createElement("button");
 	wishlistBtn.classList.add("btn-add-to-wish-list", "btn-style");
-
+	
 	wishlistBtn.textContent = product.wishlist ? "Quitar de Deseados" : "Añadir a deseados";
 	wishlistBtn.addEventListener("click", () => {
 		product.wishlist = !product.wishlist;
@@ -31,7 +31,8 @@ const createButtonsContainer = (product, index) => {
 		renderCatalog();
 		renderWishList();
 	});
-
+	
+	const productToBuy = {...product, quantity: 1};
 	const addCartBtn = document.createElement("button");
 	addCartBtn.classList.add("btn-add-to-trolly", "btn-style");
 
@@ -40,10 +41,15 @@ const createButtonsContainer = (product, index) => {
 	addCartBtn.addEventListener("click", () => {
 		product.addcart = !product.addcart;
 		if (product.addcart && !productsOnTrolly.some(({ id }) => id === product.id)) {
-			productsOnTrolly.push(product);
+			console.log("Que tiene productToBuy", productToBuy);
+			productsOnTrolly.push(productToBuy);
 		}
 		if (!product.addcart) {
-			removeProductFromTrolly(product);
+			console.log("Quiero eliminarlo", productToBuy);
+			removeProductFromTrolly(productToBuy);
+			console.log("Lo he eliminado de trolly",productToBuy);
+			console.log(productsOnTrolly);
+			console.log(productsOnStorage);
 		}
 		addCartBtn.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";
 		saveDataInStorage("trolly", productsOnTrolly);
