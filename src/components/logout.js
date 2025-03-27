@@ -10,6 +10,8 @@ const createLogOutMenu = () => {
 
     const spanForLogOutName = document.createElement("span");
     spanForLogOutName.classList.add("span-for-logout-name");
+    spanForLogOutName.textContent = ` (${getDataFromStorage("username")})`;
+    console.log("Que vale LogOut => ", spanForLogOutName.textContent);
 
     paragraphToLogOut.addEventListener("click", () => {
         localStorage.clear();
