@@ -655,12 +655,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	btnFloatingTrollyContainer.addEventListener("click", () => {
-		window.scrollTo({top: 0, behavior: "smooth"});
 		if (!productsOnTrolly.length) {
 			alert("Tu Carrito esta vacio");
 			catalogSection.classList.remove("dont-show");
 		}
-
+		window.scrollTo({top: 0, behavior: "smooth"});
+		
 		if (productsOnTrolly.length && !trollyCatalog.classList.contains("dont-show")) {
 			console.log("NO TIENE LA CLASE DONT SHOW");
 			catalogSection.classList.remove("dont-show");
@@ -797,8 +797,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			btnFloatingTrollyContainer.style.top = "40px";
 			btnGoToTop.style.bottom = "40px";
 		} else {
-			btnFloatingTrollyContainer.style.top = "-50px";
-			btnGoToTop.style.bottom = "-50px";
+			btnFloatingTrollyContainer.style.top = "-70px";
+			btnGoToTop.style.bottom = "-70px";
 		}
 	});
 

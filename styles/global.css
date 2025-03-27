@@ -468,19 +468,20 @@ body .dont-show {
 .floating-trolly-button {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 
 	position: fixed;
 	background-color: #131921;
 	box-shadow: 0px 0px 0px 4px var(--primary-color-btn);
 	opacity: 0.8;
-	top: -50px;
+	top: -80px;
 	right: 40px;
-	height: 40px;
-	width: 40px;
+	height: 48px;
+	width: 48px;
 	border: none;
 	border-radius: 50%;
-	transition-duration: 1s;
+	transition-duration: 0.3s;
 }
 
 .floating-trolly-button:hover {
@@ -760,12 +761,13 @@ main {
 	box-shadow: 0px 0px 0px 4px var(--primary-color-btn);
 	cursor: pointer;
 	font-weight: 500;
-	height: 38px;
+	height: 48px;
 	opacity: 0.8;
 	overflow: hidden;
 	transition-duration: 0.3s;
-	width: 38px;
+	width: 48px;
 	border-radius: 50%;
+	padding: 0;
 }
 
 .svgIcon {

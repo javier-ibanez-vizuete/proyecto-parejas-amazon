@@ -1,7 +1,7 @@
 /* MOBILE FIRST */
 
 /* TABLET */
-@media (min-width: 768px) {
+@media (min-width: 481px) {
 	:root {
 		--font-size-html: 15px;
 		--radius-card: 6px;
@@ -32,6 +32,11 @@
 
 	.icon-account-arrow-container {
 		width: 0.6rem;
+	}
+
+	/* ----floating button styles ----- */
+	.floating-trolly-button {
+		right: 60px;
 	}
 
 	/* -----------------------MAIN----------------- */
@@ -74,36 +79,35 @@
 
 		padding: var(--spacing-lg) var(--spacing-sm);
 	}
-}
-/* -----------FOOTER------------- */
+	/* -----------FOOTER------------- */
+	/* -------styles for button back to top------- */
+	.btn-back-to-top {
+		right: 60px;
+	}
+	/* ---------XXXXXXX---------- */
 
-/* -------styles for button back to top------- */
-.btn-back-to-top {
-	right: 60px;
-}
-/* ---------XXXXXXX---------- */
+	/* .footer {
+		padding: 0px var(--spacing-md) var(--spacing-md);
+	} */
 
-/* .footer {
-	padding: 0px var(--spacing-md) var(--spacing-md);
-} */
+	.amazon-countries-container {
+		gap: 1rem;
+	}
 
-.amazon-countries-container {
-	gap: 1rem;
-}
+	.amazon-countries {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.amazon-countries a {
+		text-align: center;
+	}
 
-.amazon-countries {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-}
-.amazon-countries a {
-	text-align: center;
-}
+	.copyright-info {
+		gap: 2rem;
+	}
 
-.copyright-info {
-	gap: 2rem;
+	/* ------------------------------------------------ */
 }
-
-/* ------------------------------------------------ */
 
 /* DESKTOP */
 @media (min-width: 1024px) {
@@ -207,6 +211,15 @@
 		flex: 0;
 	}
 
+	/* --------floating button styles ------- */
+	.floating-trolly-button {
+		justify-content: center;
+		right: 80px;
+		width: 56px;
+		height: 56px;
+	}
+
+
 	/* --------------------MAIN--------------------- */
 	/* --------------SECCION DE PRODUCTOS ------------------- */
 
@@ -280,18 +293,18 @@
 	}
 
 	/* -----------FOOTER------------- */
-/* --------styles for btn BackToTop-------- */
-.btn-back-to-top {
-	right: 80px;
-	height: 52px;
-	opacity: 0.9;
-	width: 52px;
-}
+	/* --------styles for btn BackToTop-------- */
+	.btn-back-to-top {
+		right: 80px;
+		height: 56px;
+		opacity: 0.9;
+		width: 56px;
+	}
 
-.svgIcon {
-	width: 10px;
-}
-/* --------------------------------------------------------------- */
+	.svgIcon {
+		width: 10px;
+	}
+	/* --------------------------------------------------------------- */
 
 	.footer {
 		gap: 1.5rem;
