@@ -84,6 +84,7 @@
 	.btn-back-to-top {
 		right: 60px;
 	}
+
 	/* ---------XXXXXXX---------- */
 
 	/* .footer {
@@ -303,6 +304,29 @@
 
 	.svgIcon {
 		width: 10px;
+	}
+	
+	.btn-back-to-top:hover {
+		align-items: center;
+	
+		background-color: var(--secondary-color-btn);
+		border-radius: 50px;
+		opacity: 1;
+		transition-duration: 0.3s;
+		transform: translateX(40px);
+		width: 140px;
+	}
+
+	.btn-back-to-top:hover .svgIcon {
+		transition-duration: 0.1s;
+		transform: translateY(-250%);
+	}
+
+	.btn-back-to-top:hover::before {
+		font-size: 0.9rem;
+		opacity: 1;
+		bottom: unset;
+		transition-duration: 0.5s;
 	}
 	/* --------------------------------------------------------------- */
 
