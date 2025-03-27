@@ -710,6 +710,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-storages-products");
+		wishListCatalog.classList.add("dont-show");
+		trollyCatalog.classList.add("dont-show");
+		catalogSection.classList.remove("dont-show")
 
 		renderCatalog(inputSearch.value);
 	});
@@ -723,6 +726,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-storages-products");
+		wishListCatalog.classList.add("dont-show");
+		trollyCatalog.classList.add("dont-show");
+		catalogSection.classList.remove("dont-show");
+
 
 		renderCatalog(inputSearch.value);
 	});
@@ -736,6 +743,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-storages-products");
+		wishListCatalog.classList.add("dont-show");
+		trollyCatalog.classList.add("dont-show");
+		catalogSection.classList.remove("dont-show");
 
 		renderCatalog(inputSearch.value);
 	});
@@ -749,6 +759,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
 		btnGamingProducts.classList.remove("open-storages-products");
+		wishListCatalog.classList.add("dont-show");
+		trollyCatalog.classList.add("dont-show");
+		catalogSection.classList.remove("dont-show");
 
 		renderCatalog(inputSearch.value);
 	});
@@ -762,6 +775,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnTabletsProducts.classList.remove("open-tablets-products");
 		btnGamingProducts.classList.remove("open-storages-products");
+		wishListCatalog.classList.add("dont-show");
+		trollyCatalog.classList.add("dont-show");
+		catalogSection.classList.remove("dont-show");
 
 		renderCatalog(inputSearch.value);
 	});
@@ -775,6 +791,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnTabletsProducts.classList.remove("open-tablets-products");
 		btnHeadphonesProducts.classList.remove("open-headphones-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
+		wishListCatalog.classList.add("dont-show");
+		trollyCatalog.classList.add("dont-show");
+		catalogSection.classList.remove("dont-show");
 
 		renderCatalog(inputSearch.value);
 	});
@@ -787,7 +806,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		btnMonitorsProducts.classList.remove("open-monitors-products");
 		btnTabletsProducts.classList.remove("open-tablets-products");
 		btnStoragesProducts.classList.remove("open-storages-products");
-		btnGamingProducts.classList.remove("open-gaming-products");
+		btnGamingProducts.classList.remove("open-gaming-products");		wishListCatalog.classList.add("dont-show");
+		trollyCatalog.classList.add("dont-show");
+		catalogSection.classList.remove("dont-show");
 
 		renderCatalog(inputSearch.value);
 	});
