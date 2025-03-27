@@ -577,14 +577,14 @@ const renderTrolly = () => {
  */
 document.addEventListener("DOMContentLoaded", () => {
 	// SELECCION DE ELEMENTOS
-	createBackToTopButton();
-	createFloatingTrollyButton();
+	elementsCaller();
 	const inputLogin = document.querySelector("#loginInput");
 	const btnContinue = document.querySelector(".continue-btn");
 
 	const inputSearch = document.querySelector("#input-search-product");
 	const btnSearch = document.querySelector(".btnSearch");
 
+	const spanForLogOutName = document.querySelector(".span-for-logout-name")
 	const spanForUserName = document.querySelector(".span-for-user-name");
 	const btnForTrollyCatalog = document.querySelector(".btn-trolly-catalog");
 	const btnFloatingTrollyContainer = document.querySelector(".floating-trolly-button")
@@ -618,6 +618,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		divLoginContainer.style.display = "none";
 		saveDataInStorage("username", inputLogin.value);
 		spanForUserName.textContent = getDataFromStorage("username");
+		spanForLogOutName.textContent = getDataFromStorage("username");
 		window.scrollTo(0, 0);
 	});
 
@@ -669,7 +670,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			return;
 		}
 		if (productsOnTrolly.length && trollyCatalog.classList.contains("dont-show")) {
-			console.log("SI TIENE LA CLASE");
 			catalogSection.classList.add("dont-show");
 			trollyCatalog.classList.remove("dont-show");
 			wishListCatalog.classList.add("dont-show");
@@ -805,8 +805,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	btnGoToTop.addEventListener("click", () => {
 		window.scrollTo({top: 0, behavior: "smooth"})
 	})
-
+	// CUSTOM NAMES
 	spanForUserName.textContent = getDataFromStorage("username");
+	spanForLogOutName.textContent = ` (${getDataFromStorage("username")})`;
+	console.log(spanForLogOutName);
+
 
 	if (inputSearch.value) {
 		renderCatalog(inputSearch.value);

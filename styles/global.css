@@ -404,6 +404,13 @@ body .dont-show {
 	flex-direction: column;
 	align-items: center;
 	flex: 1;
+
+	position: relative;
+	visibility: visible;
+}
+
+.account-container:hover {
+	visibility: hidden;
 }
 .title-for-account-and-icon-container {
 	display: flex;
@@ -418,6 +425,24 @@ body .dont-show {
 	align-items: center;
 
 	width: 0.5rem;
+}
+/* ----LogOut Seson Container---- */
+.menu-logout-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	position: absolute;
+	top: 0;
+	right: -20px;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+	background-color: #131921;
+}
+
+.account-container:hover .menu-logout-container {
+	visibility: visible;
 }
 
 .wishlist-container {
