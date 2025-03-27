@@ -294,6 +294,7 @@
 	}
 
 	/* -----------FOOTER------------- */
+
 	/* --------styles for btn BackToTop-------- */
 	.btn-back-to-top {
 		right: 80px;
@@ -333,7 +334,7 @@
 	.footer {
 		gap: 1.5rem;
 
-		padding: 0px var(--spacing-lg) var(--spacing-lg);
+		padding: var(--spacing-lg) var(--spacing-lg);
 	}
 
 	.footer-links-container {
