@@ -39,7 +39,16 @@ const clearContainer = () => {
 };
 
 const calculateTotalPrice = () => {
-	return productsOnTrolly.reduce((total, product) => total + product.price, 0);
+	return productsOnTrolly.reduce((total, product) => {
+		console.log(`
+			Total Acumulado => ${total}
+			Precio del producto => ${product.price}
+			Cantidad de Producto => ${product.quantity}
+			precio total segun cantidad => ${product.price * product.quantity}
+			TOTAL => ${total + (product.price * product.quantity)}
+			`);
+		return total + (product.price * product.quantity);
+	}, 0);
 };
 
 const recalculateProductsInTheCar = () => {
