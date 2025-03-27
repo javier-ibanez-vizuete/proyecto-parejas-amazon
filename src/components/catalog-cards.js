@@ -87,6 +87,16 @@ const createInfoProductContainer = (product, index) => {
 	return infoContainer;
 };
 
+const createProductimage = (image) => {
+	const imageContainer = document.createElement("div");
+	imageContainer.classList.add("img-product-container");
+
+	const imgProduct = document.createElement("img");
+	imgProduct.src = image;
+	imageContainer.append(imgProduct);
+	return imageContainer;
+};
+
 /**
  * create a HTML element (container) for each product
  * 
