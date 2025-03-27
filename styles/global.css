@@ -442,9 +442,9 @@ body .dont-show {
 	background-color: #131921;
 }
 
-.account-container:hover .menu-logout-container {
+/* .account-container:hover .menu-logout-container {
 	visibility: visible;
-}
+} */
 
 .wishlist-container {
 	display: flex;
