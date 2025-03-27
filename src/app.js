@@ -578,14 +578,10 @@ const renderTrolly = () => {
 document.addEventListener("DOMContentLoaded", () => {
 	// SELECCION DE ELEMENTOS
 	elementsCaller();
-	// const inputLogin = document.querySelector("#loginInput");
-	// const btnContinue = document.querySelector(".continue-btn");
 
 	const inputSearch = document.querySelector("#input-search-product");
 	const btnSearch = document.querySelector(".btnSearch");
 
-	// const spanForLogOutName = document.querySelector(".span-for-logout-name")
-	// const spanForUserName = document.querySelector(".span-for-user-name");
 	const btnForTrollyCatalog = document.querySelector(".btn-trolly-catalog");
 	const btnFloatingTrollyContainer = document.querySelector(".floating-trolly-button");
 	const btnForWishList = document.querySelector(".wishlist-container");
@@ -609,19 +605,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// ADDEVENTLISTENER
-	// btnContinue.addEventListener("click", (event) => {
-	// 	event.preventDefault();
-	// 	if (!inputLogin.value) {
-	// 		window.location.reload();
-	// 	}
-	// 	const divLoginContainer = document.querySelector(".login-background-container");
-	// 	divLoginContainer.style.display = "none";
-	// 	saveDataInStorage("username", inputLogin.value);
-	// 	spanForUserName.textContent = getDataFromStorage("username");
-	// 	spanForLogOutName.textContent = getDataFromStorage("username");
-	// 	window.scrollTo(0, 0);
-	// });
-
 	inputSearch.addEventListener("keyup", () => {
 		saveDataInStorage("searchOnStorage", inputSearch.value);
 		renderCatalog(inputSearch.value);
@@ -813,6 +796,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		renderCatalog(inputSearch.value);
 	});
 
+	window.addEventListener("load", () => {
+		window.scrollTo(0, 0);
+	});
+	
 	window.addEventListener("scroll", () => {
 		if (window.scrollY > 500) {
 			btnFloatingTrollyContainer.style.top = "40px";
@@ -823,17 +810,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 
-	window.addEventListener("load", () => {
-		window.scrollTo(0, 0);
-	});
 
 	btnGoToTop.addEventListener("click", () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	});
-	// CUSTOM NAMES
-	// spanForUserName.textContent = getDataFromStorage("username");
-	// spanForLogOutName.textContent = ` (${getDataFromStorage("username")})`;
-	// console.log(spanForLogOutName);
 
 	if (inputSearch.value) {
 		renderCatalog(inputSearch.value);
