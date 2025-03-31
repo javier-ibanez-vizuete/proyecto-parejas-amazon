@@ -3,7 +3,7 @@ const removeProductFromTrolly = (productToBuy) => {
 	productsOnTrolly.splice(indexOfProduct, 1);
 };
 
-const removeProductFromWishList = ({id}) => {
+const removeProductFromWishList = ({ id }) => {
 	const indexOfProduct = productsOnWishList.findIndex((product) => product.id === id);
 	productsOnWishList.splice(indexOfProduct, 1);
 };
@@ -11,11 +11,11 @@ const removeProductFromWishList = ({id}) => {
 const createButtonsContainer = (product, index) => {
 	const buttonsContainer = document.createElement("div");
 	buttonsContainer.classList.add("buttons-card-container");
-	
+
 	const wishlistBtn = document.createElement("button");
 	wishlistBtn.classList.add("btn-add-to-wish-list", "btn-style");
-	
-	wishlistBtn.textContent = product.wishlist ? "Quitar de Deseados" : "Añadir a deseados";
+
+	wishlistBtn.textContent = product.wishlist ? "Eliminar de Deseados" : "Añadir a deseados";
 	wishlistBtn.addEventListener("click", () => {
 		product.wishlist = !product.wishlist;
 		if (product.wishlist && !productsOnWishList.some(({ id }) => id === product.id)) {
@@ -31,8 +31,8 @@ const createButtonsContainer = (product, index) => {
 		renderCatalog();
 		renderWishList();
 	});
-	
-	const productToBuy = {...product, quantity: 1};
+
+	const productToBuy = { ...product, quantity: 1 };
 	const addCartBtn = document.createElement("button");
 	addCartBtn.classList.add("btn-add-to-trolly", "btn-style");
 
@@ -62,7 +62,7 @@ const createButtonsContainer = (product, index) => {
 
 /**
  * Create a HTML element with information of each product.
- * 
+ *
  * @param {*} product Contains the product information.
  * @param {*} index Index of the product in the array.
  * @returns HTML Element with a product's Information.
@@ -101,15 +101,26 @@ const createProductimage = (image) => {
 
 /**
  * create a HTML element (container) for each product
- * 
+ *
  * @param {*} product Contains the product information
  * @param {*} index Index of the product in the array.
  * @returns HTML Element (container) with the product's information.
  */
 const createProductCard = (product, index) => {
+	const header = document.querySelector(".header");
+	const main = document.querySelector(".main");
+	const footer = document.querySelector(".footer");
 	const cardContainer = document.createElement("div");
 	cardContainer.classList.add("product-card");
-console.log("Que vale product? => ", product);
+	cardContainer.addEventListener("dblclick", (event) => {
+		event.stopPropagation();
+		event.stopImmediatePropagation();
+		createProductSpecification(product);
+		header.classList.add("blur-background");
+		main.classList.add("blur-background");
+		footer.classList.add("blur-background");
+	})
+
 	const { image } = product;
 	const firstImage = image[0];
 	const divImageContainer = createProductimage(firstImage);
@@ -124,7 +135,7 @@ console.log("Que vale product? => ", product);
 
 /**
  * filter the array of products by a given name
- * 
+ *
  * @param {*} name Input value to search products on the array.
  * @returns An Array filtered with products with the same given name
  */

@@ -14,7 +14,7 @@ const products = [
 		color: "Gris",
 		price: 202,
 		deliveryDate: "",
-		isPrime: false,
+		isPrime: true,
 		wishlist: false,
 		addcart: false,
 	},

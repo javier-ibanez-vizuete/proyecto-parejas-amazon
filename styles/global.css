@@ -77,6 +77,7 @@ ul {
 	--spacing-2xl: 36px;
 	--spacing-3xl: 48px;
 	--spacing-4xl: 60px;
+	--super-spacing: 180px;
 
 	--radius-card: 4px;
 	--radius-button: 16px;
@@ -132,13 +133,17 @@ img {
 
 body .dont-show {
 	display: none;
-
 }
-
 
 .body-container {
 	display: flex;
 	flex-direction: column;
+
+	position: relative;
+}
+
+.hide-with-over {
+	display: none;
 }
 
 .container {
@@ -432,7 +437,7 @@ body .dont-show {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
+
 	position: absolute;
 	top: 0;
 	right: -20px;
@@ -514,7 +519,6 @@ body .dont-show {
 	transition-duration: 0.5s;
 	opacity: 1;
 }
-
 
 .floating-trolly-button button {
 	display: flex;
@@ -652,6 +656,161 @@ main {
 	background-color: var(--secondary-color-btn);
 }
 
+/* ------------ STYLES FOR PRODUCTS CARD SPECIFICATIONS --------------- */
+.div-bg-product-container {
+	display: flex;
+	flex-direction: column;
+
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+
+	padding: var(--spacing-xl);
+}
+
+.div-product-specification-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1;
+	gap: 0.5rem;
+
+	position: relative;
+	background-color: white;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+	border-radius: var(--radius-card);
+	padding: var(--spacing-sm);
+}
+
+.btn-to-close-product {
+	align-self: center;
+
+	position: absolute;
+	top: 10px;
+	right: 10px;
+
+	border: none;
+	background-color: var(--primary-color-btn);
+	border-radius: var(--radius-card);
+	padding: var(--spacing-sm);
+}
+
+.div-all-images-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.div-mini-images-container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 0.5rem;
+}
+
+.div-image-mini-container {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+
+	width: 60px;
+}
+
+.div-maxi-images-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	
+	position: relative;
+
+}
+
+.div-image-maxi-container {
+	display: none;
+	justify-content: center;
+	align-self: center;
+	flex: 1;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.div-details-product-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1rem;
+}
+
+.name-product-details {
+	color: var(--primary-text-color);
+	font-weight: 400;
+}
+
+.div-logo-prime-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 60px;
+}
+
+.div-details-product-container .separator {
+	background-color: lightgrey;
+}
+
+.div-details-product-container p {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+.div-btns-details-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	gap: 1rem;
+}
+
+.btn-details-wished-product {
+	background-color: #fbdc40;
+}
+
+.btn-details-trolly-prodct {
+	background-color: var(--secondary-color-btn);
+}
+
+.div-btns-details-container button:hover {
+	filter: brightness(85%);
+	transition-duration: 0.5s;
+}
+
+/* master class for details products cards... */
+.blur-background {
+	filter: blur(2px);
+}
+
+.show-with-hover {
+	display: flex;
+}
+
+.fake-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hide-with-hover {
+	visibility: hidden;
+}
+
+
+
 /* --------------------SECTION FOR WISH LIST PRODUCTS -------------------------- */
 
 .wishlist-container-section {
@@ -779,7 +938,8 @@ main {
 	padding: var(--spacing-sm) 0;
 }
 
-.btn-decrease-quantity-product:hover, .btn-increase-quantity-product:hover {
+.btn-decrease-quantity-product:hover,
+.btn-increase-quantity-product:hover {
 	filter: brightness(85%);
 	transition-duration: 0.3s;
 }
