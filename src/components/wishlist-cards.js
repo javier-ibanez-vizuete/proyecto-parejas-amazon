@@ -73,7 +73,8 @@ const createWishListCard = (product) => {
 	divWishedCard.classList.add("wished-product-card");
 
 	const { image } = product;
-	const imageWishedProduct = createImageForWishedProduct(image);
+	const firstImage = image[0];
+	const imageWishedProduct = createImageForWishedProduct(firstImage);
 	divWishedCard.append(imageWishedProduct);
 
 	const infoCardContainer = createInfoWishedCard(product);

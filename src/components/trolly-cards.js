@@ -91,8 +91,10 @@ const createTrollyCard = (product) => {
 	const divImageTrollyCardContainer = document.createElement("div");
 	divImageTrollyCardContainer.classList.add("card-trolly-image-container");
 
+	const {image} = product;
+	const firstImage = image[0];
 	const imageTrollyCard = document.createElement("img");
-	imageTrollyCard.src = product.image;
+	imageTrollyCard.src = firstImage;
 	divImageTrollyCardContainer.append(imageTrollyCard);
 
 	const divInfoTrollyCardContainer = document.createElement("div");

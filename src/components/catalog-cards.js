@@ -94,6 +94,7 @@ const createProductimage = (image) => {
 
 	const imgProduct = document.createElement("img");
 	imgProduct.src = image;
+	imgProduct.alt = "La imagen se rompió";
 	imageContainer.append(imgProduct);
 	return imageContainer;
 };
@@ -108,9 +109,10 @@ const createProductimage = (image) => {
 const createProductCard = (product, index) => {
 	const cardContainer = document.createElement("div");
 	cardContainer.classList.add("product-card");
-
+console.log("Que vale product? => ", product);
 	const { image } = product;
-	const divImageContainer = createProductimage(image);
+	const firstImage = image[0];
+	const divImageContainer = createProductimage(firstImage);
 
 	const divInfoProductContainer = createInfoProductContainer(product, index);
 
