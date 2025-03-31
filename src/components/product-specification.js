@@ -22,6 +22,7 @@ const createDetailsButtonsContainer = (product) => {
 	});
 	divButtonsContainer.append(btnWishedProduct);
 
+	const productToBuy = { ...product, quantity: 1 };
 	const btnTrollyProduct = document.createElement("button");
 	btnTrollyProduct.classList.add("btn-details-trolly-prodct", "btn-style");
 	btnTrollyProduct.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";

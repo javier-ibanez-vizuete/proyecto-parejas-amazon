@@ -69,8 +69,21 @@ const createImageForWishedProduct = (image) => {
 };
 
 const createWishListCard = (product) => {
+	const header = document.querySelector(".header");
+	const main = document.querySelector(".main");
+	const footer = document.querySelector(".footer");
+
 	const divWishedCard = document.createElement("div");
 	divWishedCard.classList.add("wished-product-card");
+	divWishedCard.addEventListener("dblclick", (event) => {
+		event.stopPropagation();
+		event.stopImmediatePropagation();
+		createProductSpecification(product);
+		header.classList.add("blur-background");
+		main.classList.add("blur-background");
+		footer.classList.add("blur-background");
+	});
+
 
 	const { image } = product;
 	const firstImage = image[0];

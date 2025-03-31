@@ -15,6 +15,7 @@ const removeFromTrollyCatalog = (product) => {
 	}
 	saveDataInStorage("productsOnStorage", productsOnStorage);
 	saveDataInStorage("trolly", productsOnTrolly);
+	renderCatalog();
 };
 
 const clearTrolly = () => {
@@ -46,10 +47,11 @@ const createquantityButtonsControls = (quantity, id) => {
 			productsOnTrolly.splice(indexOfProduct, 1);
 			productsOnStorage[indexOfProduct].addcart = false;
 			saveDataInStorage("productsOnStorage", productsOnStorage);
+			saveDataInStorage("trolly", productsOnTrolly);
 			renderCatalog();
 			recalculateProductsInTheCar();
 		}
-
+		
 		saveDataInStorage("trolly", productsOnTrolly);
 		renderTrolly();
 	});
@@ -85,13 +87,24 @@ const createquantityButtonsControls = (quantity, id) => {
 };
 
 const createTrollyCard = (product) => {
+	const header = document.querySelector(".header");
+	const main = document.querySelector(".main");
+	const footer = document.querySelector(".footer");
+
 	const divTrollyCard = document.createElement("div");
 	divTrollyCard.classList.add("trolly-card");
-
+	divTrollyCard.addEventListener("dblclick", (event) => {
+		event.stopPropagation();
+		event.stopImmediatePropagation();
+		createProductSpecification(product);
+		header.classList.add("blur-background");
+		main.classList.add("blur-background");
+		footer.classList.add("blur-background");
+	});
 	const divImageTrollyCardContainer = document.createElement("div");
 	divImageTrollyCardContainer.classList.add("card-trolly-image-container");
 
-	const {image} = product;
+	const { image } = product;
 	const firstImage = image[0];
 	const imageTrollyCard = document.createElement("img");
 	imageTrollyCard.src = firstImage;

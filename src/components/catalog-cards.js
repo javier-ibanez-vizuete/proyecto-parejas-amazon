@@ -119,7 +119,7 @@ const createProductCard = (product, index) => {
 		header.classList.add("blur-background");
 		main.classList.add("blur-background");
 		footer.classList.add("blur-background");
-	})
+	});
 
 	const { image } = product;
 	const firstImage = image[0];
