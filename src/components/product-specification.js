@@ -60,7 +60,8 @@ const createDetailsProduct = (product) => {
 	h5ProductName.textContent = product.name;
 	divDetailsContainer.append(h5ProductName);
 
-	const divSeparator = document.querySelector(".separator");
+	const divSeparator = document.createElement("div");
+	divSeparator.classList.add("separator");
 	divDetailsContainer.append(divSeparator);
 
 	const h4ProductPrice = document.createElement("h4");
