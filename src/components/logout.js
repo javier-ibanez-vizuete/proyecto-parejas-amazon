@@ -1,8 +1,8 @@
 const createLogOutMenu = () => {
 	const accountMenuContainer = document.querySelector(".account-container");
 
-	const isTouchDevice = window.matchMedia("(hover: none)").matches;
-
+	const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+	
 	const divMenuTextContainer = document.createElement("div");
 	divMenuTextContainer.classList.add("menu-logout-container");
 
