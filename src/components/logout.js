@@ -1,8 +1,8 @@
 const createLogOutMenu = () => {
 	const accountMenuContainer = document.querySelector(".account-container");
 
-	const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-	
+	const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
 	const divMenuTextContainer = document.createElement("div");
 	divMenuTextContainer.classList.add("menu-logout-container");
 
@@ -19,15 +19,13 @@ const createLogOutMenu = () => {
 		window.location.reload();
 	});
 	if (isTouchDevice) {
-		alert("estamos entrando en el if")
+		alert("Sigue siendo un dispositivo tactil");
 		accountMenuContainer.addEventListener("click", (event) => {
 			event.stopPropagation();
 			divMenuTextContainer.style.visibility = "visible";
 		});
-		document.addEventListener("click", () => {
-			setTimeout(() => {
-				divMenuTextContainer.style.visibility = "hidden";
-			}, 400);
+		divMenuTextContainer.addEventListener("dblclick", () => {
+			divMenuTextContainer.style.visibility = "hidden";
 		});
 	} else {
 		accountMenuContainer.addEventListener("mouseenter", () => {
