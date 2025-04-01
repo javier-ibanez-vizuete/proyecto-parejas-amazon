@@ -10,38 +10,51 @@ const removeProductFromWishList = ({ id }) => {
 
 const createButtonsContainer = (product, index) => {
 	const buttonsContainer = document.createElement("div");
+	const productToBuy = { ...product, quantity: 1 };
 	buttonsContainer.classList.add("buttons-card-container");
 
 	const wishlistBtn = document.createElement("button");
 	wishlistBtn.classList.add("btn-add-to-wish-list", "btn-style");
-
 	wishlistBtn.textContent = product.wishlist ? "Eliminar de Deseados" : "Añadir a deseados";
 	wishlistBtn.addEventListener("click", () => {
 		product.wishlist = !product.wishlist;
+		productToBuy.wishlist = product.wishlist;
 		if (product.wishlist && !productsOnWishList.some(({ id }) => id === product.id)) {
 			productsOnWishList.push(product);
+		}
+		if (!productsOnTrolly.some(({ id }) => id === product.id)) {
+			productsOnTrolly.push(productToBuy);
+		}
+		if (productsOnTrolly.some(({ id }) => id === product.id)) {
+			const ProductToReplice = productsOnTrolly.findIndex(({ i }) => i === product.id);
+			productsOnTrolly.splice(ProductToReplice, 1, productToBuy);
 		}
 		if (!product.wishlist) {
 			removeProductFromWishList(product);
 		}
 		wishlistBtn.textContent = product.wishlist ? "Quitar de Deseados" : "Añadir a deseados";
 		saveDataInStorage("wishlist", productsOnWishList);
+		saveDataInStorage("trolly", productsOnTrolly);
+		renderTrolly();
 		recalculateProductsInTheWishList();
 		saveDataInStorage("productsOnStorage", productsOnStorage);
 		renderCatalog();
 		renderWishList();
 	});
 
-	const productToBuy = { ...product, quantity: 1 };
 	const addCartBtn = document.createElement("button");
 	addCartBtn.classList.add("btn-add-to-trolly", "btn-style");
 
 	addCartBtn.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";
-
 	addCartBtn.addEventListener("click", () => {
 		product.addcart = !product.addcart;
+		productToBuy.addcart = product.addcart;
 		if (product.addcart && !productsOnTrolly.some(({ id }) => id === product.id)) {
 			productsOnTrolly.push(productToBuy);
+		}
+		if (product.addcart && productsOnTrolly.some(({ id }) => id === product.id)) {
+			const ProductToReplice = productsOnTrolly.findIndex(({ i }) => i === product.id);
+			productsOnTrolly.splice(ProductToReplice, 1, productToBuy);
 		}
 		if (!product.addcart) {
 			removeProductFromTrolly(productToBuy);
@@ -110,6 +123,7 @@ const createProductCard = (product, index) => {
 	const header = document.querySelector(".header");
 	const main = document.querySelector(".main");
 	const footer = document.querySelector(".footer");
+
 	const cardContainer = document.createElement("div");
 	cardContainer.classList.add("product-card");
 	cardContainer.addEventListener("dblclick", (event) => {

@@ -761,9 +761,9 @@ main {
 	width: 60px;
 }
 
-.div-details-product-container .separator {
+/* .separator {
 	background-color: lightgrey;
-}
+} */
 
 .div-details-product-container p {
 	font-size: 1.2rem;

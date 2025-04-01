@@ -10,6 +10,9 @@ const createDetailsButtonsContainer = (product) => {
 		if (product.wishlist && !productsOnWishList.some(({ id }) => id === product.id)) {
 			productsOnWishList.push(product);
 		}
+		const productToReplice = productsOnStorage.findIndex(({ id }) => id === product.id);
+		productsOnStorage[productToReplice].wishlist = product.wishlist;
+
 		if (!product.wishlist) {
 			removeProductFromWishList(product);
 		}
@@ -22,17 +25,19 @@ const createDetailsButtonsContainer = (product) => {
 	});
 	divButtonsContainer.append(btnWishedProduct);
 
-	const productToBuy = { ...product, quantity: 1 };
+	// const productToBuy = { ...product, quantity: 1 };
 	const btnTrollyProduct = document.createElement("button");
 	btnTrollyProduct.classList.add("btn-details-trolly-prodct", "btn-style");
 	btnTrollyProduct.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";
 	btnTrollyProduct.addEventListener("click", () => {
 		product.addcart = !product.addcart;
 		if (product.addcart && !productsOnTrolly.some(({ id }) => id === product.id)) {
-			productsOnTrolly.push(productToBuy);
+			productsOnTrolly.push(product);
 		}
+		const productToReplice = productsOnStorage.findIndex(({ id }) => id === product.id);
+		productsOnStorage[productToReplice].wishlist = product.addcart;
 		if (!product.addcart) {
-			removeProductFromTrolly(productToBuy);
+			removeProductFromTrolly(product);
 		}
 		btnTrollyProduct.textContent = product.addcart ? "Eliminar del Carrito" : "Agregar al carrito";
 		saveDataInStorage("trolly", productsOnTrolly);
@@ -117,14 +122,14 @@ const createImagesContainer = (modelName, images) => {
 
 	const divMaxiImagesContainer = document.createElement("div");
 	divMaxiImagesContainer.classList.add("div-maxi-images-container");
-    
-    const fakeImageContainer = document.createElement("div");
-    fakeImageContainer.classList.add("fake-image");
-    const imgFake = document.createElement("img");
-    imgFake.src = images[0];
-    imgFake.alt = modelName;
-    fakeImageContainer.append(imgFake);
-    divMaxiImagesContainer.append(fakeImageContainer);
+
+	const fakeImageContainer = document.createElement("div");
+	fakeImageContainer.classList.add("fake-image");
+	const imgFake = document.createElement("img");
+	imgFake.src = images[0];
+	imgFake.alt = modelName;
+	fakeImageContainer.append(imgFake);
+	divMaxiImagesContainer.append(fakeImageContainer);
 	images.forEach((image, index) => {
 		const divImageMiniContainer = document.createElement("div");
 		divImageMiniContainer.classList.add("div-image-mini-container");
@@ -146,21 +151,18 @@ const createImagesContainer = (modelName, images) => {
 		divImageMaxiContainer.append(imageMaxi);
 		divMaxiImagesContainer.append(divImageMaxiContainer);
 
-        divImageMiniContainer.addEventListener("mouseover", () => {
-            console.log(divImageMaxiContainer.children);
-        })
+		divImageMiniContainer.addEventListener("mouseover", () => {});
 
-        divImageMiniContainer.addEventListener("mouseenter", () => {
-            console.log(Array.from(document.querySelectorAll(".div-image-maxi-container"))[index]);
-            Array.from(document.querySelectorAll(".div-image-maxi-container"))[index].classList.add("show-with-hover");
-            fakeImageContainer.classList.add("hide-with-hover");
-
-        })
-        divImageMiniContainer.addEventListener("mouseleave", () => {
-            console.log(Array.from(document.querySelectorAll(".div-image-maxi-container"))[index]);
-            Array.from(document.querySelectorAll(".div-image-maxi-container"))[index].classList.remove("show-with-hover");
-            fakeImageContainer.classList.remove("hide-with-hover");
-        })
+		divImageMiniContainer.addEventListener("mouseenter", () => {
+			Array.from(document.querySelectorAll(".div-image-maxi-container"))[index].classList.add("show-with-hover");
+			fakeImageContainer.classList.add("hide-with-hover");
+		});
+		divImageMiniContainer.addEventListener("mouseleave", () => {
+			Array.from(document.querySelectorAll(".div-image-maxi-container"))[index].classList.remove(
+				"show-with-hover"
+			);
+			fakeImageContainer.classList.remove("hide-with-hover");
+		});
 	});
 
 	divAllImagesContainer.append(divMiniImagesContainer);
