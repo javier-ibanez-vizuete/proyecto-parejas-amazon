@@ -26,7 +26,7 @@ const createLogOutMenu = () => {
 		document.addEventListener("click", () => {
 			setTimeout(() => {
 				divMenuTextContainer.style.visibility = "hidden";
-			}, 200);
+			}, 400);
 
 			divMenuTextContainer.style.visibility = "hidden";
 		});
