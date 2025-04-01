@@ -62,6 +62,17 @@
 		padding: 0 var(--super-spacing);
 	}
 
+	.div-image-maxi-container {
+		max-width: 350px;
+		max-height: 400px;
+	}
+	
+	.fake-image {
+		max-width: 350px;
+		max-height: 400px;
+	}
+	
+
 	.div-details-product-container {
 		gap: 0.5rem;
 	}
@@ -497,6 +508,17 @@
 	.div-maxi-images-container {
 		width: 700px;
 	}
+
+	.div-image-maxi-container {
+		max-width: 400px;
+		max-height: 450px;
+	}
+	
+	.fake-image {
+		max-width: 400px;
+		max-height: 450px;
+	}
+
 
 	/* ---------------------SECCION DE WISHLIST ---------------------- */
 

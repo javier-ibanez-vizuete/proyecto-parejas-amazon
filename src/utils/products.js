@@ -328,7 +328,6 @@ const products = [
 		category: "monitor",
 		image: [
 			"/media/productos/monitores/philips-24e1n1100a/philips-24e1n1100a-front.jpg",
-			"/media/productos/monitores/philips-24e1n1100a/philips-24e1n1100a-side.jpg",
 			"/media/productos/monitores/philips-24e1n1100a/philips-24e1n1100a-back.jpg",
 		],
 		color: "Negro",
