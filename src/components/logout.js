@@ -14,17 +14,12 @@ const createLogOutMenu = () => {
 	spanForLogOutName.classList.add("span-for-logout-name");
 	spanForLogOutName.textContent = ` (${getDataFromStorage("username")})`;
 
-	paragraphToLogOut.addEventListener("click", () => {
-		localStorage.clear();
-		window.location.reload();
-	});
 	if (isTouchDevice) {
-		alert("Sigue siendo un dispositivo tactil");
 		accountMenuContainer.addEventListener("click", (event) => {
 			event.stopPropagation();
 			divMenuTextContainer.style.visibility = "visible";
 		});
-		divMenuTextContainer.addEventListener("dblclick", () => {
+		paragraphToLogOut.addEventListener("dblclick", () => {
 			divMenuTextContainer.style.visibility = "hidden";
 		});
 	} else {
@@ -32,13 +27,17 @@ const createLogOutMenu = () => {
 			divMenuTextContainer.style.transitionDuration = "0.3s";
 			divMenuTextContainer.style.visibility = "visible";
 		});
-
+		
 		accountMenuContainer.addEventListener("mouseleave", () => {
 			divMenuTextContainer.style.transitionDuration = "0.3s";
 			divMenuTextContainer.style.visibility = "hidden";
 		});
 	}
-
+	paragraphToLogOut.addEventListener("click", () => {
+		localStorage.clear();
+		window.location.reload();
+	});
+	
 	paragraphToLogOut.append(spanForLogOutName);
 	divMenuTextContainer.append(paragraphToLogOut);
 	accountMenuContainer.append(divMenuTextContainer);
