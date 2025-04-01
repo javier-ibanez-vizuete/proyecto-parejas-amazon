@@ -19,6 +19,7 @@ const createLogOutMenu = () => {
 		window.location.reload();
 	});
 	if (isTouchDevice) {
+		alert("estamos entrando en el if")
 		accountMenuContainer.addEventListener("click", (event) => {
 			event.stopPropagation();
 			divMenuTextContainer.style.visibility = "visible";
