@@ -1,44 +1,48 @@
 const createLogOutMenu = () => {
-    const accountMenuContainer = document.querySelector(".account-container");
-    
-    const isTouchDevice = window.matchMedia("(hover: none)").matches;
-    
-    const divMenuTextContainer = document.createElement("div");
-    divMenuTextContainer.classList.add("menu-logout-container");
+	const accountMenuContainer = document.querySelector(".account-container");
 
-    const paragraphToLogOut = document.createElement("p");
-    paragraphToLogOut.classList.add("paragraph-logout");
-    paragraphToLogOut.textContent = "Cerrar Sesion";
+	const isTouchDevice = window.matchMedia("(hover: none)").matches;
 
-    const spanForLogOutName = document.createElement("span");
-    spanForLogOutName.classList.add("span-for-logout-name");
-    spanForLogOutName.textContent = ` (${getDataFromStorage("username")})`;
+	const divMenuTextContainer = document.createElement("div");
+	divMenuTextContainer.classList.add("menu-logout-container");
 
-    paragraphToLogOut.addEventListener("click", () => {
-        localStorage.clear();
-        window.location.reload();
-    })
-    if (isTouchDevice) {
-        accountMenuContainer.addEventListener("click", (event) => {
-            event.stopPropagation();
-            divMenuTextContainer.style.visibility = "visible";
-        })
-        document.addEventListener("click", (event) => {
-            event.stopPropagation()
-            divMenuTextContainer.style.visibility = "hidden";
-        })
-    } else {
-        accountMenuContainer.addEventListener("mouseenter", () => {
-            divMenuTextContainer.style.visibility = "visible";
-        })
+	const paragraphToLogOut = document.createElement("p");
+	paragraphToLogOut.classList.add("paragraph-logout");
+	paragraphToLogOut.textContent = "Cerrar Sesion";
 
-        accountMenuContainer.addEventListener("mouseleave", () => {
-            divMenuTextContainer.style.visibility = "hidden";
-        })
-    }
+	const spanForLogOutName = document.createElement("span");
+	spanForLogOutName.classList.add("span-for-logout-name");
+	spanForLogOutName.textContent = ` (${getDataFromStorage("username")})`;
 
-    
-    paragraphToLogOut.append(spanForLogOutName);
-    divMenuTextContainer.append(paragraphToLogOut);
-    accountMenuContainer.append(divMenuTextContainer);
+	paragraphToLogOut.addEventListener("click", () => {
+		localStorage.clear();
+		window.location.reload();
+	});
+	if (isTouchDevice) {
+		accountMenuContainer.addEventListener("click", (event) => {
+			event.stopPropagation();
+			divMenuTextContainer.style.visibility = "visible";
+		});
+		document.addEventListener("click", () => {
+			setTimeout(() => {
+				divMenuTextContainer.style.visibility = "hidden";
+			}, 200);
+
+			divMenuTextContainer.style.visibility = "hidden";
+		});
+	} else {
+		accountMenuContainer.addEventListener("mouseenter", () => {
+			divMenuTextContainer.style.transitionDuration = "0.3s";
+			divMenuTextContainer.style.visibility = "visible";
+		});
+
+		accountMenuContainer.addEventListener("mouseleave", () => {
+			divMenuTextContainer.style.transitionDuration = "0.3s";
+			divMenuTextContainer.style.visibility = "hidden";
+		});
+	}
+
+	paragraphToLogOut.append(spanForLogOutName);
+	divMenuTextContainer.append(paragraphToLogOut);
+	accountMenuContainer.append(divMenuTextContainer);
 };
