@@ -22,9 +22,6 @@ const createButtonsContainer = (product, index) => {
 		if (product.wishlist && !productsOnWishList.some(({ id }) => id === product.id)) {
 			productsOnWishList.push(product);
 		}
-		if (!productsOnTrolly.some(({ id }) => id === product.id)) {
-			productsOnTrolly.push(productToBuy);
-		}
 		if (productsOnTrolly.some(({ id }) => id === product.id)) {
 			const ProductToReplice = productsOnTrolly.findIndex(({ i }) => i === product.id);
 			productsOnTrolly.splice(ProductToReplice, 1, productToBuy);

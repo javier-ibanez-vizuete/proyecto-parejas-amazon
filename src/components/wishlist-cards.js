@@ -8,18 +8,29 @@ const removeFromWishList = (id) => {
 	if (!productsOnWishList.length) {
 		renderCatalog();
 	}
-	
+
 	saveDataInStorage("wishlist", productsOnWishList);
 	saveDataInStorage("productsOnStorage", productsOnStorage);
 };
 
 const clearWishList = () => {
-    productsOnWishList.length = 0;
-    productsOnStorage.forEach(product => product.wishlist = false);
-    saveDataInStorage("wishlist", productsOnWishList);
-    saveDataInStorage("productsOnStorage", productsOnStorage);
-    renderWishList(); 
+	const catalogSection = document.querySelector(".catalog-section");
+	const wishListCatalog = document.querySelector(".wishlist-container-section");
+	const trollyCatalog = document.querySelector(".trolly-container");
+
+	productsOnWishList.length = 0;
+	productsOnStorage.forEach((product) => (product.wishlist = false));
+	saveDataInStorage("wishlist", productsOnWishList);
+	saveDataInStorage("productsOnStorage", productsOnStorage);
+	renderWishList();
+	console.log(productsOnWishList.length);
 	if (!productsOnWishList.length) {
+		console.log("¿Estoy entrando aqui?");
+		catalogSection.classList.remove("dont-show");
+		trollyCatalog.classList.add("dont-show");
+		wishListCatalog.classList.add("dont-show");
+		window.scrollTo(0, 0);
+
 		renderCatalog();
 	}
 };
@@ -84,7 +95,6 @@ const createWishListCard = (product) => {
 		footer.classList.add("blur-background");
 	});
 
-
 	const { image } = product;
 	const firstImage = image[0];
 	const imageWishedProduct = createImageForWishedProduct(firstImage);
@@ -122,10 +132,10 @@ const renderWishList = () => {
 	clearWishlist.classList.add("reset-wishlist", "btn-style");
 	clearWishlist.textContent = "Vaciar lista de deseos";
 	clearWishlist.addEventListener("click", () => {
-        if (confirm("¿Estás seguro de que quieres vaciar la lista de deseos?")) {
-            clearWishList();
-        }
-    });
+		if (confirm("¿Estás seguro de que quieres vaciar la lista de deseos?")) {
+			clearWishList();
+		}
+	});
 
 	divWishListSectionContainer.appendChild(wishlistBtnsContainer);
 	wishlistBtnsContainer.appendChild(clearWishlist);

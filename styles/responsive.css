@@ -372,6 +372,11 @@
 		align-items: stretch;
 	}
 
+	.wished-product-info-container {
+		flex: 1;
+	}
+	
+
 	.btn-remove-wish-list {
 		padding: var(--spacing-xs);
 	}

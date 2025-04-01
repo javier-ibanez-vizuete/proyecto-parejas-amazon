@@ -19,12 +19,21 @@ const removeFromTrollyCatalog = (product) => {
 };
 
 const clearTrolly = () => {
+	const catalogSection = document.querySelector(".catalog-section");
+	const wishListCatalog = document.querySelector(".wishlist-container-section");
+	const trollyCatalog = document.querySelector(".trolly-container");
+
 	productsOnTrolly.length = 0;
 	productsOnStorage.forEach((product) => (product.addcart = false));
 	saveDataInStorage("productsOnStorage", productsOnStorage);
 	saveDataInStorage("trolly", productsOnTrolly);
 	renderTrolly();
 	if (!productsOnTrolly.length) {
+		catalogSection.classList.remove("dont-show");
+		trollyCatalog.classList.add("dont-show");
+		wishListCatalog.classList.add("dont-show");
+		window.scrollTo(0, 0)
+
 		renderCatalog();
 	}
 };
