@@ -27,8 +27,6 @@ const createLogOutMenu = () => {
 			setTimeout(() => {
 				divMenuTextContainer.style.visibility = "hidden";
 			}, 400);
-
-			divMenuTextContainer.style.visibility = "hidden";
 		});
 	} else {
 		accountMenuContainer.addEventListener("mouseenter", () => {
